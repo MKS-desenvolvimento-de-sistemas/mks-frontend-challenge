@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Title = styled.h1`
   display: inline-block;
   color: #fff;
@@ -21,20 +20,16 @@ const Wrapper = styled.header`
   padding: 0 20px;
   align-items: center;
   height: 3rem;
-  background: ${props => props.theme.main.color.primary};
+  background: ${(props) => props.theme.main.color.primary};
 `;
 
 const Header = () => (
-    <Wrapper>
-        <div>
-            <Title>
-                MKS
-            </Title>
-            <Subtitle>
-                Sistemas
-            </Subtitle>
-        </div>
-    </Wrapper>
-)
+  <Wrapper>
+    <div>
+      <Title>MKS</Title>
+      <Subtitle>Sistemas</Subtitle>
+    </div>
+  </Wrapper>
+);
 
-export default Header
+export default Header;
