@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CartButton from "@/components/CartButton/CartButton";
 
 const Title = styled.h1`
   display: inline-block;
@@ -17,6 +18,7 @@ const Subtitle = styled.h2`
 
 const Wrapper = styled.header`
   display: flex;
+  justify-content: space-between;
   padding: 0 20px;
   align-items: center;
   height: 3rem;
@@ -29,6 +31,7 @@ const Header = () => (
       <Title>MKS</Title>
       <Subtitle>Sistemas</Subtitle>
     </div>
+    <CartButton />
   </Wrapper>
 );
 
