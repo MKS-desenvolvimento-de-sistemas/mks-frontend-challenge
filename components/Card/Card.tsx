@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import PriceTag from "@/components/PriceTag/PriceTag";
-import {FiShoppingBag} from "react-icons/fi";
+import { FiShoppingBag } from "react-icons/fi";
+import { Product } from "@/integrations/mks";
 
 const Container = styled.div`
   display: flex;
@@ -68,30 +69,84 @@ const BagIcon = styled(FiShoppingBag)`
   margin-right: 5px;
 `;
 
-export interface Product {
-    id: number;
-    name: string;
-    brand: string;
-    description: string;
-    photo: string;
-    price: string;
-    createdAt: string;
-    updatedAt: string;
-}
+const ShimmerKeyframe = keyframes`
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+`;
+
+const shimmerEffect = css`
+  background: #f6f7f8
+    linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    )
+    no-repeat;
+  background-size: 800px 800px;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: ${ShimmerKeyframe};
+  -webkit-animation-timing-function: linear;
+
+  border-radius: 5px;
+`;
+
+const Box = styled.div`
+  ${shimmerEffect};
+  width: 138px;
+  height: 138px;
+  margin-bottom: 2rem;
+`;
+
+const Text = styled.div`
+  ${shimmerEffect};
+  width: 100%;
+  height: 10px;
+`;
+
+const Skeleton = styled(Container)`
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
 
 const Card = (props: Product) => (
-    <Container>
-        <ProductImage src={props.photo} alt="asjkl"/>
-        <ProductDetail>
-            <ProductName>{props.name}</ProductName>
-            <PriceTag price={+props.price}/>
-        </ProductDetail>
-        <ProductDescription>{props.description}</ProductDescription>
-        <div style={{flex: 1}}></div>
-        <AddToCartButton>
-            <BagIcon/> Comprar
-        </AddToCartButton>
-    </Container>
+  <Container>
+    <ProductImage src={props.photo} alt="asjkl" />
+    <ProductDetail>
+      <ProductName>{props.name}</ProductName>
+      <PriceTag price={+props.price} />
+    </ProductDetail>
+    <ProductDescription>{props.description}</ProductDescription>
+    <div style={{ flex: 1 }}></div>
+    <AddToCartButton>
+      <BagIcon /> Comprar
+    </AddToCartButton>
+  </Container>
 );
+
+const CardSkeleton = () => {
+  return (
+    <Skeleton>
+      <Box />
+      <Text />
+      <Text />
+      <Text />
+    </Skeleton>
+  );
+};
+
+Card.Skeleton = CardSkeleton;
 
 export default Card;

@@ -1,27 +1,34 @@
-import Card, { Product } from "@/components/Card/Card";
+import Card from "@/components/Card/Card";
 import styled from "styled-components";
+import { Product } from "@/integrations/mks";
 
 const Container = styled.ul`
   display: flex;
-  justify-content: center;
-  margin-top: 18px;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: center;
+  margin: 18px auto 0 auto;
+  max-width: 1200px;
   gap: 18px;
 `;
 
 export interface ProductsProps {
   products: Product[];
+  loading: boolean;
+  skeletonsCount?: number;
 }
 
-const Products = ({ products }: ProductsProps) => {
+const Products = ({ products, loading, skeletonsCount = 8 }: ProductsProps) => {
   return (
     <Container>
-      {products.map((product) => (
-        <li key={product.id}>
-          <Card {...product}></Card>
-        </li>
-      ))}
+      {loading
+        ? Array.from({ length: skeletonsCount }).map((_, i) => (
+            <Card.Skeleton key={i} />
+          ))
+        : products.map((product) => (
+            <li key={product.id}>
+              <Card {...product}></Card>
+            </li>
+          ))}
     </Container>
   );
 };
