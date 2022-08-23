@@ -3,9 +3,7 @@ import {Container, HeaderHome, CartButton} from './style';
 import Logo from '../../img/logo.svg';
 import Cart from '../../img/cart.png';
 
-type Props = Record<string, unknown>;
-
-const Header = (props: Props) => (
+const Header = () => (
 	<HeaderHome>
 		<Container>
 			<div>

@@ -10,6 +10,10 @@ export default createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
 
+  body {
+    background: #F9F9F9;
+  }
+
   img {
     max-width: 100%;
     display: block;
