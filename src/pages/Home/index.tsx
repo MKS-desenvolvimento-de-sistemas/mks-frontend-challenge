@@ -7,6 +7,8 @@ type Props = Record<string, unknown>;
 
 const Home = (props: Props) => (
 	<>
+		<Header></Header>
+		<List></List>
 		<Cart />
 	</>
 );

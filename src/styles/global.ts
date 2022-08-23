@@ -18,5 +18,18 @@ export default createGlobalStyle`
     max-width: 100%;
     display: block;
   }
+
+  ::-webkit-scrollbar {
+  width: 8px;              
+}
+
+  ::-webkit-scrollbar-track {
+    background: transparent;        
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: black;    
+    border-radius: 20px;     
+  }
 `;
 

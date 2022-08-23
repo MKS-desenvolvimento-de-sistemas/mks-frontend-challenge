@@ -2,10 +2,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 938px;
+  max-width: 1000px;
+  height: 70vh;
+  overflow: auto;
   margin: 0 auto;
-  padding-top: 116px;
-  padding-bottom: 116px;
+  margin-top: 64px;
+  padding-bottom: 24px;
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
