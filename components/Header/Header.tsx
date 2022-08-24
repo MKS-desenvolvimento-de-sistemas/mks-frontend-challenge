@@ -25,13 +25,17 @@ const Wrapper = styled.header`
   background: ${(props) => props.theme.main.color.primary};
 `;
 
-const Header = () => (
+export interface HeaderProps {
+  onOpenCart: () => void;
+}
+
+const Header = ({ onOpenCart }: HeaderProps) => (
   <Wrapper>
     <div>
       <Title>MKS</Title>
       <Subtitle>Sistemas</Subtitle>
     </div>
-    <CartButton />
+    <CartButton onClick={onOpenCart} />
   </Wrapper>
 );
 

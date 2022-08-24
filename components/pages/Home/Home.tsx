@@ -3,10 +3,20 @@ import Header from "@/components/Header/Header";
 import Products from "@/components/Products/Products";
 import { useCallback, useEffect, useState } from "react";
 import mks, { Product } from "../../../integrations/mks";
+import ShoppingCartDrawer from "@/components/ShoppingCartDrawer/ShoppingCartDrawer";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [drawerVisible, setDrawerVisible] = useState(false);
+
+  const openDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerVisible(false);
+  };
 
   const fetchProducts = useCallback(async () => {
     setLoading(true);
@@ -40,11 +50,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header onOpenCart={openDrawer} />
 
       <main>
         <Products loading={loading} products={products} />
       </main>
+
+      <ShoppingCartDrawer visible={drawerVisible} onClose={closeDrawer} />
     </>
   );
 }

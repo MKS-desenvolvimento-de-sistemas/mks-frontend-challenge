@@ -52,8 +52,7 @@ const AddToCartButton = styled.button`
   border-radius: 0 0 8px 8px;
   text-transform: uppercase;
   margin: 0 -16px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     filter: brightness(110%);

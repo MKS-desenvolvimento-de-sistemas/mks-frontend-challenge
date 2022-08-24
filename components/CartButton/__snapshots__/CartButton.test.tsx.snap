@@ -2,8 +2,8 @@
 
 exports[`CartButton should match snapshot 1`] = `
 <div>
-  <div
-    class="sc-bczRLJ csjixh"
+  <button
+    class="sc-bczRLJ jqrswS"
   >
     <svg
       fill="currentColor"
@@ -23,6 +23,6 @@ exports[`CartButton should match snapshot 1`] = `
     >
       0
     </span>
-  </div>
+  </button>
 </div>
 `;
