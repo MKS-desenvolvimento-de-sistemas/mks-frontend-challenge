@@ -120,14 +120,14 @@ const Skeleton = styled(Container)`
   gap: 10px;
 `;
 
-const Card = (props: Product) => (
+const Card = ({ photo, name, price, description }: Product) => (
   <Container>
-    <ProductImage src={props.photo} alt="asjkl" />
+    <ProductImage src={photo} alt={name} />
     <ProductDetail>
-      <ProductName>{props.name}</ProductName>
-      <PriceTag price={+props.price} />
+      <ProductName>{name}</ProductName>
+      <PriceTag style={{ height: 30 }} price={+price} />
     </ProductDetail>
-    <ProductDescription>{props.description}</ProductDescription>
+    <ProductDescription>{description}</ProductDescription>
     <div style={{ flex: 1 }}></div>
     <AddToCartButton>
       <BagIcon /> Comprar

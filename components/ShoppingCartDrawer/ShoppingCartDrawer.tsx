@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components";
 import { ImCross } from "react-icons/im";
+import ShoppingCartCard from "@/components/ShoppingCartCard/ShoppingCartCard";
+import { Product } from "@/integrations/mks";
+
+const drawerPaddingX = "32px";
 
 const DrawerWrapper = styled.div<{ visible: boolean }>`
   position: absolute;
@@ -29,12 +33,13 @@ const CloseButton = styled.button`
 `;
 
 const Container = styled.div<{ visible: boolean }>`
-  position: absolute;
-  width: 315px;
+  position: fixed;
+  width: 85%;
+  max-width: 380px;
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 25px 32px 0 32px;
+  padding: 25px ${drawerPaddingX} 0 ${drawerPaddingX};
   background-color: ${(props) => props.theme.main.color.primary};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
@@ -70,12 +75,41 @@ const CheckoutButton = styled.button`
   right: 0;
 `;
 
+const CartItems = styled.div`
+  position: absolute;
+  top: 100px;
+  bottom: 180px;
+  left: ${drawerPaddingX};
+  right: ${drawerPaddingX};
+  overflow-y: auto;
+`;
+
+const TotalTextContainer = styled.div`
+  position: absolute;
+  left: ${drawerPaddingX};
+  right: ${drawerPaddingX};
+  bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 2rem;
+  color: #fff;
+`;
+
 export interface ShoppingCartDrawer {
   visible: boolean;
   onClose: () => void;
+  products: Product[];
 }
 
-const ShoppingCartDrawer = ({ visible, onClose }: ShoppingCartDrawer) => {
+const ShoppingCartDrawer = ({
+  visible,
+  onClose,
+  products,
+}: ShoppingCartDrawer) => {
   return (
     <>
       <DrawerWrapper onClick={onClose} visible={visible}></DrawerWrapper>
@@ -84,6 +118,21 @@ const ShoppingCartDrawer = ({ visible, onClose }: ShoppingCartDrawer) => {
         <CloseButton onClick={onClose}>
           <ImCross style={{ verticalAlign: "middle" }} />
         </CloseButton>
+        <CartItems>
+          {products.map((product) => (
+            <ShoppingCartCard
+              onRemove={() => {
+                console.log("tem que remover", product.name);
+              }}
+              key={product.id}
+              product={product}
+            />
+          ))}
+        </CartItems>
+        <TotalTextContainer>
+          <span>Total:</span>
+          <span>R$ 1.0000,00</span>
+        </TotalTextContainer>
         <CheckoutButton>Finalizar Compra</CheckoutButton>
       </Container>
     </>
