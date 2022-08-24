@@ -23,7 +23,7 @@ const Header = () => {
 					onClick={() => cartOpen()}
 				>
 					<img src={Cart} alt='Carrinho de compra' />
-					<span>0</span>
+					<span>{carrinho.productsSelected.length}</span>
 				</CartButton>
 			</Container>
 		</HeaderHome>

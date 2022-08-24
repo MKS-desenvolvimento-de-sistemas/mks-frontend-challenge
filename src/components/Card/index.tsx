@@ -6,12 +6,22 @@ import {useDispatch, useSelector} from 'react-redux';
 import {adicionalCarrinho, addMaisCarrinho} from '../../store/Stock.store';
 import {RootState} from '../../store';
 import ProductInterface from '../../interface/product.interface';
+import {toast} from 'react-toastify';
 
 const Card = ({id, photo, price, name, description}: CardInterface) => {
 	const dispatch = useDispatch();
 	const carrinho = useSelector((state: RootState) => state.carrinho);
 
 	const onClick = () => {
+		toast.success('Adicionado ao Carrinho!', {
+			position: 'top-right',
+			autoClose: 2000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
 		const allProducts: ProductInterface[] = carrinho.products;
 		const allProductsSelected: ProductInterface[] = carrinho.productsSelected;
 		const filterProduct = allProducts.find(obj => obj.id === id);

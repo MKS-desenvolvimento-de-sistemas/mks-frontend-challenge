@@ -18,6 +18,16 @@ const Cart = () => {
 
 	const cartClose = () => dispatch(fecharCarrinho());
 
+	const getTotalValores = () => {
+		if (carrinho.productsSelected.length > 0) {
+			const totalArray = carrinho.productsSelected.map(obj => Number(obj.price) * Number(obj.quantity));
+			const soma = totalArray.reduce((acc, curl) => acc + curl);
+			return soma.toFixed(2);
+		}
+
+		return '0.00';
+	};
+
 	return (
 		<div style={{display: carrinho.cartOpen}}>
 			<CartStyleContainer>
@@ -46,7 +56,7 @@ const Cart = () => {
 			</CartStyleContainer>
 			<CartTotalPrice>
 				<h1>Total:</h1>
-				<h1>R$798</h1>
+				<h1>R${getTotalValores()}</h1>
 			</CartTotalPrice>
 			<CartFinality>
 				<h1>Finalizar Compra</h1>

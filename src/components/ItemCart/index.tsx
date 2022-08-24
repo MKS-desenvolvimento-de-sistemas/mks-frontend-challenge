@@ -36,6 +36,12 @@ const ItemCart = ({id, name, photo, quantity, price}: ItemCartInterface) => {
 		return dispatch(removerCarrinho(addExtra));
 	};
 
+	const removeItemCart = () => {
+		const allProductsSelected: ProductInterface[] = carrinho.productsSelected;
+		const addExtra = allProductsSelected.filter(obj => obj.id !== id);
+		return dispatch(removerCarrinho(addExtra));
+	};
+
 	return (
 		<ItemCartStyle>
 			<img src={photo} alt='' />
@@ -48,8 +54,8 @@ const ItemCart = ({id, name, photo, quantity, price}: ItemCartInterface) => {
 					<button onClick={addItem}>+</button>
 				</div>
 			</div>
-			<ItemCartPrice>{price}</ItemCartPrice>
-			<ItemCartButton>&#x02A2F;</ItemCartButton>
+			<ItemCartPrice>R${price}</ItemCartPrice>
+			<ItemCartButton onClick={removeItemCart}>&#x02A2F;</ItemCartButton>
 		</ItemCartStyle>
 	);
 };
