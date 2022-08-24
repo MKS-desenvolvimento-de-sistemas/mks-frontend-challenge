@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../../components/Header';
 import List from '../../components/List';
+import Footer from '../../components/Footer';
 import Cart from '../../components/Cart';
 
-type Props = Record<string, unknown>;
-
-const Home = (props: Props) => (
+const Home = () => (
 	<>
-		<Header></Header>
-		<List></List>
+		<Header />
+		<List />
+		<Footer />
 		<Cart />
 	</>
 );

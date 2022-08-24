@@ -31,9 +31,16 @@ const Cart = () => {
 						</button>
 					</CartHeader>
 					<CartList className='paddingLast'>
-						<ItemCart />
-						<ItemCart />
-						<ItemCart />
+						{carrinho.productsSelected.map(({id, name, photo, quantity, price}, index) => (
+							<ItemCart
+								key={index}
+								name={name}
+								id={id}
+								photo={photo}
+								quantity={quantity}
+								price={price}
+							/>
+						))}
 					</CartList>
 				</Container>
 			</CartStyleContainer>
