@@ -4,8 +4,13 @@ html,
 body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  height: 100%;
 }
 
 button {
   cursor: pointer;
+}
+
+#__next {
+  height: 100%;
 }

@@ -16,12 +16,12 @@ const Subtitle = styled.h2`
   font-weight: 300;
 `;
 
-const Wrapper = styled.header`
+const Container = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
   align-items: center;
-  height: 3rem;
+  min-height: 3rem;
   background: ${(props) => props.theme.main.color.primary};
 `;
 
@@ -30,13 +30,13 @@ export interface HeaderProps {
 }
 
 const Header = ({ onOpenCart }: HeaderProps) => (
-  <Wrapper>
+  <Container>
     <div>
       <Title>MKS</Title>
       <Subtitle>Sistemas</Subtitle>
     </div>
     <CartButton onClick={onOpenCart} />
-  </Wrapper>
+  </Container>
 );
 
 export default Header;

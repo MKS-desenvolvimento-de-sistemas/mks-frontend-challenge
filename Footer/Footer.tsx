@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.footer`
-  position: fixed;
+  position: sticky;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 34px;
+  min-height: 34px;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;

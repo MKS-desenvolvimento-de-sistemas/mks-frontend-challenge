@@ -5,6 +5,14 @@ import { useCallback, useEffect, useState } from "react";
 import mks, { Product } from "../../../integrations/mks";
 import ShoppingCartDrawer from "@/components/ShoppingCartDrawer/ShoppingCartDrawer";
 import Footer from "../../../Footer/Footer";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+`;
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -45,7 +53,7 @@ export default function Home() {
   }, [fetchProducts]);
 
   return (
-    <>
+    <Container>
       <Head>
         <title>MKS Sistemas | E-commerce</title>
         <link rel="icon" href="/favicon.ico" />
@@ -59,6 +67,6 @@ export default function Home() {
 
       <ShoppingCartDrawer visible={drawerVisible} onClose={closeDrawer} />
       <Footer />
-    </>
+    </Container>
   );
 }
