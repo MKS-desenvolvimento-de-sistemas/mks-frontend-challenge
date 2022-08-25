@@ -51,17 +51,17 @@ const Card = ({id, photo, price, name, description}: CardInterface) => {
 		<div>
 			<CardStyle>
 				<CardImage>
-					<img src={photo} alt='' />
+					<img src={photo} alt='imagem de um produto' data-testid='img-card'/>
 				</CardImage>
 				<CardText>
 					<div>
-						<h1>{name}</h1>
-						<span>R${price}</span>
+						<h1 data-testid='name-card'>{name}</h1>
+						<span data-testid='price-card'>R${price}</span>
 					</div>
-					<p>{description}</p>
+					<p data-testid='description-card'>{description}</p>
 				</CardText>
 			</CardStyle>
-			<CardBotao onClick={onClick}>
+			<CardBotao onClick={onClick} data-testid='button-card'>
 				<img src={Shopping} alt='Pequena cesta' />
 				<span>Comprar</span>
 			</CardBotao>
