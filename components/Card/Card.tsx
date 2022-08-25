@@ -2,6 +2,8 @@ import styled, { css, keyframes } from "styled-components";
 import PriceTag from "@/components/PriceTag/PriceTag";
 import { FiShoppingBag } from "react-icons/fi";
 import { Product } from "@/integrations/mks";
+import { addItem } from "../../store/store";
+import { useAppDispatch } from "../../hooks/redux";
 
 const Container = styled.div`
   display: flex;
@@ -120,20 +122,24 @@ const Skeleton = styled(Container)`
   gap: 10px;
 `;
 
-const Card = ({ photo, name, price, description }: Product) => (
-  <Container>
-    <ProductImage src={photo} alt={name} />
-    <ProductDetail>
-      <ProductName>{name}</ProductName>
-      <PriceTag style={{ height: 30 }} price={+price} />
-    </ProductDetail>
-    <ProductDescription>{description}</ProductDescription>
-    <div style={{ flex: 1 }}></div>
-    <AddToCartButton>
-      <BagIcon /> Comprar
-    </AddToCartButton>
-  </Container>
-);
+const Card = (product: Product) => {
+  const dispatch = useAppDispatch();
+
+  return (
+    <Container>
+      <ProductImage src={product.photo} alt={product.name} />
+      <ProductDetail>
+        <ProductName>{product.name}</ProductName>
+        <PriceTag style={{ height: 30 }} price={+product.price} />
+      </ProductDetail>
+      <ProductDescription>{product.description}</ProductDescription>
+      <div style={{ flex: 1 }}></div>
+      <AddToCartButton onClick={() => dispatch(addItem(product))}>
+        <BagIcon /> Comprar
+      </AddToCartButton>
+    </Container>
+  );
+};
 
 const CardSkeleton = () => {
   return (

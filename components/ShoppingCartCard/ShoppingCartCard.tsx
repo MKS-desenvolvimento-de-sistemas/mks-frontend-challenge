@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Product } from "@/integrations/mks";
 import PriceTag from "@/components/PriceTag/PriceTag";
 import ItemCounter from "@/components/ItemCounter/ItemCounter";
-import { useState } from "react";
+import { addItem, CountedProduct, reduceItem } from "../../store/store";
+import { useAppDispatch } from "../../hooks/redux";
 
 const Container = styled.div`
   display: flex;
@@ -31,32 +31,22 @@ const Image = styled.img`
 `;
 
 export interface ShoppingCartCardProps {
-  product: Product;
-  onRemove: () => void;
+  product: CountedProduct;
 }
 
-const ShoppingCartCard = ({
-  product: { photo, name },
-  onRemove,
-}: ShoppingCartCardProps) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const increment = () => {
-    setQuantity((counter) => counter + 1);
-  };
+const ShoppingCartCard = ({ product }: ShoppingCartCardProps) => {
+  const dispatch = useAppDispatch();
 
   const decrement = () => {
-    if (quantity === 1) {
-      return onRemove();
+    if (product.quantity > 1) {
+      dispatch(reduceItem(product));
     }
-
-    setQuantity((counter) => Math.max(counter - 1, 1));
   };
 
   return (
     <Container>
-      <Image src={photo} alt="" />
-      <ProductName>{name}</ProductName>
+      <Image src={product.photo} alt={product.name} />
+      <ProductName>{product.name}</ProductName>
       <div
         style={{
           width: "100%",
@@ -67,11 +57,11 @@ const ShoppingCartCard = ({
         }}
       >
         <ItemCounter
-          quantity={quantity}
-          onAdd={increment}
+          quantity={product.quantity}
+          onAdd={() => dispatch(addItem(product))}
           onSub={decrement}
         ></ItemCounter>
-        <PriceTag style={{ height: 35 }} price={5000} />
+        <PriceTag style={{ height: 35 }} price={+product.price} />
       </div>
     </Container>
   );

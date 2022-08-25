@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CSSProperties } from "react";
+import { formatBrlCurrency } from "../../utils";
 
 export interface PriceTagProps {
   price: number;
@@ -19,11 +20,6 @@ const Container = styled.span`
   line-height: 15px;
   padding: 4px 6px;
 `;
-
-const formatBrlCurrency = (value: number) =>
-  value
-    .toLocaleString("pt-br", { style: "currency", currency: "BRL" })
-    .slice(0, -3);
 
 const PriceTag = ({ price, style }: PriceTagProps) => {
   return <Container style={style}>{formatBrlCurrency(price)}</Container>;

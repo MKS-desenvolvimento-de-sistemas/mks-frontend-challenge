@@ -29,6 +29,10 @@ const Button = styled.button`
   &:active {
     color: ${(props) => props.theme.main.color.primary};
   }
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
 `;
 
 export interface ItemCounterProps {
@@ -40,7 +44,11 @@ export interface ItemCounterProps {
 const ItemCounter = ({ onSub, quantity = 1, onAdd }: ItemCounterProps) => {
   return (
     <Container>
-      <Button onClick={onSub} style={{ fontSize: "24px", lineHeight: "29px" }}>
+      <Button
+        disabled={quantity === 1}
+        onClick={onSub}
+        style={{ fontSize: "24px", lineHeight: "29px" }}
+      >
         -
       </Button>
       <Counter>{quantity}</Counter>

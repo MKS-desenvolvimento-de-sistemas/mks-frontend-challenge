@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
 import { ImCross } from "react-icons/im";
 import ShoppingCartCard from "@/components/ShoppingCartCard/ShoppingCartCard";
-import { Product } from "@/integrations/mks";
+import { useAppSelector } from "../../hooks/redux";
+import { selectProducts, selectTotal } from "../../store/store";
+import { formatBrlCurrency } from "../../utils";
 
 const drawerPaddingX = "32px";
 
@@ -102,14 +104,11 @@ const TotalTextContainer = styled.div`
 export interface ShoppingCartDrawer {
   visible: boolean;
   onClose: () => void;
-  products: Product[];
 }
 
-const ShoppingCartDrawer = ({
-  visible,
-  onClose,
-  products,
-}: ShoppingCartDrawer) => {
+const ShoppingCartDrawer = ({ visible, onClose }: ShoppingCartDrawer) => {
+  const products = useAppSelector(selectProducts);
+  const total = useAppSelector(selectTotal);
   return (
     <>
       <DrawerWrapper onClick={onClose} visible={visible}></DrawerWrapper>
@@ -120,18 +119,12 @@ const ShoppingCartDrawer = ({
         </CloseButton>
         <CartItems>
           {products.map((product) => (
-            <ShoppingCartCard
-              onRemove={() => {
-                console.log("tem que remover", product.name);
-              }}
-              key={product.id}
-              product={product}
-            />
+            <ShoppingCartCard key={product.id} product={product} />
           ))}
         </CartItems>
         <TotalTextContainer>
           <span>Total:</span>
-          <span>R$ 1.0000,00</span>
+          <span>{formatBrlCurrency(total)}</span>
         </TotalTextContainer>
         <CheckoutButton>Finalizar Compra</CheckoutButton>
       </Container>
