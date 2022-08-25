@@ -84,6 +84,7 @@ const CartItems = styled.div`
   left: ${drawerPaddingX};
   right: ${drawerPaddingX};
   overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const TotalTextContainer = styled.div`

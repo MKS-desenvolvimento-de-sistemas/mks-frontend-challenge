@@ -1,15 +1,22 @@
 import styled from "styled-components";
 import PriceTag from "@/components/PriceTag/PriceTag";
 import ItemCounter from "@/components/ItemCounter/ItemCounter";
-import { addItem, CountedProduct, reduceItem } from "../../store/store";
+import {
+  addItem,
+  CountedProduct,
+  reduceItem,
+  removeItem,
+} from "../../store/store";
 import { useAppDispatch } from "../../hooks/redux";
+import { ImCross } from "react-icons/im";
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 97%;
   height: 220px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.135216);
@@ -30,6 +37,22 @@ const Image = styled.img`
   height: 95.1px;
 `;
 
+const RemoveFromCartButton = styled.button`
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border: 0;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  transition: transform 0.1s ease-in-out;
+
+  &:active {
+    transform: scale(1.2);
+  }
+`;
+
 export interface ShoppingCartCardProps {
   product: CountedProduct;
 }
@@ -45,6 +68,16 @@ const ShoppingCartCard = ({ product }: ShoppingCartCardProps) => {
 
   return (
     <Container>
+      <RemoveFromCartButton onClick={() => dispatch(removeItem(product))}>
+        <ImCross
+          size={8}
+          style={{
+            verticalAlign: "middle",
+            margin: "-1 0 0 -1",
+            color: "#fff",
+          }}
+        />
+      </RemoveFromCartButton>
       <Image src={product.photo} alt={product.name} />
       <ProductName>{product.name}</ProductName>
       <div
