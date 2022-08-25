@@ -23,6 +23,7 @@ Foi uma aplicação muito legal de se fazer e espero que goste, o link para o fr
 ## 👨‍💻 Tecnologia utilizadas
 
 <p align='center'>
+  <img src='https://img.shields.io/badge/Typescript-blue?style=for-the-badge' />
   <img src='https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge' />
   <img src='https://img.shields.io/badge/React-blue?style=for-the-badge' />
   <img src='https://img.shields.io/badge/Hooks-red?style=for-the-badge' />
@@ -38,6 +39,16 @@ Foi uma aplicação muito legal de se fazer e espero que goste, o link para o fr
   <img src='https://img.shields.io/badge/jest-blue?style=for-the-badge' />
 
 </p>
+
+<br/>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<h3 align='center'> 🌎 Rodando no navegador</h3>
+
+- Você pode clicar no link para ser redirecionado ao site:
+[MKS Sistemas](https://mkssistema.netlify.app/)
+
 
 <br/>
 
