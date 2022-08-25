@@ -42,7 +42,7 @@ exports[`should call api on mount 1`] = `
   </header>
   <main>
     <ul
-      class="sc-ksZaOG gMSLYO"
+      class="sc-ksZaOG fodYfz"
     >
       <div
         class="sc-gKXOVf sc-breuTD moJhb bNNZpD"
@@ -175,18 +175,18 @@ exports[`should call api on mount 1`] = `
     </ul>
   </main>
   <div
-    class="sc-hHLeRK fYBAxL"
+    class="sc-dmRaPn hHhLIT"
   />
   <div
-    class="sc-kgflAQ lloblB"
+    class="sc-fLlhyt jxmGWs"
   >
     <h1
-      class="sc-fLlhyt gZchDS"
+      class="sc-bBrHrO hEEWom"
     >
       Carrinho de compras
     </h1>
     <button
-      class="sc-dmRaPn lhtwKH"
+      class="sc-kgflAQ iFAjnp"
     >
       <svg
         fill="currentColor"
@@ -205,10 +205,10 @@ exports[`should call api on mount 1`] = `
       </svg>
     </button>
     <div
-      class="sc-ivTmOn eocyOm"
+      class="sc-cxabCf izUIPQ"
     />
     <div
-      class="sc-cxabCf iBIpLu"
+      class="sc-llJcti kljwOH"
     >
       <span>
         Total:
@@ -218,10 +218,15 @@ exports[`should call api on mount 1`] = `
       </span>
     </div>
     <button
-      class="sc-bBrHrO iZRMcs"
+      class="sc-ivTmOn iLyhSA"
     >
       Finalizar Compra
     </button>
   </div>
+  <footer
+    class="sc-iIPllB hyVMzf"
+  >
+    MKS Sistemas © Todos os direitos reservados
+  </footer>
 </div>
 `;

@@ -3,7 +3,7 @@
 exports[`should render given products 1`] = `
 <div>
   <ul
-    class="sc-kDDrLX jUFxyw"
+    class="sc-kDDrLX iPcPaR"
   >
     <li>
       <div
@@ -524,7 +524,7 @@ exports[`should render given products 1`] = `
 exports[`should render skeletons 1`] = `
 <div>
   <ul
-    class="sc-kDDrLX jUFxyw"
+    class="sc-kDDrLX iPcPaR"
   >
     <div
       class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"

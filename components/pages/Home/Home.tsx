@@ -4,6 +4,7 @@ import Products from "@/components/Products/Products";
 import { useCallback, useEffect, useState } from "react";
 import mks, { Product } from "../../../integrations/mks";
 import ShoppingCartDrawer from "@/components/ShoppingCartDrawer/ShoppingCartDrawer";
+import Footer from "../../../Footer/Footer";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -57,6 +58,7 @@ export default function Home() {
       </main>
 
       <ShoppingCartDrawer visible={drawerVisible} onClose={closeDrawer} />
+      <Footer />
     </>
   );
 }
