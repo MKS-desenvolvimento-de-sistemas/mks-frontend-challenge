@@ -39,7 +39,7 @@ describe('Testa os Cards da Aplicação', () => {
     const {getAllByTestId} = render(<App/>)
 
     await waitFor(async()=> {
-      expect(getAllByTestId('button-card')).toBeInTheDocument
+      expect(getAllByTestId('button-card-1')).toBeInTheDocument
     })
   })
 })

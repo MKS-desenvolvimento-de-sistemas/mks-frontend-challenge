@@ -6,7 +6,7 @@
 
 **Olá comprador, já escolheu seu próximo pedido?** Nesse projeto eu criei uma aplicação `de um loja virtual`. Tudo isso com o uso de tecnologias como `React, Redux, Typescript, RTL, Eslint, Style-Components, Jest e muito mais`. Foi um projeto desafiador, pois houve `uso de várias técnicas de Redux, além de ser um aplicação 100% testada`. Além disso, foi usado `Hooks e Padrões de commits
 Foi uma aplicação muito legal de se fazer e espero que goste, o link para o front end`.
-[Front-End](https://github.com/Vitor545/mks-frontend-challenge)
+[Front-End](https://github.com/Vitor545/mks-frontend-challenge/tree/vitor-souza-da-silva-mks)
 <br />
 
 

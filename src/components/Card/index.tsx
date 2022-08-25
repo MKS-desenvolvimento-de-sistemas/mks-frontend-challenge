@@ -61,7 +61,7 @@ const Card = ({id, photo, price, name, description}: CardInterface) => {
 					<p data-testid='description-card'>{description}</p>
 				</CardText>
 			</CardStyle>
-			<CardBotao onClick={onClick} data-testid='button-card'>
+			<CardBotao onClick={onClick} data-testid={`button-card-${id}`}>
 				<img src={Shopping} alt='Pequena cesta' />
 				<span>Comprar</span>
 			</CardBotao>
