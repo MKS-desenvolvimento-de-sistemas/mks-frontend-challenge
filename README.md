@@ -86,6 +86,6 @@ npm start
  Abaixo você pode ter uma previa de como ficou a aplicação.
 
 - Você pode clicar no link para ser redirecionado ao site:
-[Youtube](https://youtu.be/)
+[Youtube](https://youtu.be/rphOvyPneWo)
 
 
