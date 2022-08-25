@@ -26,6 +26,6 @@
     "types/custom/image-png.d.ts"
   ],
   "exclude": [
-    "src/test",
+    "src/test/*.spec.tsx",
   ]
 }

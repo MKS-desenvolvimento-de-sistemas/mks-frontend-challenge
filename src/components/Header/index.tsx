@@ -21,6 +21,7 @@ const Header = () => {
 				<CartButton
 					style={{display: carrinho.cartOpen === 'flex' ? 'none' : 'flex'}}
 					onClick={() => cartOpen()}
+					data-testid='button-cart'
 				>
 					<img src={Cart} alt='Carrinho de compra' />
 					<span>{carrinho.productsSelected.length}</span>
