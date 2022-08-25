@@ -1,0 +1,659 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render given products 1`] = `
+<div>
+  <ul
+    class="sc-kDDrLX iPcPaR"
+  >
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="Iphone 11 128 GB"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            Iphone 11 128 GB
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 5.000
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="AirPods"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/airpods.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            AirPods
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 1.200
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          Criados pela Apple Ligam e se conectam automaticamente Configuração com apenas um toque para todos seus aparelhos Apple.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="Macbook Air"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/macbookair.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            Macbook Air
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 8.200
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          Processador intel Core i5 de dois núcleos e 1,8 GHz (Turbo Boost de até 2,9 GHz) com cache L3 compartilhado de 3 MB.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="iPhone 12 64 GB"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone12x64.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            iPhone 12 64 GB
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 6.500
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="Apple Watch Series 7"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/applewatch-series7.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            Apple Watch Series 7
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 3.200
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          O Apple Watch faz coisas que outros aparelhos não conseguem porque ele fica no seu pulso.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="iPad"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/ipadair.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            iPad
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 4.200
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          iPad é uma linha de tablets projetada, desenvolvida e comercializada pela Apple, que funciona com o sistema operacional móvel iOS e iPadOS.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="Headset Cloud Revolver"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperx-cloudrevolver.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            Headset Cloud Revolver
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 1.000
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          A linha HyperX Cloud Revolver foi projetada para atender as exigências dos gamers de PC ou de console.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+    <li>
+      <div
+        class="sc-gsnTZi syHTx"
+      >
+        <img
+          alt="Headset Cloud Stinger"
+          class="sc-dkzDqf bFvDCI"
+          src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperxcloudstinger.webp"
+        />
+        <div
+          class="sc-jSMfEi laoEdf"
+        >
+          <h1
+            class="sc-hKMtZM eDkWcw"
+          >
+            Headset Cloud Stinger
+          </h1>
+          <span
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
+          >
+            R$ 600
+          </span>
+        </div>
+        <p
+          class="sc-eCYdqJ dfRMpl"
+        >
+          O HyperX Cloud Stinger™ é o headset ideal para jogadores que procuram leveza e conforto, qualidade de som superior e maior praticidade.
+        </p>
+        <div
+          style="flex: 1;"
+        />
+        <button
+          class="sc-gKXOVf hEQAyR"
+        >
+          <svg
+            class="sc-iBkjds dFEFZF"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <path
+              d="M16 10a4 4 0 0 1-8 0"
+            />
+          </svg>
+           Comprar
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should render skeletons 1`] = `
+<div>
+  <ul
+    class="sc-kDDrLX iPcPaR"
+  >
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+    <div
+      class="sc-gsnTZi sc-jqUVSM syHTx ccbHaF"
+    >
+      <div
+        class="sc-ftvSup diTfsO"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+      <div
+        class="sc-papXJ fekGrp"
+      />
+    </div>
+  </ul>
+</div>
+`;
