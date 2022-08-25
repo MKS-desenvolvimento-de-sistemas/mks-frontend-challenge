@@ -15,7 +15,7 @@ const Header = () => {
 	return (
 		<HeaderHome>
 			<Container>
-				<div>
+				<div className='containerImg'>
 					<img src={Logo} alt='Logo MKS sistemas' />
 				</div>
 				<CartButton

@@ -12,8 +12,21 @@ export const ItemCartStyle = styled.div`
     padding: 20px;
     margin-bottom: 22px;
 
+    @media screen and (max-width: 500px) {
+        width: 250px;
+        height: 312px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
     img {
         height: 57px;
+        @media screen and (max-width: 500px) {
+            height: 97px;
+            margin-bottom: 13px;
+    }
     }
 
     h1 {
@@ -28,11 +41,27 @@ export const ItemCartStyle = styled.div`
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         font-weight: 400;
+
+        @media screen and (max-width: 500px) {
+            font-size: 16px;
+            max-width: 100%;
+            margin-bottom: 16px;
+    }
     }
 
-    div {
+`;
+
+export const ContainerQuantity = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+`;
+
+export const QuantityCart = styled.div`
         display: flex;
         flex-direction: column;
+        margin-right: 24px;
         span {
             margin-bottom: 4px;
             font-size: 8px;
@@ -77,7 +106,7 @@ export const ItemCartStyle = styled.div`
             border-right: none;
             border-left: 0.2px solid #BFBFBF;
         }
-    }
+
 `;
 
 export const ItemCartButton = styled.button`
@@ -94,10 +123,27 @@ export const ItemCartButton = styled.button`
         right: 0;
         transform: translate(8px, -8px);
         border-radius: 50%;
+
+        @media screen and (max-width: 500px) {
+            background: transparent;
+            color: black;
+            width: 48px;
+            height: 48px;
+            font-size: 42px;
+            transform: translate(-5px, 5px);
+            border-radius: 0;
+        }
 `;
 
 export const ItemCartPrice = styled.span`
         font-size: 14px;
         font-weight: 700;
         line-height: 17px;
+
+        @media screen and (max-width: 500px) {
+            background-color: #373737;
+            padding: 4px;
+            color: white;
+            border-radius: 5px;
+        }
 `;

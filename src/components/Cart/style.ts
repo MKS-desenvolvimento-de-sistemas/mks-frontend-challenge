@@ -9,6 +9,11 @@ export const CartStyleContainer = styled.div`
     overflow: auto;
     top: 0;
     right: 0;
+
+    @media screen and (max-width: 500px) {
+        width: 330px;
+        
+    }
 `;
 
 export const Container = styled.div`
@@ -69,6 +74,11 @@ export const CartTotalPrice = styled.div`
         color: white;
         line-height: 15px;
     }
+
+    @media screen and (max-width: 500px) {
+        width: 330px;
+        
+    }
 `;
 
 export const CartFinality = styled.div`
@@ -88,6 +98,10 @@ export const CartFinality = styled.div`
         font-weight: 700;
         color: white;
         line-height: 15px;
+    }
+    @media screen and (max-width: 500px) {
+        width: 330px;
+        
     }
 `;
 

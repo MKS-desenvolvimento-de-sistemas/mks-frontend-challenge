@@ -6,10 +6,17 @@ export const Container = styled.div`
   margin: 0 auto;
   height: 101px;
   display: flex;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
   justify-content: space-between;
   align-items: center;
+  
+  @media screen and (max-width: 500px) {
+    .containerImg {
+      width: 150px;
+    }
+    }
+
 `;
 
 export const HeaderHome = styled.header`
@@ -25,9 +32,17 @@ export const CartButton = styled.header`
   justify-content: center;
   height: 45px;
   width: 90px;
+
+  @media screen and (max-width: 500px) {
+    height: 36px;
+    width: 64px;
+    }
   
   img {
     margin-right: 16px;
+    @media screen and (max-width: 500px) {
+    width: 16px;
+    }
   }
 
   span {

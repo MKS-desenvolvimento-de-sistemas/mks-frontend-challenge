@@ -1,5 +1,5 @@
 import React from 'react';
-import {ItemCartStyle, ItemCartButton, ItemCartPrice} from './style';
+import {ItemCartStyle, ItemCartButton, ItemCartPrice, QuantityCart, ContainerQuantity} from './style';
 import ItemCartInterface from '../../interface/itemcart.interface';
 import {RootState} from '../../store';
 import {useSelector, useDispatch} from 'react-redux';
@@ -46,15 +46,17 @@ const ItemCart = ({id, name, photo, quantity, price}: ItemCartInterface) => {
 		<ItemCartStyle>
 			<img src={photo} alt='' />
 			<h1>{name}</h1>
-			<div>
-				<span>Qtd:</span>
-				<div>
-					<button onClick={removeItem}>-</button>
-					<span>{quantity}</span>
-					<button onClick={addItem}>+</button>
-				</div>
-			</div>
-			<ItemCartPrice>R${price}</ItemCartPrice>
+			<ContainerQuantity>
+				<QuantityCart>
+					<span>Qtd:</span>
+					<div>
+						<button onClick={removeItem}>-</button>
+						<span>{quantity}</span>
+						<button onClick={addItem}>+</button>
+					</div>
+				</QuantityCart>
+				<ItemCartPrice>R${price}</ItemCartPrice>
+			</ContainerQuantity>
 			<ItemCartButton onClick={removeItemCart}>&#x02A2F;</ItemCartButton>
 		</ItemCartStyle>
 	);
