@@ -4,7 +4,6 @@ import Products from "@/components/Products/Products";
 import { useCallback, useEffect, useState } from "react";
 import mks, { Product } from "../../../integrations/mks";
 import ShoppingCartDrawer from "@/components/ShoppingCartDrawer/ShoppingCartDrawer";
-import { mockProducts } from "../../../test/utils";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -57,11 +56,7 @@ export default function Home() {
         <Products loading={loading} products={products} />
       </main>
 
-      <ShoppingCartDrawer
-        products={mockProducts}
-        visible={drawerVisible}
-        onClose={closeDrawer}
-      />
+      <ShoppingCartDrawer visible={drawerVisible} onClose={closeDrawer} />
     </>
   );
 }

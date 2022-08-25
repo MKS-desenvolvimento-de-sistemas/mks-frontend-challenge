@@ -10,7 +10,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="Iphone 11 128 GB"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp"
         />
@@ -23,9 +23,10 @@ exports[`should render given products 1`] = `
             Iphone 11 128 GB
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 5.000,00
+            R$ 5.000
           </span>
         </div>
         <p
@@ -73,7 +74,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="AirPods"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/airpods.webp"
         />
@@ -86,9 +87,10 @@ exports[`should render given products 1`] = `
             AirPods
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 1.200,00
+            R$ 1.200
           </span>
         </div>
         <p
@@ -136,7 +138,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="Macbook Air"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/macbookair.webp"
         />
@@ -149,9 +151,10 @@ exports[`should render given products 1`] = `
             Macbook Air
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 8.200,00
+            R$ 8.200
           </span>
         </div>
         <p
@@ -199,7 +202,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="iPhone 12 64 GB"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone12x64.webp"
         />
@@ -212,9 +215,10 @@ exports[`should render given products 1`] = `
             iPhone 12 64 GB
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 6.500,00
+            R$ 6.500
           </span>
         </div>
         <p
@@ -262,7 +266,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="Apple Watch Series 7"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/applewatch-series7.webp"
         />
@@ -275,9 +279,10 @@ exports[`should render given products 1`] = `
             Apple Watch Series 7
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 3.200,00
+            R$ 3.200
           </span>
         </div>
         <p
@@ -325,7 +330,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="iPad"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/ipadair.webp"
         />
@@ -338,9 +343,10 @@ exports[`should render given products 1`] = `
             iPad
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 4.200,00
+            R$ 4.200
           </span>
         </div>
         <p
@@ -388,7 +394,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="Headset Cloud Revolver"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperx-cloudrevolver.webp"
         />
@@ -401,9 +407,10 @@ exports[`should render given products 1`] = `
             Headset Cloud Revolver
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 1.000,00
+            R$ 1.000
           </span>
         </div>
         <p
@@ -451,7 +458,7 @@ exports[`should render given products 1`] = `
         class="sc-gsnTZi syHTx"
       >
         <img
-          alt="asjkl"
+          alt="Headset Cloud Stinger"
           class="sc-dkzDqf bFvDCI"
           src="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperxcloudstinger.webp"
         />
@@ -464,9 +471,10 @@ exports[`should render given products 1`] = `
             Headset Cloud Stinger
           </h1>
           <span
-            class="sc-bczRLJ gJxdYq"
+            class="sc-bczRLJ fvLqnu"
+            style="height: 30px;"
           >
-            R$ 600,00
+            R$ 600
           </span>
         </div>
         <p

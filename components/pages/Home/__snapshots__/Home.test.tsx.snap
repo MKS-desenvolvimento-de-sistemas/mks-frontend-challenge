@@ -175,18 +175,18 @@ exports[`should call api on mount 1`] = `
     </ul>
   </main>
   <div
-    class="sc-hAZoDl Nyakn"
+    class="sc-hHLeRK fYBAxL"
   />
   <div
-    class="sc-fEOsli jnIsLs"
+    class="sc-kgflAQ lloblB"
   >
     <h1
-      class="sc-bjUoiL frqtRO"
+      class="sc-fLlhyt gZchDS"
     >
       Carrinho de compras
     </h1>
     <button
-      class="sc-fnykZs kBDJQU"
+      class="sc-dmRaPn lhtwKH"
     >
       <svg
         fill="currentColor"
@@ -204,8 +204,21 @@ exports[`should call api on mount 1`] = `
         />
       </svg>
     </button>
+    <div
+      class="sc-ivTmOn eocyOm"
+    />
+    <div
+      class="sc-cxabCf iBIpLu"
+    >
+      <span>
+        Total:
+      </span>
+      <span>
+        R$ 0
+      </span>
+    </div>
     <button
-      class="sc-idiyUo bzryHg"
+      class="sc-bBrHrO iZRMcs"
     >
       Finalizar Compra
     </button>
