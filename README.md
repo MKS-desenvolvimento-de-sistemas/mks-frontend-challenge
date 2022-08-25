@@ -1,43 +1,91 @@
-Diretrizes do desafio
-===========================
-
-O objetivo principal desse teste é avaliar sua capacidade de escrever código limpo, bem testado e reutilizável. Ao terminar, faça o deploy da aplicação e mande-nos o link.
-
-Tarefa (funcional)
----------------
-
-Para esse desafio, você deve consumir nossa [API REST de produtos](https://mks-frontend-challenge-api.herokuapp.com/api-docs/) para exibir a lista de produtos da loja.
-
-A aplicação deve conter apenas uma página/rota e um carrinho.
-
-- <b>Loja</b>: A lista de produtos deve ser buscada de nossa API, use um shimmer/skeleton enquanto estiver em loading.
+## Projeto MKS Sistemas
  
-- <b>Carrinho</b>: O carrinho deve conter todos os produtos selecionados, juntamente com a opção de aumentar a quantidade de cada produto selecionado.
+<h3 align='center'> 🚗 Se eu tivesse um único dólar, investiria em propaganda. </h3>
 
-Use do Jest e a testing-library para realizar os testes unitários.
+## 📄 Contexto
 
-Recursos
----------------
+**Olá comprador, já escolheu seu próximo pedido?** Nesse projeto eu criei uma aplicação `de um loja virtual`. Tudo isso com o uso de tecnologias como `React, Redux, Typescript, RTL, Eslint, Style-Components, Jest e muito mais`. Foi um projeto desafiador, pois houve `uso de várias técnicas de Redux, além de ser um aplicação 100% testada`. Além disso, foi usado `Hooks e Padrões de commits
+Foi uma aplicação muito legal de se fazer e espero que goste, o link para o front end`.
+[Front-End](https://github.com/Vitor545/mks-frontend-challenge)
+<br />
 
-UI/UX: [Figma loja](https://www.figma.com/file/Z4z8osDbK1ET7cjNzFRMrK/MKS-Front-end-challenge?node-id=0%3A1) PS: O design system está incluso, incluindo a fonte.
 
-API: [API REST de produtos](https://mks-frontend-challenge-api.herokuapp.com/api-docs/) para exibir a lista de produtos da loja.
+<div>
+<img width=100% src="videoPage.gif"></img>
+</div>
 
-Ferramentas requeridas
----------------
+<br/>
 
-1. TypeScript
-2. React ou Next.js (Preferimos Next.js)
-3. Redux toolkit
-4. Styled-components
-5. Jest
 
-Aspectos técnicos
----------------
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-Todas as ferramentas listadas anteriormente são mandatórias, além delas sinta-se livre para utilizar de qualquer outra technologia que te seja confortável.
 
-Faça o deploy!
----------------
+## 👨‍💻 Tecnologia utilizadas
 
-Ao finalizar, faça o deploy no lugar que te for confortável (exemplo: Vercel, Netlify, Heroku, Amazon EC2, etc)
+<p align='center'>
+  <img src='https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/React-blue?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/Hooks-red?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/Bibliotecas-brown?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/Git-black?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/GitHub-purple?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/css-blue?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/html-orange?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/style-components-pink?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/React Testing Library-blue?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/Redux-purple?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/eslint-purple?style=for-the-badge' />
+  <img src='https://img.shields.io/badge/jest-blue?style=for-the-badge' />
+
+</p>
+
+<br/>
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+<h3 align='center'> 💿 Rodando na sua máquina</h3>
+
+
+## ⬇️ Instalações necessárias
+
+- Para executar com sucesso o projeto é necessário instalar o GIT:
+[GIT](https://git-scm.com/downloads)
+
+- Para executar com sucesso o projeto é necessário instalar o Node.js:
+[Node.js](https://nodejs.org/en/download/)
+
+<br/>
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+## ▶️ Executar a aplicação
+
+**Para executar a aplicação em sua máquina local basta escolher uma pasta no seu computador e seguir os seguintes comandos no terminal do seu computador.**
+**Lembrando que é preciso configurar as variaveis de ambiente na sua maquina**
+
+📋 Copie as linhas de código e cole no terminal.
+
+```bash
+git clone git@github.com:Vitor545/mks-frontend-challenge.git
+cd mks-frontend-challenge
+npm i
+npm start 
+```
+
+<br/>
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## 📄 Video apresentando o projeto
+
+ Abaixo você pode ter uma previa de como ficou a aplicação.
+
+- Você pode clicar no link para ser redirecionado ao site:
+[Youtube](https://youtu.be/)
+
+

@@ -6,6 +6,8 @@ export const Container = styled.div`
   margin: 0 auto;
   height: 101px;
   display: flex;
+  padding-left: 8px;
+  padding-right: 8px;
   justify-content: space-between;
   align-items: center;
 `;
