@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     :root {
 
         --header-height: 48px;
+        --footer-height: 34px;
         --global-padding: 20px;
         
         /* ==== COLORS ==== */
@@ -14,20 +15,27 @@ const GlobalStyle = createGlobalStyle`
             --secondary-color-200: ${(props) => props.theme.secondary["200"]};
             --secondary-color-300: ${(props) =>
               props.theme.secondary["300"]};   
-            --terciary-color: ${(props) =>
-              props.theme
-                .terciary};                                                            
+            --terciary-color: ${(props) => props.theme.terciary};  
+                
+            --shadow-color: ${(props) => props.theme.shadow};   
+            
         /* ==== Z-INDEX ==== */
             --z-cart: 100;
             --z-fixed: 10;
     }
 
     @media screen and (min-width: 760px) {
-        --global-padding: 40px;
+        :root {
+            --global-padding: 40px;
+            --header-height: 70px;
+        }
     }
 
-    @media screen and (min-width: 1440px) {
-        --global-padding: 65px;
+    @media screen and (min-width: 1240px) {
+       :root {
+            --global-padding: 65px;
+            --header-height: 101px;
+       }
     }
 
     * {
@@ -65,6 +73,18 @@ const GlobalStyle = createGlobalStyle`
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    main {
+        width: 100%;
+        margin-top: var(--header-height);
+        margin-bottom: var(--footer-height);
+
+        min-height: calc(100vh - var(--header-height) - var(--footer-height));
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 `;
