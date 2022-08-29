@@ -2,6 +2,7 @@ export type theme = {
   primary: { 100: string; 200: string };
   secondary: { 100: string; 200: string; 300: string };
   terciary: string;
+  shadow: string;
 };
 
 const light: theme = {
@@ -15,6 +16,7 @@ const light: theme = {
     300: "#000000",
   },
   terciary: "#0F52BA",
+  shadow: "rgba(0, 0, 0, 0.135216)",
 };
 
 const dark: theme = {
@@ -28,6 +30,7 @@ const dark: theme = {
     300: "#FFFFFF",
   },
   terciary: "#0F52BA",
+  shadow: "rgba(255, 255, 255, 0.135216)",
 };
 
 export const themes: { light: theme; dark: theme } = {

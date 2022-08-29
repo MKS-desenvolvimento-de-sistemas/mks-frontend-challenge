@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import store from "../redux";
 
 // COMPONENTS IMPORT'S
-import Global from "../components/Global";
+import { Global } from "../components";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
