@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Component should match the snapshot - set target 1`] = `
+<a
+  data-testid="link"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+  target="_blank"
+  title="BLANK-TESTE"
+>
+  BLANK-TESTE
+</a>
+`;
+
+exports[`Link Component should match the snapshot - target default 1`] = `
+<a
+  data-testid="link"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+  target="_self"
+  title="TESTE"
+>
+  TESTE
+</a>
+`;

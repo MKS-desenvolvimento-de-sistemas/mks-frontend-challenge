@@ -11,7 +11,7 @@ interface ILinkProps {
 const Link = ({ href, title, target = "self", children }: ILinkProps) => {
   return (
     <NextLink href={href}>
-      <a title={title} target={`_${target}`}>
+      <a data-testid="link" title={title} target={`_${target}`}>
         {children}
       </a>
     </NextLink>
