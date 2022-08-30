@@ -6,7 +6,9 @@ interface IPriceProps {
 }
 
 const Price = ({ price, type = "product" }: IPriceProps) => {
-  return <Styles.Price type={type}>{`R$${price}`}</Styles.Price>;
+  return (
+    <Styles.Price data-testid="price" type={type}>{`R$${price}`}</Styles.Price>
+  );
 };
 
 export default Price;
