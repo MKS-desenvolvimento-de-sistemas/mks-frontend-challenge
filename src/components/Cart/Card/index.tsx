@@ -27,15 +27,16 @@ const CartCard = (props: IProductCart) => {
   };
 
   return (
-    <Styles.Card>
+    <Styles.Card data-testid="cart-card">
       <Styles.CardRemove
+        data-testid="cart-card--remove"
         type="button"
         title="Remover do Carrinho"
         onClick={remove}
       >
         <AiOutlineClose />
       </Styles.CardRemove>
-      <Styles.CardImage imageUrl={photo} />
+      <Styles.CardImage data-testid="cart-card--image" imageUrl={photo} />
       <Styles.CardInfo>
         <h4>{name}</h4>
         <QuantityControl

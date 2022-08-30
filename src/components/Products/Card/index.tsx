@@ -5,14 +5,17 @@ import { Price } from "../../";
 import BuyButton from "../BuyButton";
 
 const ProductCard = (props: IProduct) => {
-  const { id, name, description, price, photo } = props;
+  const { name, description, price, photo } = props;
   const formatterDescription =
     description.length > 63 ? description.slice(0, 64) + "..." : description;
 
   return (
-    <Styles.Card>
+    <Styles.Card data-testid="card">
       <Styles.CardDetails>
-        <Styles.CardImage imageUrl={photo}></Styles.CardImage>
+        <Styles.CardImage
+          data-testid="card--image"
+          imageUrl={photo}
+        ></Styles.CardImage>
 
         <Styles.CardInfo>
           <h4>{name}</h4>

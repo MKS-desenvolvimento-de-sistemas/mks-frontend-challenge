@@ -15,6 +15,7 @@ const BuyButton = ({ product }: IBuyButtonProps) => {
 
   return (
     <Styles.Button
+      data-testid="buy-button"
       type="button"
       title="Adicionar ao Carrinho"
       onClick={() => dispatch(add(product))}

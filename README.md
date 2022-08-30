@@ -39,3 +39,26 @@ API: [API REST de produtos](https://mks-frontend-challenge-api.herokuapp.com/api
 3. Redux Toolkit
 4. Styled-components
 5. Jest
+6. React Testing Library
+
+## Detalhes de Implementação
+
+---
+
+### QuantityControl Component
+
+- Propriedades: quantity (tipo number), increment (função) e decrement(função);
+- Este componente exibe na tela uma div com o valor passado atual de quantity (que deve ser um state numérico) e dois botões, com suas respectivas funcionalidades de incrementar e decrementar uma unidade do produto no carrinho (as funções devem se comunicar com o estado global via dispatch do redux);
+
+### Price Component
+
+- Propriedades: price (tipo number) e type ("cart" ou "product");
+- Este componente exibe na tela uma div com o valor passado em price;
+- O type define alguns estilos css;
+
+### BuyButton Component
+
+- Propriedades: product;
+- Este componente exibe na tela um botão que tem como funcionalidade adicionar uma unidade do produto passado por props ao carrinho;  
+  
+

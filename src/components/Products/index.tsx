@@ -4,7 +4,7 @@ import ProductCard from "./Card";
 
 const ProductsList = ({ products }: IProducts) => {
   return (
-    <Styles.List>
+    <Styles.List data-testid="products-list">
       {products?.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}

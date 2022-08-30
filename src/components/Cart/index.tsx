@@ -12,17 +12,18 @@ interface ICartProps {
 
 const Cart = ({ cart, closeCart }: ICartProps) => {
   return (
-    <Styles.Cart>
+    <Styles.Cart data-testid="cart">
       <Styles.CartHeader>
         <h2>Carrinho de Compras</h2>
         <AiFillCloseCircle
+          data-testid="cart-close"
           title="Fechar Carrinho"
           style={{ cursor: "pointer" }}
           onClick={closeCart}
         />
       </Styles.CartHeader>
 
-      <Styles.CartList>
+      <Styles.CartList data-testid="cart-list">
         {cart.map((product) => (
           <CartCard key={`cart-${product.id}`} {...product} />
         ))}
@@ -30,7 +31,7 @@ const Cart = ({ cart, closeCart }: ICartProps) => {
 
       <Styles.CartTotal>
         <span>Total</span>
-        <span>{`R$ ${getPriceInCart(cart)}`}</span>
+        <span data-testid="cart-total">{`R$ ${getPriceInCart(cart)}`}</span>
       </Styles.CartTotal>
 
       <Styles.CartButton type="button" title="Finalizar Compra">

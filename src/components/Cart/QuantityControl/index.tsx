@@ -15,6 +15,7 @@ const QuantityControl = ({
     <Styles.Container>
       <small>Qtd:</small>
       <Styles.Button
+        data-testid="decrement-button"
         type="button"
         title="Diminuir Quantidade"
         blocked={quantity <= 1}
@@ -26,8 +27,9 @@ const QuantityControl = ({
       >
         -
       </Styles.Button>
-      <span>{quantity}</span>
+      <span data-testid="quantity-display">{quantity}</span>
       <Styles.Button
+        data-testid="increment-button"
         type="button"
         title="Aumentar Quantidade"
         onClick={increment}
