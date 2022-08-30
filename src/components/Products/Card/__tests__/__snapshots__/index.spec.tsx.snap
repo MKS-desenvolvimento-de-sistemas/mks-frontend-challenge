@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard Component should match the snapshot 1`] = `
+<li
+  className="sc-bczRLJ cyfZqA"
+  data-testid="card"
+>
+  <div
+    className="sc-gsnTZi hlgEBv"
+  >
+    <div
+      className="sc-dkzDqf gDJlNm"
+      data-testid="card--image"
+    />
+    <div
+      className="sc-hKMtZM jwyXmD"
+    >
+      <h4>
+        EXEMPLO 1
+      </h4>
+      <div
+        className="sc-ftvSup LlaOC"
+        data-testid="price"
+        type="product"
+      >
+        R$200
+      </div>
+      <p>
+        Exemplo 1
+      </p>
+    </div>
+  </div>
+  <button
+    className="sc-idiyUo eimsFO"
+    data-testid="buy-button"
+    onClick={[Function]}
+    title="Adicionar ao Carrinho"
+    type="button"
+  >
+    <svg
+      fill="none"
+      height="16px"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      style={
+        {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+      />
+      <line
+        x1="3"
+        x2="21"
+        y1="6"
+        y2="6"
+      />
+      <path
+        d="M16 10a4 4 0 0 1-8 0"
+      />
+    </svg>
+    Comprar
+  </button>
+</li>
+`;
