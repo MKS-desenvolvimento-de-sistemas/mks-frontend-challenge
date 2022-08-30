@@ -23,13 +23,14 @@ const Header = ({ openCart }: IHeaderProps) => {
   const themeIsLight = theme === "light";
 
   return (
-    <Styles.Header>
+    <Styles.Header data-testid="header">
       <Link href="/" title="MKS Sistemas">
         MKS
         <span>Sistemas</span>
       </Link>
 
       <Styles.Theme
+        data-testid="theme-button"
         type="button"
         title={themeIsLight ? "Ativar Modo Escuro" : "Ativar Modo Claro"}
         onClick={() => dispatch(change())}
@@ -37,7 +38,12 @@ const Header = ({ openCart }: IHeaderProps) => {
         {themeIsLight ? <BsFillMoonFill /> : <BsFillSunFill />}
       </Styles.Theme>
 
-      <Styles.Cart type="button" title="Abrir Carrinho" onClick={openCart}>
+      <Styles.Cart
+        data-testid="cart-button"
+        type="button"
+        title="Abrir Carrinho"
+        onClick={openCart}
+      >
         <i>
           <IoCart />
         </i>
