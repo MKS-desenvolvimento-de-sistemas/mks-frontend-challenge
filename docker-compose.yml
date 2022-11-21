@@ -1,0 +1,44 @@
+version: "1"
+
+services:
+  # Serviço que irá rodar o node
+  node:
+    # Imagem base do container
+    image: node:16
+    # Nome do container para facilitar execução
+    container_name: mks_frontend_challenge
+    # Mesmo que `docker run -t`
+    tty: true
+    # Mesmo que `docker run -i`
+    stdin_open: true
+    ports:
+      - 3000:3000
+      - 5173:5173
+    # Substitui o comando padrão da imagem do node
+    command: bash
+    # Restarta a imagem caso algo a faça parar
+    restart: always
+    # Diretório padrão de execução
+    working_dir: /app
+    # Lista de volumes (diretórios) mapeados de fora para dentro do container
+    volumes:
+      # Monta o diretório atual, com todos os dados do projeto, 
+      # dentro do diretório /app
+      - ./:/app
+
+# Lista de redes que os containeres irão utilizar
+networks:
+  # Rede padrão, criada automaticamente
+  default:
+    # Dá um nome específico à rede padrão
+    name: mks_frontend_challenge_net
+
+# As chaves `tty`, `stdin_open` e `command` fazem com que o container fique
+# rodando em segundo plano, bem como tornam possível o uso do comando
+# `docker attach`, já deixando o terminal atual acoplado ao container, direto
+# no bash. Apesar disso, utilizar o attach mais de uma vez irá replicar o
+# terminal, portanto é melhor utilizar o comando `docker exec`.
+
+# A renomeação da rede padrão é feita pois caso contrário o nome da rede será
+# o nome do diretório onde o arquivo atual se encontra, o que pode dificultar
+# a listagem individual.
