@@ -19,10 +19,8 @@ class ProductsSection extends React.Component {
 
   render() {
     const { loading, products } = this.props as IStore;
-    console.log(products);
-
     return (
-      <section>
+      <section className="product-section">
         {loading ? (
           <p>Carregando...</p>
         ) : (
@@ -32,7 +30,7 @@ class ProductsSection extends React.Component {
               img={product.photo}
               description={product.description}
               price={product.price}
-              title={product.brand}
+              title={product.name}
               key={product.id}
             />
           ))
@@ -75,7 +73,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   getProducts: () =>
     dispatch(
       getProducts(
-        "https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC"
+        "https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=50&sortBy=id&orderBy=ASC"
       )
     ),
 });

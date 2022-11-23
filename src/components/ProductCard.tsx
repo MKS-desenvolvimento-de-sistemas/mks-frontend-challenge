@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import { addProduct } from "../redux/actions";
+import { addProduct, updateTotalValue } from "../redux/actions";
 
 type Product = {
   img: string;
@@ -11,7 +11,8 @@ type Product = {
 };
 
 type ReduxProps = {
-  addProduct: Function
+  addProduct: Function;
+  updateValue: Function;
 }
 
 
@@ -25,20 +26,21 @@ function ProductCard({
   ...props
 }: Product ) {
   const addProductToCart = ({ target }: {target: any}): void => {
-    const { addProduct } = props as ReduxProps;
-    
+    const { addProduct, updateValue } = props as ReduxProps;
     addProduct(target.id)
+    updateValue(Number(price.split(".")[0]));
   }
 
   return (
-    <div>
+    <div className="product-card">
       <img src={img} alt={title} />
-      <div>
+      <div className="price-name">
         <p>{title}</p>
-        <p>R${price}</p>
+        <p className="price">R${price.split('.')[0]}</p>
       </div>
-      <p>{description}</p>
+      <p className="description">{description}</p>
       <button
+        className="comprar"
         id={`${id}`}
         onClick={addProductToCart}
         type="button">Comprar</button>
@@ -70,7 +72,8 @@ function ProductCard({
 //   }
 // }
 const mapDispatchToProps = (dispatch: any) => ({
-  addProduct: (id: number): void => dispatch(addProduct(id))
+  addProduct: (id: number): void => dispatch(addProduct(id)),
+  updateValue: (value: number) => dispatch(updateTotalValue(value)),
 })
 
 export default connect(null, mapDispatchToProps)(ProductCard);

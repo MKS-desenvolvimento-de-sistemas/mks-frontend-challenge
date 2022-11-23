@@ -5,10 +5,28 @@ export const REQUEST_API = 'REQUEST_API';
 export const REQUEST_SUCSSES = 'REQUEST_SUCSSES';
 export const REQUEST_ERROR = 'REQUEST_ERROR';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const ONE_MORE = 'ONE_MORE';
+export const ONE_LESS = 'ONE_LESS';
+export const UPDATE_VALUE = 'UPDATE_VALUE'
 
 export const addProducts = (products: Product[]) => ({
   type: REQUEST_SUCSSES,
   products,
+})
+
+export const oneMoreProduct = (productId: string) => ({
+  type: ONE_MORE,
+  productId,
+})
+
+export const oneLessProduct = (productId: string) => ({
+  type: ONE_LESS,
+  productId,
+})
+
+export const updateTotalValue = (value: number) => ({
+  type: UPDATE_VALUE,
+  value,
 })
 
 const requestAPI = (loading: boolean) => ({

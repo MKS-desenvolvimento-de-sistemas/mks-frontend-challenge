@@ -1,9 +1,16 @@
 import React from "react";
-import Cart from "./Cart";
+import CartButton from "./CartButton";
 
 class Header extends React.Component {
   render() {
-    return <header><p>MKS Sistem</p><Cart /></header>;
+    return (
+      <header>
+        <p>
+          <span className='MKS'>MKS</span>{' '}Sistemas
+        </p>
+        <CartButton />
+      </header>
+    );
   }
 }
 
