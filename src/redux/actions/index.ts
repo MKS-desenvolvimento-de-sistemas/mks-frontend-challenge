@@ -7,7 +7,18 @@ export const REQUEST_ERROR = 'REQUEST_ERROR';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const ONE_MORE = 'ONE_MORE';
 export const ONE_LESS = 'ONE_LESS';
-export const UPDATE_VALUE = 'UPDATE_VALUE'
+export const UPDATE_VALUE = 'UPDATE_VALUE';
+export const SHOW_CART = 'SHOW_CART';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+
+export const removeItem = (productId: string) => ({
+  type: REMOVE_ITEM,
+  productId,
+})
+
+export const showCart = () => ({
+  type: SHOW_CART
+})
 
 export const addProducts = (products: Product[]) => ({
   type: REQUEST_SUCSSES,

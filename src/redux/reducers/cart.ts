@@ -1,8 +1,16 @@
-import { ADD_PRODUCT, ONE_LESS, ONE_MORE, UPDATE_VALUE } from "../actions";
+import {
+  ADD_PRODUCT,
+  ONE_LESS,
+  ONE_MORE,
+  REMOVE_ITEM,
+  SHOW_CART,
+  UPDATE_VALUE,
+} from "../actions";
 
 const INITIAL_STATE = {
   products: [],
-  value: 0
+  value: 0,
+  visible: false,
 };
 
 type ProductCart = {
@@ -16,15 +24,19 @@ type Store = {
 
 const cart = (
   store = INITIAL_STATE,
-  action: { type: string; productId: string, value: number }
+  action: { type: string; productId: string; value: number }
 ) => {
   switch (action.type) {
+    case REMOVE_ITEM:
+      return { ...store, products: removeItem(store, action.productId) };
+    case SHOW_CART:
+      return { ...store, visible: !store.visible };
     case ONE_LESS:
-      return {...store, products: removeProduct(store, action.productId)};
+      return { ...store, products: removeProduct(store, action.productId) };
     case ONE_MORE:
       return { ...store, products: addProduct(store, action.productId) };
     case UPDATE_VALUE:
-      return { ...store, value: store.value + action.value}
+      return { ...store, value: store.value + action.value };
     case ADD_PRODUCT:
       return { ...store, products: organizeItems(store, action.productId) };
     default:
@@ -32,9 +44,22 @@ const cart = (
   }
 };
 
+const removeItem = ({ products }: Store, productId: string) => {
+  const position = products.findIndex(
+    (product) => product.productId === productId
+  );
+  const newArr = [...products];
+  newArr.splice(position, 1);
+  return newArr;
+};
+
 const removeProduct = ({ products }: Store, productId: string) => {
-  if (products.find((product) => product.productId === productId)?.count === 1) {
-    const position = products.findIndex((product) => product.productId === productId);
+  if (
+    products.find((product) => product.productId === productId)?.count === 1
+  ) {
+    const position = products.findIndex(
+      (product) => product.productId === productId
+    );
     const newArr = [...products];
     newArr.splice(position, 1);
     return newArr;
@@ -46,7 +71,6 @@ const removeProduct = ({ products }: Store, productId: string) => {
     return product;
   });
   return newStore;
-  
 };
 
 const addProduct = ({ products }: Store, productId: string) => {

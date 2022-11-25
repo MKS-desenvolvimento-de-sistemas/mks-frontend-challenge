@@ -27,6 +27,23 @@ header span {
   font-size: 40px;
 }
 
+.cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: none;
+  width: 90px;
+  height: 45px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -103,6 +120,10 @@ header span {
 }
 
 .product-card .comprar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 14px;
   background: #0F52BA;
   width: 100%;
   height: 32px;
@@ -115,9 +136,13 @@ header span {
   font-size: 14px;
   line-height: 18px;
   /* or 129% */
-
-
   color: #FFFFFF;
+}
+
+.comprar img {
+  width: 12px;
+  height: 13.5px;
+  margin: 0;
 }
 
 .product-section {
@@ -220,7 +245,9 @@ header span {
 }
 
 aside {
-  
+  position: fixed;
+  right: 0px;
+  top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -245,6 +272,12 @@ aside {
   color: #FFFFFF;
   margin-bottom: 70px;
   padding-left: 47px;
+  margin-top: 37px;
+}
+
+.cart-header p {
+  width: 180px;
+  height: 56px;
 }
 
 .cart-header button {
@@ -303,4 +336,25 @@ aside .products {
   /* identical to box height, or 54% */
   color: #FFFFFF;
   margin-top: 42px;
+}
+
+.remove-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #000000;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  border-radius: 50%;
+  align-self: flex-start;
+  position: relative;
+  left: 5px;
+  top: -5px;
 }

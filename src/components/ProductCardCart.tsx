@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import {
   oneLessProduct,
   oneMoreProduct,
+  removeItem,
   updateTotalValue,
 } from "../redux/actions";
 
@@ -14,6 +15,7 @@ type Product = {
   addProduct: Function;
   removeProduct: Function;
   updateValue: Function;
+  removeItemFromCart: Function;
 };
 
 function ProductCardCart({
@@ -25,6 +27,7 @@ function ProductCardCart({
   addProduct,
   removeProduct,
   updateValue,
+  removeItemFromCart,
 }: Product) {
   const oneLess = () => {
     removeProduct(id);
@@ -35,6 +38,11 @@ function ProductCardCart({
     addProduct(id);
     updateValue(Number(price.split(".")[0]));
   };
+
+  const remove = () => {
+    updateValue(-(Number(price.split(".")[0]) * count));
+    removeItemFromCart(id)
+  }
 
   return (
     <div className="product-card-cart">
@@ -50,7 +58,8 @@ function ProductCardCart({
       </div>
       <p className="price">{`R$${
         (price.split(".")[0] as unknown as number) * count
-      }`}</p>
+        }`}</p>
+      <button onClick={remove} className="remove-item">X</button>
     </div>
   );
 }
@@ -59,6 +68,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   addProduct: (id: string) => dispatch(oneMoreProduct(id)),
   removeProduct: (id: string) => dispatch(oneLessProduct(id)),
   updateValue: (value: number) => dispatch(updateTotalValue(value)),
+  removeItemFromCart: (id: string) => dispatch(removeItem(id)),
 });
 
 export default connect(null, mapDispatchToProps)(ProductCardCart);

@@ -2,26 +2,38 @@ import { count } from "console";
 import React from "react";
 import { connect } from "react-redux";
 import Product from "../interfaces";
+import { showCart } from "../redux/actions";
 import ProductCardCart from "./ProductCardCart";
 
 type Props = {
   products: Product[];
   cart: ProductCart[];
   value: number;
+  visible: boolean;
+  updateVisibility: Function;
 };
 
 type ProductCart = { productId: string; count: number };
 
-type CartType = { products: ProductCart; value: number };
+export type CartType = { products: ProductCart; value: number; visible: boolean };
 
 class Cart extends React.Component {
+  changeCart = () => {
+    const { updateVisibility } = this.props as Props
+    updateVisibility();
+  }
+
   render() {
-    const { products, cart, value } = this.props as Props;
+    const { products, cart, value, visible } = this.props as Props;
+    if (!visible) {
+      return ''
+    }
+
     return (
       <aside>
         <div className="cart-header">
           <p>Carrinho de Compras</p>
-          <button type="button">X</button>
+          <button onClick={this.changeCart} type="button">X</button>
         </div>
         <div className="products">
           {cart.map((item) => {
@@ -48,8 +60,8 @@ class Cart extends React.Component {
         </div>
         <div className="footer">
           <div className="total">
-          <p>Total:</p>
-          <p>R${`${value}`}</p>
+            <p>Total:</p>
+            <p>R${`${value}`}</p>
           </div>
           <button>Finalizar Compra</button>
         </div>
@@ -65,6 +77,11 @@ const mapStateToProps = (store: {
   products: store.products.products,
   cart: store.cart.products,
   value: store.cart.value,
+  visible: store.cart.visible,
 });
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch: any) => ({
+  updateVisibility: () => dispatch(showCart())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

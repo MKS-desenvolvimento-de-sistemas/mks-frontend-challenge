@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React from "react";
 import { addProduct, updateTotalValue } from "../redux/actions";
-
+import shopping from '../images/shopping-bag.svg'
 type Product = {
   img: string;
   title: string;
@@ -25,9 +25,10 @@ function ProductCard({
   id,
   ...props
 }: Product ) {
-  const addProductToCart = ({ target }: {target: any}): void => {
+  const addProductToCart = ({ target }: { target: any }): void => {
+    
     const { addProduct, updateValue } = props as ReduxProps;
-    addProduct(target.id)
+    addProduct(`${id}`)
     updateValue(Number(price.split(".")[0]));
   }
 
@@ -43,7 +44,7 @@ function ProductCard({
         className="comprar"
         id={`${id}`}
         onClick={addProductToCart}
-        type="button">Comprar</button>
+        type="button"><img src={shopping} />Comprar</button>
     </div>
   );
 }
