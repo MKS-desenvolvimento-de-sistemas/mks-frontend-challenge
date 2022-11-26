@@ -20,7 +20,12 @@ class CartButton extends React.Component {
     const { cartItems } = this.props as Props;
     const countItems = cartItems.length as number;
     return (
-      <button className="cart-button" onClick={this.changeCart} type="button">
+      <button
+        data-testid="cart-button"
+        className="cart-button"
+        onClick={this.changeCart}
+        type="button"
+      >
         <img src={cart} /> {`${countItems}`}
       </button>
     );

@@ -10,7 +10,9 @@ interface IStore {
   loading: boolean;
 }
 
-class ProductsSection extends React.Component {
+interface Props {}
+
+class ProductsSection extends React.Component<Props> {
 
   componentDidMount(): void {
     const { getProducts } = this.props as { getProducts: Function};

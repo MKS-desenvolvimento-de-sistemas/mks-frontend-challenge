@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import { addProduct, updateTotalValue } from "../redux/actions";
 import shopping from '../images/shopping-bag.svg'
-type Product = {
+interface Product {
   img: string;
   title: string;
   description: string;
@@ -10,68 +10,85 @@ type Product = {
   id: number;
 };
 
-type ReduxProps = {
+interface Props extends Product {
   addProduct: Function;
   updateValue: Function;
 }
 
-
-
-function ProductCard({
-  img,
-  title,
-  description,
-  price,
-  id,
-  ...props
-}: Product ) {
-  const addProductToCart = ({ target }: { target: any }): void => {
+// function ProductCard({
+//   img,
+//   title,
+//   description,
+//   price,
+//   id,
+//   ...props
+// }: Product ) {
+//   const addProductToCart = ({ target }: { target: any }): void => {
     
-    const { addProduct, updateValue } = props as ReduxProps;
+//     const { addProduct, updateValue } = props as ReduxProps;
+//     addProduct(`${id}`)
+//     updateValue(Number(price.split(".")[0]));
+//   }
+
+//   return (
+//     <div className="product-card">
+//       <img src={img} alt={title} />
+//       <div className="price-name">
+//         <p>{title}</p>
+//         <p className="price">R${price.split('.')[0]}</p>
+//       </div>
+//       <p className="description">{description}</p>
+//       <button
+//         className="comprar"
+//         id={`${id}`}
+//         onClick={addProductToCart}
+//         type="button"><img src={shopping} />Comprar</button>
+//     </div>
+//   );
+// }
+
+// interface IntrinsicElements {
+//   id: number;
+//   price: string;
+// }
+
+interface Props {}
+
+class ProductCard extends React.Component<Props> {
+
+  addProductToCart = ({ target }: { target: any }): void => {
+    const { id, price } = this.props
+    const { addProduct, updateValue } = this.props;
     addProduct(`${id}`)
     updateValue(Number(price.split(".")[0]));
   }
-
-  return (
-    <div className="product-card">
-      <img src={img} alt={title} />
-      <div className="price-name">
-        <p>{title}</p>
-        <p className="price">R${price.split('.')[0]}</p>
+  render() {
+    const {
+      img,
+      title,
+      description,
+      price,
+      id,
+    } = this.props as Product
+    return (
+      <div className="product-card">
+        <img src={img} alt={title} />
+        <div className="price-name">
+          <p>{title}</p>
+          <p data-testid={`product-price-${id}`} className="price">R${price.split('.')[0]}</p>
+        </div>
+        <p className="description">{description}</p>
+        <button
+          data-testid={`buy-${id}`}
+          className="comprar"
+          id={`${id}`}
+          onClick={this.addProductToCart}
+          type="button"><img src={shopping} />Comprar</button>
       </div>
-      <p className="description">{description}</p>
-      <button
-        className="comprar"
-        id={`${id}`}
-        onClick={addProductToCart}
-        type="button"><img src={shopping} />Comprar</button>
-    </div>
-  );
+    );
+  }
 }
 
-// export default class ProductCard extends React.Component {
-//   render() {
-//     const {
-//       img,
-//       title,
-//       description,
-//       price,
-//     } = this.props as Product
-//     return (
-//       <div>
-//         <img src={img} alt={title} />
-//         <div>
-//           <p>{title}</p>
-//           <p>R${price}</p>
-//         </div>
-//         <p>{description}</p>
-//         <button
-//           onClick={addProductToCart}
-//           type="button">Comprar</button>
-//       </div>
-//     );
-//   }
-// }
 const mapDispatchToProps = (dispatch: any) => ({
   addProduct: (id: number): void => dispatch(addProduct(id)),
   updateValue: (value: number) => dispatch(updateTotalValue(value)),

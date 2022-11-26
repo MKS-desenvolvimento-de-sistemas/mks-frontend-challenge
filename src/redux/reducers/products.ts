@@ -10,7 +10,7 @@ const INITIAL_STATE = {
   loading: false,
 };
 
-const wallet = (store = INITIAL_STATE, action: { type: string, products: Product[] }) => {
+const products = (store = INITIAL_STATE, action: { type: string, products: Product[] }) => {
   switch (action.type) {
     case REQUEST_API:
       return { ...store, loading: true };
@@ -27,4 +27,4 @@ const wallet = (store = INITIAL_STATE, action: { type: string, products: Product
   }
 };
 
-export default wallet;
+export default products;
