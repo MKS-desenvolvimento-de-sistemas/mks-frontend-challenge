@@ -10,6 +10,5 @@ export default function HomePage() {
       <Cart />
       <ProductsSection />
     </div>
-
-  )
+  );
 }

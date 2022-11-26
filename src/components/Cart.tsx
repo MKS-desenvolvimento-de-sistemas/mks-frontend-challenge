@@ -1,4 +1,3 @@
-import { count } from "console";
 import React from "react";
 import { connect } from "react-redux";
 import Product from "../interfaces";
@@ -15,25 +14,31 @@ type Props = {
 
 type ProductCart = { productId: string; count: number };
 
-export type CartType = { products: ProductCart; value: number; visible: boolean };
+export type CartType = {
+  products: ProductCart;
+  value: number;
+  visible: boolean;
+};
 
 class Cart extends React.Component {
   changeCart = () => {
-    const { updateVisibility } = this.props as Props
+    const { updateVisibility } = this.props as Props;
     updateVisibility();
-  }
+  };
 
   render() {
     const { products, cart, value, visible } = this.props as Props;
     if (!visible) {
-      return ''
+      return "";
     }
 
     return (
       <aside>
         <div className="cart-header">
           <p>Carrinho de Compras</p>
-          <button onClick={this.changeCart} type="button">X</button>
+          <button onClick={this.changeCart} type="button">
+            X
+          </button>
         </div>
         <div className="products">
           {cart.map((item) => {
@@ -81,7 +86,7 @@ const mapStateToProps = (store: {
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  updateVisibility: () => dispatch(showCart())
-})
+  updateVisibility: () => dispatch(showCart()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

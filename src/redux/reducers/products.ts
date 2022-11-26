@@ -1,16 +1,15 @@
 import Product from "../../interfaces";
-import {
-  REQUEST_API,
-  REQUEST_ERROR,
-  REQUEST_SUCSSES,
-} from "../actions";
+import { REQUEST_API, REQUEST_ERROR, REQUEST_SUCSSES } from "../actions";
 
 const INITIAL_STATE = {
   products: [],
   loading: false,
 };
 
-const products = (store = INITIAL_STATE, action: { type: string, products: Product[] }) => {
+const products = (
+  store = INITIAL_STATE,
+  action: { type: string; products: Product[] }
+) => {
   switch (action.type) {
     case REQUEST_API:
       return { ...store, loading: true };

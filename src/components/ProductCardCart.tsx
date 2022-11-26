@@ -13,7 +13,7 @@ interface Product {
   price: string;
   count: number;
   id: string;
-};
+}
 
 interface Props extends Product {
   addProduct: Function;
@@ -69,12 +69,11 @@ interface Props extends Product {
 // }
 
 class ProductCardCart extends React.Component<Props> {
-
   oneLess = () => {
     const { id, price } = this.props;
     const { removeProduct, updateValue } = this.props;
     removeProduct(id);
-    updateValue(-(Number(price.split(".")[0])));
+    updateValue(-Number(price.split(".")[0]));
   };
 
   oneMore = () => {
@@ -88,8 +87,8 @@ class ProductCardCart extends React.Component<Props> {
     const { price, id, count } = this.props as Product;
     const { removeItemFromCart, updateValue } = this.props;
     updateValue(-(Number(price.split(".")[0]) * count));
-    removeItemFromCart(id)
-  }
+    removeItemFromCart(id);
+  };
   render() {
     const { img, title, count, price, id } = this.props;
     return (
@@ -99,15 +98,31 @@ class ProductCardCart extends React.Component<Props> {
         <div className="counter">
           qtd
           <div>
-            <button data-testid={`less-button-product-${id}`} onClick={this.oneLess}>-</button>
+            <button
+              data-testid={`less-button-product-${id}`}
+              onClick={this.oneLess}
+            >
+              -
+            </button>
             <p data-testid={`product-cart-count-${id}`}>{count}</p>
-            <button data-testid={`more-button-product-${id}`} onClick={this.oneMore}>+</button>
+            <button
+              data-testid={`more-button-product-${id}`}
+              onClick={this.oneMore}
+            >
+              +
+            </button>
           </div>
         </div>
         <p data-testid={`product-cart-price-${id}`} className="price">{`R$${
           (price.split(".")[0] as unknown as number) * count
-          }`}</p>
-        <button data-testid={`remove-item-${id}`} onClick={this.remove} className="remove-item">X</button>
+        }`}</p>
+        <button
+          data-testid={`remove-item-${id}`}
+          onClick={this.remove}
+          className="remove-item"
+        >
+          X
+        </button>
       </div>
     );
   }

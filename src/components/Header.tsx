@@ -6,7 +6,7 @@ class Header extends React.Component {
     return (
       <header>
         <p>
-          <span className='MKS'>MKS</span>{' '}Sistemas
+          <span className="MKS">MKS</span> Sistemas
         </p>
         <CartButton />
       </header>

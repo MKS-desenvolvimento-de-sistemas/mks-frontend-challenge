@@ -13,9 +13,8 @@ interface IStore {
 interface Props {}
 
 class ProductsSection extends React.Component<Props> {
-
   componentDidMount(): void {
-    const { getProducts } = this.props as { getProducts: Function};
+    const { getProducts } = this.props as { getProducts: Function };
     getProducts();
   }
 
@@ -41,28 +40,6 @@ class ProductsSection extends React.Component<Props> {
     );
   }
 }
-
-// function ProductsSection({ getProducts, products, loading }: Params) {
-//   getProducts();
-
-//   return (
-//     <section>
-//       {loading ? (
-//         <p>Carregando...</p>
-//       ) : (
-//         products.map((product: Product) => (
-//           <ProductCard
-//             img={product.photo}
-//             description={product.description}
-//             price={product.price}
-//             title={product.brand}
-//             key={product.id}
-//           />
-//         ))
-//       )}
-//     </section>
-//   );
-// }
 
 const mapStateToProps = (store: {
   products: { products: Product[]; loading: boolean };
