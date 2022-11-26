@@ -6,6 +6,7 @@ import {
   removeItem,
   updateTotalValue,
 } from "../redux/actions";
+import { PriceStyled, ProductCardCartStyled } from "./productCardCartStyled";
 
 interface Product {
   img: string;
@@ -46,7 +47,10 @@ class ProductCardCart extends React.Component<Props> {
   render() {
     const { img, title, count, price, id } = this.props;
     return (
-      <div data-testid={`product-cart-${id}`} className="product-card-cart">
+      <ProductCardCartStyled
+        data-testid={`product-cart-${id}`}
+        className="product-card-cart"
+      >
         <img src={img} alt={title} />
         <p className="title">{title}</p>
         <div className="counter">
@@ -67,9 +71,11 @@ class ProductCardCart extends React.Component<Props> {
             </button>
           </div>
         </div>
-        <p data-testid={`product-cart-price-${id}`} className="price">{`R$${
-          (price.split(".")[0] as unknown as number) * count
-        }`}</p>
+        <PriceStyled>
+          <p data-testid={`product-cart-price-${id}`}>{`R$${
+            (price.split(".")[0] as unknown as number) * count
+          }`}</p>
+        </PriceStyled>
         <button
           data-testid={`remove-item-${id}`}
           onClick={this.remove}
@@ -77,7 +83,7 @@ class ProductCardCart extends React.Component<Props> {
         >
           X
         </button>
-      </div>
+      </ProductCardCartStyled>
     );
   }
 }

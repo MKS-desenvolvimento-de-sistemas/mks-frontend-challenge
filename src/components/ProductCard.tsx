@@ -1,7 +1,16 @@
 import { connect } from "react-redux";
 import React from "react";
+import {
+  ProductCardStyled,
+  PriceStyled,
+  TitleStyled,
+  DescriptionStyled,
+  ShoppingBagStyled,
+  ProductImage,
+} from "./productCardStyled";
 import { addProduct, updateTotalValue } from "../redux/actions";
 import shopping from "../images/shopping-bag.svg";
+
 interface Product {
   img: string;
   title: string;
@@ -27,26 +36,25 @@ class ProductCard extends React.Component<Props> {
   render() {
     const { img, title, description, price, id } = this.props as Product;
     return (
-      <div className="product-card">
-        <img src={img} alt={title} />
-        <div className="price-name">
-          <p>{title}</p>
-          <p data-testid={`product-price-${id}`} className="price">
+      <ProductCardStyled>
+        <ProductImage src={img} alt={title} />
+        <div>
+          <TitleStyled>{title}</TitleStyled>
+          <PriceStyled data-testid={`product-price-${id}`}>
             R${price.split(".")[0]}
-          </p>
+          </PriceStyled>
         </div>
-        <p className="description">{description}</p>
+        <DescriptionStyled>{description}</DescriptionStyled>
         <button
           data-testid={`buy-${id}`}
-          className="comprar"
           id={`${id}`}
           onClick={this.addProductToCart}
           type="button"
         >
-          <img src={shopping} />
+          <ShoppingBagStyled src={shopping} />
           Comprar
         </button>
-      </div>
+      </ProductCardStyled>
     );
   }
 }

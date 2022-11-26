@@ -4,6 +4,7 @@ import Product from "../interfaces";
 import store from "../redux";
 import { getProducts } from "../redux/actions";
 import ProductCard from "./ProductCard";
+import { ProductSectionStyled } from "./productSectionStyled";
 
 interface IStore {
   products: Product[];
@@ -21,7 +22,7 @@ class ProductsSection extends React.Component<Props> {
   render() {
     const { loading, products } = this.props as IStore;
     return (
-      <section className="product-section">
+      <ProductSectionStyled className="product-section">
         {loading ? (
           <p>Carregando...</p>
         ) : (
@@ -36,7 +37,7 @@ class ProductsSection extends React.Component<Props> {
             />
           ))
         )}
-      </section>
+      </ProductSectionStyled>
     );
   }
 }

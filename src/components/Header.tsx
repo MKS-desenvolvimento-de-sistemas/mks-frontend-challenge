@@ -1,15 +1,16 @@
 import React from "react";
 import CartButton from "./CartButton";
+import { HeaderStyled } from "./headerStyled";
 
 class Header extends React.Component {
   render() {
     return (
-      <header>
+      <HeaderStyled>
         <p>
           <span className="MKS">MKS</span> Sistemas
         </p>
         <CartButton />
-      </header>
+      </HeaderStyled>
     );
   }
 }

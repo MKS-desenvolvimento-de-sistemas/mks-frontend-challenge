@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Product from "../interfaces";
 import { showCart } from "../redux/actions";
+import { CartFooterStyled, CartStyled, HeaderCart, ProductsStyled } from "./cartStyled";
 import ProductCardCart from "./ProductCardCart";
 
 type Props = {
@@ -33,14 +34,14 @@ class Cart extends React.Component {
     }
 
     return (
-      <aside>
-        <div className="cart-header">
+      <CartStyled>
+        <HeaderCart className="cart-header">
           <p>Carrinho de Compras</p>
           <button onClick={this.changeCart} type="button">
             X
           </button>
-        </div>
-        <div className="products">
+        </HeaderCart>
+        <ProductsStyled className="products">
           {cart.map((item) => {
             const img = products.find(
               (product) => product.id === Number(item.productId)
@@ -62,15 +63,15 @@ class Cart extends React.Component {
               />
             );
           })}
-        </div>
-        <div className="footer">
+        </ProductsStyled>
+        <CartFooterStyled className="footer">
           <div className="total">
             <p>Total:</p>
             <p>R${`${value}`}</p>
           </div>
           <button>Finalizar Compra</button>
-        </div>
-      </aside>
+        </CartFooterStyled>
+      </CartStyled>
     );
   }
 }
