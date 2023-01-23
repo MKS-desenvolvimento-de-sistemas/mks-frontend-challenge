@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartCard Component should match the snapshot 1`] = `
+<li
+  className="sc-eCYdqJ copgrZ"
+  data-testid="cart-card"
+>
+  <button
+    className="sc-jSMfEi dPaeKE"
+    data-testid="cart-card--remove"
+    onClick={[Function]}
+    title="Remover do Carrinho"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 1024 1024"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+      />
+    </svg>
+  </button>
+  <div
+    className="sc-dkzDqf sc-gKXOVf gDJlNm gkZsLx"
+    data-testid="cart-card--image"
+  />
+  <div
+    className="sc-iBkjds gHxvMP"
+  >
+    <h4>
+      EXEMPLO 1
+    </h4>
+    <div
+      className="sc-ftvSup kLLhow"
+    >
+      <small>
+        Qtd:
+      </small>
+      <button
+        className="sc-papXJ GKtMD"
+        data-testid="decrement-button"
+        onClick={[Function]}
+        title="Diminuir Quantidade"
+        type="button"
+      >
+        -
+      </button>
+      <span
+        data-testid="quantity-display"
+      >
+        2
+      </span>
+      <button
+        className="sc-papXJ GKtMD"
+        data-testid="increment-button"
+        onClick={[Function]}
+        title="Aumentar Quantidade"
+        type="button"
+      >
+        +
+      </button>
+    </div>
+    <div
+      className="sc-evZas kgTYQs"
+      data-testid="price"
+      type="cart"
+    >
+      R$200
+    </div>
+  </div>
+</li>
+`;

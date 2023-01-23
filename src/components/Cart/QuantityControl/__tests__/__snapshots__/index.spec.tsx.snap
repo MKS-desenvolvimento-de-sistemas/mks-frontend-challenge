@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuantityControl Component should match the snapshot 1`] = `
+<div
+  className="sc-bczRLJ hDDUiJ"
+>
+  <small>
+    Qtd:
+  </small>
+  <button
+    className="sc-gsnTZi fIZqiW"
+    data-testid="decrement-button"
+    onClick={[Function]}
+    title="Diminuir Quantidade"
+    type="button"
+  >
+    -
+  </button>
+  <span
+    data-testid="quantity-display"
+  >
+    1
+  </span>
+  <button
+    className="sc-gsnTZi eQzbAZ"
+    data-testid="increment-button"
+    onClick={[Function]}
+    title="Aumentar Quantidade"
+    type="button"
+  >
+    +
+  </button>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price Component should match the snapshot - type cart 1`] = `
+<div
+  className="sc-bczRLJ bjpjYw"
+  data-testid="price"
+  type="cart"
+>
+  R$200
+</div>
+`;
+
+exports[`Price Component should match the snapshot - type product 1`] = `
+<div
+  className="sc-bczRLJ kwDUOH"
+  data-testid="price"
+  type="product"
+>
+  R$200
+</div>
+`;
