@@ -6,9 +6,14 @@ export const GlobalStyles = createGlobalStyle`
 	html, body, main, header, footer, div, section, ul, li, h1, h2, h3, h4, p, a, button, img {
 		margin: 0;
 		padding: 0;
+		border: none;
 		list-style: none;
 		text-decoration: none;
 	} 
+
+	button{
+		cursor: pointer;
+	}
 	
 	body {
 		background-color: var(--color-gray-0);
