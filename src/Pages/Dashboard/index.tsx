@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Header from "../../Components/Header";
 
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchProducts } from "../../store/modules/Products";
@@ -15,13 +16,14 @@ const Dashboard = () => {
 
   return (
     <>
+      <Header />
       {product.loading ? (
         <div>
           <h1>Carregando</h1>
         </div>
       ) : (
         <div>
-					<h1>Dashboard</h1>
+          <h1>Dashboard</h1>
           <h2>MKS-FRONTEND-CHALLENGE</h2>
         </div>
       )}
