@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import Header from "../../Components/Header";
 
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchProducts } from "../../store/modules/Products";
+import Footer from "../../Components/Footer";
+import Header from "../../Components/Header";
 
 const Dashboard = () => {
   const product = useAppSelector((state) => state.products);
@@ -27,6 +28,7 @@ const Dashboard = () => {
           <h2>MKS-FRONTEND-CHALLENGE</h2>
         </div>
       )}
+      <Footer />
     </>
   );
 };
