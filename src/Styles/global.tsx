@@ -17,6 +17,15 @@ export const GlobalStyles = createGlobalStyle`
 	
 	body {
 		background-color: var(--color-gray-0);
+		
+		#root{
+			height: 100vh;
+			
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+		}
 	}
 
 	:root{
