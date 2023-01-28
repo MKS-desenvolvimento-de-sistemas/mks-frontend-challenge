@@ -2,15 +2,15 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import API from "../../../Services/API";
 
-interface Product {
-  id: number;
+export interface Product {
+  id?: number;
   name: string;
-  brand: string;
+  brand?: string;
   description: string;
   photo: string;
   price: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 interface InitialState  {
@@ -27,7 +27,7 @@ const initialState: InitialState = {
 
 export const fetchProducts = createAsyncThunk("products/getProducts", () => {
   return API.get("products?page=1&rows=8&sortBy=name&orderBy=ASC").then(
-    (res) => res.data
+    (res) => res.data.products
   );
 });
 
