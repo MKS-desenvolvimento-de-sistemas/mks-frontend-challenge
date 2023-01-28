@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.ul`
   width: 217.56px;
   height: 285px;
 
