@@ -1,31 +1,25 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 import { IProduct } from "../../store/modules/Products";
-import { CloseButton, Modal } from "./style";
-import CartProduct from "./CartProduct";
-import API from "../../Services/API";
+import { getTotalCart } from "../../store/modules/Cart";
 import { IModal } from "../../Pages/Dashboard";
+import { CloseButton, Modal } from "./style";
+import { RootState } from "../../store";
+import CartProduct from "./CartProduct";
 
 const ModalCart = ({ showModal, setShowModal }: IModal) => {
-  const [product, setProduct] = useState<any>();
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const { cart, cartTotal } = useSelector((state: RootState) => state.cart);
 
   useEffect(() => {
-    const getProducts = async () => {
-      const fetchProducts = await API.get(
-        "products?page=1&rows=8&sortBy=name&orderBy=ASC"
-      ).then((res) => res.data.products);
-      setProduct([fetchProducts[0], fetchProducts[1]]);
-      // setProduct(fetchProducts)
-      setIsLoaded(true);
-    };
-    getProducts();
-  }, []);
+    dispatch(getTotalCart());
+  }, [cart, dispatch]);
 
   useEffect(() => {
     const handleEsc = (event: any) => {
       if (event.keyCode === 27) {
-        setShowModal(false)
+        setShowModal(false);
       }
     };
     window.addEventListener("keydown", handleEsc);
@@ -33,46 +27,40 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
     return () => {
       window.removeEventListener("keydown", handleEsc);
     };
-  }, []);
+  });
 
   return (
     <Modal>
-      {!isLoaded ? (
-        <div>
-          <h1>Carregando</h1>
-        </div>
-      ) : (
-        <>
-          <div className="modal-header flex-items">
-            <p>Carrinho de compras</p>
-            <CloseButton
-              onClick={() => setShowModal(!showModal)}
-              close="modal"
-              dimension="big"
-              font="big"
-            >
-              X
-            </CloseButton>
-          </div>
+      <div className="modal-header flex-items">
+        <p>Carrinho de compras</p>
+        <CloseButton
+          onClick={() => setShowModal(!showModal)}
+          close="modal"
+          dimension="big"
+          font="big"
+        >
+          X
+        </CloseButton>
+      </div>
 
-          <ul className="cart-list">
-            {product.map((item: IProduct) => (
-              <CartProduct
-                key={item.id}
-                name={item.name}
-                photo={item.photo}
-                price={item.price}
-              />
-            ))}
-          </ul>
+      <ul className="cart-list">
+        {cart.map((item: IProduct) => (
+          <CartProduct
+            key={item.id}
+						id={item.id}
+            name={item.name}
+            photo={item.photo}
+            price={item.price}
+            quantity={item.quantity}
+          />
+        ))}
+      </ul>
 
-          <div className="total-cart flex-items">
-            <p>Total:</p>
-            <p>R$798</p>
-          </div>
-          <button className="checkout">Finalizar a Compra</button>
-        </>
-      )}
+      <div className="total-cart flex-items">
+        <p>Total:</p>
+        <p>{`R$${cartTotal}`}</p>
+      </div>
+      <button className="checkout">Finalizar a Compra</button>
     </Modal>
   );
 };
