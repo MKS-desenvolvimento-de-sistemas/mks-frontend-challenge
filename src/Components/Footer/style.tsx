@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FooterStyle = styled.footer`
 	height: 34px;
 
-	background-color: var(--color-gray-50);
+	background-color: var(--color-gray-25);
 	
 	display: flex;
 	justify-content: center;
