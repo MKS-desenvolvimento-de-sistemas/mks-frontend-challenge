@@ -1,7 +1,12 @@
+import { useDispatch } from "react-redux";
+
+import { addToCart, decrease, removeFromCart } from "../../store/modules/Cart";
 import { CartCard, CloseButton, Quantity } from "./style";
 import { IProduct } from "../../store/modules/Products";
 
-const CartProduct = ({photo, name, price}: IProduct) => {
+const CartProduct = ({ id, photo, name, price, quantity }: IProduct) => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <CartCard className="product">
@@ -10,17 +15,34 @@ const CartProduct = ({photo, name, price}: IProduct) => {
 
         <Quantity>
           <div className="quantity-buttons">
-            <button className="quantity sub">-</button>
+            <button
+              onClick={() => dispatch(decrease({ id }))}
+              className="quantity sub"
+            >
+              -
+            </button>
             <span className="split"></span>
-            <p className="quantity">1</p>
+            <p className="quantity">{quantity}</p>
             <span className="split"></span>
-            <button className="quantity add">+</button>
+            <button
+              onClick={() => dispatch(addToCart({ id }))}
+              className="quantity add"
+            >
+              +
+            </button>
           </div>
         </Quantity>
 
         <p className="price">{`R$${price.split(".")[0]}`}</p>
 
-        <CloseButton close="card" dimension="small" font="small">X</CloseButton>
+        <CloseButton
+          onClick={() => dispatch(removeFromCart({ id }))}
+          close="card"
+          dimension="small"
+          font="small"
+        >
+          X
+        </CloseButton>
       </CartCard>
     </>
   );

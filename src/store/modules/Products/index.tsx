@@ -11,6 +11,7 @@ export interface IProduct {
   price: string;
   createdAt?: string;
   updatedAt?: string;
+	quantity?: any;
 }
 
 interface IinitialState  {
@@ -31,7 +32,7 @@ export const fetchProducts = createAsyncThunk("products/getProducts", () => {
   );
 });
 
-const products = createSlice({
+const productsSlice = createSlice({
   name: "products",
   initialState,
 
@@ -56,4 +57,4 @@ const products = createSlice({
   },
 });
 
-export default products.reducer;
+export default productsSlice.reducer;

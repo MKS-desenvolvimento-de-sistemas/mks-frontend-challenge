@@ -1,9 +1,21 @@
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { addToCart, getTotalCart } from "../../store/modules/Cart";
 import { IProduct } from "../../store/modules/Products";
 import { BagIcon } from "../../Icons/BagIcon";
 import { BuyButton, Card } from "./style";
+import { RootState } from "../../store";
 
-const ProductCard = ({ name, description, photo, price }: IProduct) => {
+const ProductCard = ({ id, name, description, photo, price }: IProduct) => {
   const rewrittenPrice = `R$${price.split(".")[0]}`;
+
+  const dispatch = useDispatch();
+  const { cart } = useSelector((state: RootState) => state.cart);
+
+  useEffect(() => {
+    dispatch(getTotalCart());
+  }, [cart, dispatch]);
 
   return (
     <Card>
@@ -16,7 +28,9 @@ const ProductCard = ({ name, description, photo, price }: IProduct) => {
       </section>
       <p className="description">{description}</p>
 
-      <BuyButton>
+      <BuyButton
+        onClick={() => dispatch(addToCart({ id, name, photo, price }))}
+      >
         <BagIcon />
         Comprar
       </BuyButton>
