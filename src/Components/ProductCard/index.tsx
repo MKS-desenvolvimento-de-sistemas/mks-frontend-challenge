@@ -1,8 +1,8 @@
-import { Product } from "../../store/modules/Products";
+import { IProduct } from "../../store/modules/Products";
 import { BagIcon } from "../../Icons/BagIcon";
 import { BuyButton, Card } from "./style";
 
-const ProductCard = ({ name, description, photo, price }: Product) => {
+const ProductCard = ({ name, description, photo, price }: IProduct) => {
   const rewrittenPrice = `R$${price.split(".")[0]}`;
 
   return (

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { fetchProducts, Product } from "../../store/modules/Products";
+import { fetchProducts, IProduct } from "../../store/modules/Products";
 import ProductCard from "../ProductCard";
 import { MainStyle, ProductsList } from "./style";
 
@@ -24,7 +24,7 @@ const Main = () => {
         </div>
       ) : (
         <ProductsList>
-				{products.map((item: Product) => (
+				{products.map((item: IProduct) => (
 					<ProductCard 
 					key={item.id}
 					name={item.name}

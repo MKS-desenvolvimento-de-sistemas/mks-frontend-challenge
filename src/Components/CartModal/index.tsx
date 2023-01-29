@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-import { Product } from "../../store/modules/Products";
+import { IProduct } from "../../store/modules/Products";
 import { CloseButton, Modal } from "./style";
 import CartProduct from "./CartProduct";
 import API from "../../Services/API";
@@ -56,7 +56,7 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
           </div>
 
           <ul className="cart-list">
-            {product.map((item: Product) => (
+            {product.map((item: IProduct) => (
               <CartProduct
                 key={item.id}
                 name={item.name}
