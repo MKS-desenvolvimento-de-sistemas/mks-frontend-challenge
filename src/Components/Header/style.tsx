@@ -30,6 +30,10 @@ export const Head = styled.header`
 		:hover {
 			filter: brightness(0.9);
     }
+
+		:focus-visible{
+			outline: none;
+		}
   }
 
   .cout-cart {
