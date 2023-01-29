@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 		border: none;
 		list-style: none;
 		text-decoration: none;
+		box-sizing: border-box;
 	} 
 
 	button{
