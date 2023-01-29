@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import API from "../../../Services/API";
 
-export interface Product {
+export interface IProduct {
   id?: number;
   name: string;
   brand?: string;
@@ -13,13 +13,13 @@ export interface Product {
   updatedAt?: string;
 }
 
-interface InitialState  {
+interface IinitialState  {
   loading: boolean;
-  products: Product[];
+  products: IProduct[];
   error: string;
 };
 
-const initialState: InitialState = {
+const initialState: IinitialState = {
   loading: false,
   products: [],
   error: "",
@@ -42,7 +42,7 @@ const products = createSlice({
     });
     builder.addCase(
       fetchProducts.fulfilled,
-      (state, action: PayloadAction<Product[]>) => {
+      (state, action: PayloadAction<IProduct[]>) => {
         state.loading = false;
         state.products = action.payload;
         state.error = "";

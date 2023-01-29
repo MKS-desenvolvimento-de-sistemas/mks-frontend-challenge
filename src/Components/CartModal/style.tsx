@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface ButtonProps {
+interface IButtonProps {
   close: string;
   dimension: string;
   font: string;
@@ -173,7 +173,7 @@ export const Quantity = styled.section`
   }
 `;
 
-export const CloseButton = styled.button<ButtonProps>`
+export const CloseButton = styled.button<IButtonProps>`
   width: ${(props) => (props.dimension === "small" ? "18px" : "38px")};
   height: ${(props) => (props.dimension === "small" ? "18px" : "38px")};
   border-radius: 100%;

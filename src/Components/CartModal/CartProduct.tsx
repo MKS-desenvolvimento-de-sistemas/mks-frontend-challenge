@@ -1,7 +1,7 @@
 import { CartCard, CloseButton, Quantity } from "./style";
-import { Product } from "../../store/modules/Products";
+import { IProduct } from "../../store/modules/Products";
 
-const CartProduct = ({photo, name, price}: Product) => {
+const CartProduct = ({photo, name, price}: IProduct) => {
   return (
     <>
       <CartCard className="product">
