@@ -14,9 +14,9 @@ const Header = ({ showModal, setShowModal }: IModal) => {
         <p className="first-name">MKS</p>
         <p className="middle-name">Sistemas</p>
       </Logo>
-      <button onClick={() => setShowModal(!showModal)} className="cartButton">
+      <button onClick={() => setShowModal(!showModal)} className="cart-button">
         <CartIcon />
-        <p className="cout-cart">{itemsInCart}</p>
+        <p className="count-cart">{itemsInCart}</p>
       </button>
     </Head>
   );
