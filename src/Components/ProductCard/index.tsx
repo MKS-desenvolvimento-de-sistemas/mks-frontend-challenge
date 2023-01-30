@@ -8,7 +8,10 @@ import { BuyButton, Card } from "./style";
 import { RootState } from "../../store";
 
 const ProductCard = ({ id, name, description, photo, price }: IProduct) => {
-  const rewrittenPrice = `R$${price.split(".")[0]}`;
+	const roundPrice = price.split(".")[0]
+  const halfStr = Math.floor(roundPrice.length / 3);	
+	const formattedPrice = roundPrice.length > 3 ? roundPrice.substr(0, halfStr) + "." + roundPrice.substr(halfStr) : roundPrice
+  const rewrittenPrice = `R$${formattedPrice}`;
 
   const dispatch = useDispatch();
   const { cart } = useSelector((state: RootState) => state.cart);

@@ -32,7 +32,7 @@ export const Card = styled.li`
   }
 
   .price {
-    width: 64px;
+    width: 70px;
     height: 26px;
     padding: 0 3px;
 

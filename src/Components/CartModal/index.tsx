@@ -59,7 +59,7 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
 
       <div className="total-cart flex-items">
         <p>Total:</p>
-        <p>{`R$${cartTotal}`}</p>
+        <p>{cartTotal}</p>
       </div>
       <button className="checkout">Finalizar a Compra</button>
     </Modal>

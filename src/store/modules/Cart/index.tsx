@@ -4,13 +4,13 @@ import { IProduct } from "../Products";
 
 interface IinitialState {
   cart: IProduct[];
-  cartTotal: number;
+  cartTotal: string;
   itemsInCart: number;
 }
 
 const initialState: IinitialState = {
   cart: [],
-  cartTotal: 0,
+  cartTotal: "0",
   itemsInCart: 0,
 };
 
@@ -49,7 +49,18 @@ const cartSlice = createSlice({
 
         return acc + totalPerProduct;
       }, 0);
-      state.cartTotal = total;
+      const strNum = String(total);
+      const halfStr =
+        total >= 10000
+          ? Math.floor(strNum.length / 2)
+          : Math.floor(strNum.length / 3);
+      const formattedPrice =
+        strNum.length > 3
+          ? strNum.substr(0, halfStr) + "." + strNum.substr(halfStr)
+          : strNum;
+      const rewrittenPrice = `R$${formattedPrice}`;
+
+      state.cartTotal = rewrittenPrice;
     },
 
     decrease(state, action) {
