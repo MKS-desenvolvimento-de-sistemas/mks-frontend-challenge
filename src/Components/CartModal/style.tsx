@@ -121,6 +121,10 @@ export const Modal = styled.section`
 			height: 65px;
 			font-size: 1.25rem;
 		}
+
+		.close-button {
+			color: var(--color-primary);
+		}
   }
 
   @media (max-width: 650px) {
@@ -212,7 +216,7 @@ export const CartCard = styled.li`
       background-color: var(--color-gray-100);
     }
 
-    .close-button {
+    .remove-cart-button {
       top: 0px;
       right: 19px;
 

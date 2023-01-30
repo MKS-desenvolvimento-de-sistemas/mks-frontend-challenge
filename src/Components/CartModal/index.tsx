@@ -34,6 +34,7 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
       <div className="modal-header flex-items">
         <p>Carrinho de compras</p>
         <CloseButton
+          className="close-button"
           onClick={() => setShowModal(!showModal)}
           close="modal"
           dimension="big"
@@ -47,7 +48,7 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
         {cart.map((item: IProduct) => (
           <CartProduct
             key={item.id}
-						id={item.id}
+            id={item.id}
             name={item.name}
             photo={item.photo}
             price={item.price}
