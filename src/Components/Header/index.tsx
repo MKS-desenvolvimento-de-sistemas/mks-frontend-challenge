@@ -10,7 +10,7 @@ const Header = ({ showModal, setShowModal }: IModal) => {
 
   return (
     <Head>
-      <Logo onClick={() => setShowModal(!showModal)}>
+      <Logo onClick={() => setShowModal(false)}>
         <p className="first-name">MKS</p>
         <p className="middle-name">Sistemas</p>
       </Logo>
