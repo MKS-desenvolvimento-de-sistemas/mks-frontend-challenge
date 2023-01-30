@@ -14,6 +14,18 @@ export const Card = styled.li`
   box-shadow: 0px 2px 8px #00000022;
   border-radius: 8px;
 
+  animation: opacity 0.5s ease-in;
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
   .info {
     display: flex;
     flex-direction: row;
