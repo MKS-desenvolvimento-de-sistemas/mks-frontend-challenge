@@ -16,6 +16,19 @@ export const Card = styled.li`
 
   animation: opacity 0.5s ease-in;
 
+	.skeleton {
+
+		@keyframes opacity {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+	}
+
   @keyframes opacity {
     0% {
       opacity: 0;

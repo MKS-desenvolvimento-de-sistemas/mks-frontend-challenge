@@ -17,7 +17,7 @@ const Dashboard = () => {
     showModal === true
       ? setTimeout(() => {
           setShowModal(modalAnimation);
-        }, 495)
+        }, 450)
       : setShowModal(modalAnimation);
   }, [modalAnimation]);
 
