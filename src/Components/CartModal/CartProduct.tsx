@@ -37,7 +37,7 @@ const CartProduct = ({ id, photo, name, price, quantity }: IProduct) => {
           <p className="price">{`R$${price.split(".")[0]}`}</p>
         </section>
 
-        <CloseButton className="close-button"
+        <CloseButton className="remove-cart-button"
           onClick={() => dispatch(removeFromCart({ id }))}
           close="card"
           dimension="small"
