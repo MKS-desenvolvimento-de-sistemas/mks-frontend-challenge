@@ -8,7 +8,7 @@ import { CloseButton, Modal } from "./style";
 import { RootState } from "../../store";
 import CartProduct from "./CartProduct";
 
-const ModalCart = ({ showModal, setShowModal }: IModal) => {
+const ModalCart = ({ setModalAnimation, modalAnimation }: IModal) => {
   const dispatch = useDispatch();
   const { cart, cartTotal } = useSelector((state: RootState) => state.cart);
 
@@ -19,7 +19,7 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
   useEffect(() => {
     const handleEsc = (event: any) => {
       if (event.keyCode === 27) {
-        setShowModal(false);
+        setModalAnimation(!modalAnimation);
       }
     };
     window.addEventListener("keydown", handleEsc);
@@ -30,12 +30,12 @@ const ModalCart = ({ showModal, setShowModal }: IModal) => {
   });
 
   return (
-    <Modal>
+    <Modal action={modalAnimation}>
       <div className="modal-header flex-items">
         <p>Carrinho de compras</p>
         <CloseButton
           className="close-button"
-          onClick={() => setShowModal(!showModal)}
+          onClick={() => setModalAnimation(!modalAnimation)}
           close="modal"
           dimension="big"
           font="big"

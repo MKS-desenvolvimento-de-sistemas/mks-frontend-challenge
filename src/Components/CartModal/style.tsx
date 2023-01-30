@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface IButtonProps {
   close: string;
@@ -6,7 +6,31 @@ interface IButtonProps {
   font: string;
 }
 
-export const Modal = styled.section`
+interface IShowModal {
+  action: boolean;
+}
+
+const showModal = keyframes`
+	from {
+			transform: translateX(100%);
+	}
+	
+	to {
+      transform: translateX(0);
+	}
+`;
+
+const hideModal = keyframes`
+	from {
+		transform: translateX(0);
+	}
+	
+	to {
+		transform: translateX(100%);
+	}
+`;
+
+export const Modal = styled.div<IShowModal>`
   height: 100vh;
   width: 486px;
 
@@ -23,8 +47,10 @@ export const Modal = styled.section`
   position: fixed;
   right: 0;
   top: 0;
+  
+	background-color: var(--color-primary);
 
-  background-color: var(--color-primary);
+	animation: ${(props) =>props.action === true ? showModal : hideModal} 0.5s;
 
   .modal-header {
     margin-top: 36px;
@@ -117,14 +143,14 @@ export const Modal = styled.section`
       justify-content: space-around;
     }
 
-		.checkout {
-			height: 65px;
-			font-size: 1.25rem;
-		}
+    .checkout {
+      height: 65px;
+      font-size: 1.25rem;
+    }
 
-		.close-button {
-			color: var(--color-primary);
-		}
+    .close-button {
+      color: var(--color-primary);
+    }
   }
 
   @media (max-width: 650px) {
@@ -154,6 +180,18 @@ export const CartCard = styled.li`
   position: relative;
 
   background-color: var(--color-white);
+
+  animation: opacity 0.2s ease-in;
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 
   img {
     width: 60px;
