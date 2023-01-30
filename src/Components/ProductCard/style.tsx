@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.ul`
+export const Card = styled.li`
   width: 217.56px;
   height: 285px;
 
@@ -11,7 +11,7 @@ export const Card = styled.ul`
   align-items: center;
 
   background: #ffffff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+  box-shadow: 0px 2px 8px #00000022;
   border-radius: 8px;
 
   .info {
@@ -27,6 +27,8 @@ export const Card = styled.ul`
     font-family: "Montserrat";
     font-weight: 400;
     font-size: 1rem;
+
+    width: 124px;
   }
 
   .price {
@@ -50,7 +52,7 @@ export const Card = styled.ul`
   .description {
     font-family: "Montserrat";
     font-weight: 300;
-    font-size: 10px;
+    font-size: 0.625rem;
 
     width: 90%;
   }
@@ -62,6 +64,20 @@ export const Card = styled.ul`
   }
 
   margin: 10px;
+
+  @media (max-width: 475px) {
+    width: 250.5px;
+    height: 328px;
+
+    .price {
+      width: 73px;
+      height: 29.9px;
+    }
+
+    .name {
+      width: 142px;
+    }
+  }
 `;
 
 export const BuyButton = styled.button`
@@ -87,5 +103,9 @@ export const BuyButton = styled.button`
 
   :hover {
     background-color: var(--color-primary-50);
+  }
+
+  @media (max-width: 475px) {
+    height: 36.7px;
   }
 `;
