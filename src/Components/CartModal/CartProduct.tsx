@@ -9,33 +9,35 @@ const CartProduct = ({ id, photo, name, price, quantity }: IProduct) => {
 
   return (
     <>
-      <CartCard className="product">
+      <CartCard>
         <img src={photo} alt={name} />
         <p className="product-name">{name}</p>
 
-        <Quantity>
-          <div className="quantity-buttons">
-            <button
-              onClick={() => dispatch(decrease({ id }))}
-              className="quantity sub"
-            >
-              -
-            </button>
-            <span className="split"></span>
-            <p className="quantity">{quantity}</p>
-            <span className="split"></span>
-            <button
-              onClick={() => dispatch(addToCart({ id }))}
-              className="quantity add"
-            >
-              +
-            </button>
-          </div>
-        </Quantity>
+        <section className="quantity-price">
+          <Quantity>
+            <div className="quantity-buttons">
+              <button
+                onClick={() => dispatch(decrease({ id }))}
+                className="quantity sub"
+              >
+                -
+              </button>
+              <span className="split"></span>
+              <p className="quantity">{quantity}</p>
+              <span className="split"></span>
+              <button
+                onClick={() => dispatch(addToCart({ id }))}
+                className="quantity add"
+              >
+                +
+              </button>
+            </div>
+          </Quantity>
 
-        <p className="price">{`R$${price.split(".")[0]}`}</p>
+          <p className="price">{`R$${price.split(".")[0]}`}</p>
+        </section>
 
-        <CloseButton
+        <CloseButton className="close-button"
           onClick={() => dispatch(removeFromCart({ id }))}
           close="card"
           dimension="small"
