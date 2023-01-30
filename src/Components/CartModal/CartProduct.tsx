@@ -5,6 +5,10 @@ import { CartCard, CloseButton, Quantity } from "./style";
 import { IProduct } from "../../store/modules/Products";
 
 const CartProduct = ({ id, photo, name, price, quantity }: IProduct) => {
+	const roundPrice = price.split(".")[0]
+  const halfStr = Math.floor(roundPrice.length / 3);	
+	const formattedPrice = roundPrice.length > 3 ? roundPrice.substr(0, halfStr) + "." + roundPrice.substr(halfStr) : roundPrice
+  const rewrittenPrice = `R$${formattedPrice}`;
   const dispatch = useDispatch();
 
   return (
@@ -34,7 +38,7 @@ const CartProduct = ({ id, photo, name, price, quantity }: IProduct) => {
             </div>
           </Quantity>
 
-          <p className="price">{`R$${price.split(".")[0]}`}</p>
+          <p className="price">{rewrittenPrice}</p>
         </section>
 
         <CloseButton className="remove-cart-button"
