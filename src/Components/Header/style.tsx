@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Head = styled.header`
   height: 11.4vh;
-	width: 100%;
+  width: 100%;
   padding: 0 70px;
 
   display: flex;
@@ -43,9 +43,11 @@ export const Head = styled.header`
     font-size: 1.125rem;
   }
 
+  @media (max-width: 950px) {
+    position: fixed;
+  }
+	
   @media (max-width: 720px) {
-		position: fixed;
-
     height: 48px;
     padding: 0 30px;
 
