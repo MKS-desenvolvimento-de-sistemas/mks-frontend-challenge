@@ -73,6 +73,8 @@ const CardStyles = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    position: relative;
+    top: 5px;
     /* text-overflow: ellipsis; */
     /* height: min-content; */
     /* white-space: nowrap; */
