@@ -7,7 +7,7 @@ import {CheckOutBox,
         CheckOutCardDetails,
         CheckOutCardAmount,
         CheckOutButton
-    } from '../../../styles/styles'
+    } from '../../../styles'
 import { useSelector } from "react-redux";
 import { CloseIcon } from './CloseIcon';
 import { MathNumber} from '../tools/math/MathNumber';

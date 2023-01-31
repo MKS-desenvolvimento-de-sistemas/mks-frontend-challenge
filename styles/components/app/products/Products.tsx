@@ -5,7 +5,7 @@ import { getProductsData, updateCartData } from "../state/actions/products";
 import Loader from "../loader/Loader";
 import Img from "../image/Image";
 import BuyIcon from "./buyIcon";
-import {Grid, Card, Button, TitlePrice} from '../../../styles/styles';
+import {Grid, Card, Button, TitlePrice} from '../../../styles';
 import { MathNumber } from "../tools/math/MathNumber";
 
 const ProductsList: React.FC = () => {

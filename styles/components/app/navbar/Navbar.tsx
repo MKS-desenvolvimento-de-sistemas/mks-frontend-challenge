@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Logo, Text, CartBox} from '../../../styles/styles'
+import { Box, Logo, Text, CartBox} from '../../../styles'
 import { useSelector } from "react-redux";
 import { CartIcon } from './CartIcon';
 

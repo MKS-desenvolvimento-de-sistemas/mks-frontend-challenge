@@ -1,10 +1,10 @@
 import Head from 'next/head';
 // import styles from '../styles/Home.module.css';
 // import {Counter} from './app/counter/Counter';
-import { Navbar } from './app/navbar/Navbar';
-import ProductsList from './app/products/Products';
+import { Navbar } from '../styles/components/app/navbar/Navbar';
+import ProductsList from '../styles/components/app/products/Products';
 import {Main, Footer} from '../styles/styles';
-import { Cart } from './app/cart/Cart';
+import { Cart } from '../styles/components/app/cart/Cart';
 
 export default function Home() {
   return (
