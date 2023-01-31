@@ -20,7 +20,7 @@ const CardStyles = styled.div`
   & .card-info {
     padding: 1rem;
     /* padding-bottom: 0; */
-    gap: 1rem;
+    gap: 0.7rem;
   }
   &:hover {
     transform: scale(1.01);
@@ -61,7 +61,9 @@ const CardStyles = styled.div`
     font-weight: lighter;
     font-size: 1.2rem;
     width: 60%;
-    height: 2rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   & p {
