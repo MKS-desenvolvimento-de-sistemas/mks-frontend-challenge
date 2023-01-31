@@ -6,18 +6,20 @@ import { cartActions } from "./store";
 
 const CardStyles = styled.div`
   position: relative;
-
+  height: fit-content;
+  max-height: 30rem;
   width: 250px;
   background-color: white;
   box-shadow: 0 0 4px #00000068;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   transition: transform 100ms ease-in-out;
   & .card-info {
     padding: 1rem;
+    /* padding-bottom: 0; */
     gap: 1rem;
   }
   &:hover {
@@ -59,11 +61,20 @@ const CardStyles = styled.div`
     font-weight: lighter;
     font-size: 1.2rem;
     width: 60%;
+    height: 2rem;
   }
 
   & p {
     font-size: smaller;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    /* height: min-content; */
+    /* white-space: nowrap; */
+    /* display: inline-block; */
   }
 
   & .row-1 {
