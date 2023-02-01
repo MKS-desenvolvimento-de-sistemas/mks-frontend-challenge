@@ -203,11 +203,20 @@ export const CheckOutCard = styled.div`
   margin-bottom: 24px;
 `;
 
+export const CheckOutCardClose = styled.div`         
+  position: absolute;
+  right: 54px;
+  margin-top: -15px;
+  & svg{
+    width: 18px;
+  }
+`;
+
 export const CheckOutCardDetails = styled.div`         
   display: flex;
   padding: 19px 10px 19px 23px;
   font-family: 'Montserrat 300', sans-serif;
-  align-items: flex-end;
+  align-items: center;
 
   & h1 {
     margin: 0;
@@ -240,12 +249,41 @@ export const CheckOutCardAmount = styled.div`
     font-size: 5px;
     line-height: 6px;
     color: #000000;
-  }
+    margin-bottom: 4px;
+  } 
+`;
 
+export const CounterBox = styled.div`         
+  background: #FFFFFF;
+  border: 0.3px solid #BFBFBF;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 19px;
   & h3{
+    margin: 0;
     font-weight: 400;
     font-size: 8px;
   }
+  & svg{
+    margin: 0 4px 0 4px;
+  }  
+`;
+
+export const CounterButton = styled.div`   
+  font-family: 'Montserrat 300', sans-serif;
+  font-weight: 400;
+  & h5{
+    font-size: 12px; 
+    cursor:pointer;   
+  }
+  & h6{
+    font-size: 8px;
+    cursor:pointer;
+  }  
 `;
 
 export const CheckOutButton = styled.div`     
@@ -260,14 +298,30 @@ export const CheckOutButton = styled.div`
   align-items: center;
   cursor:pointer;
 
-& h1 {
-  margin: 0;
+  & h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 15px;
+    color: #FFFFFF;  
+    font-family: 'Montserrat 600', sans-serif;
+  }
+`;
+
+export const CheckOutTotal = styled.div`     
+  display: flex;
   font-weight: 700;
   font-size: 28px;
-  line-height: 15px;
-  color: #FFFFFF;  
+  color: #FFFFFF;
   font-family: 'Montserrat 600', sans-serif;
-}
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 139px;
+  padding: 0 63px 0 47px; 
+  & .total{
+    margin-right: 204px;
+  }
 `;
 
 // Footer Style
