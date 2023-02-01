@@ -1,3 +1,5 @@
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -56,6 +58,9 @@ const CardStyles = styled.div`
     color: white;
     font-weight: 600;
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
   }
   & .name {
     font-weight: lighter;
@@ -106,7 +111,8 @@ const Card = ({ produto }: Props) => {
         <p>{produto?.description}</p>
       </div>
       <button onClick={() => dispatch(cartActions.addToCart(produto))}>
-        <i className="fa-solid fa-bag-shopping"></i>COMPRAR
+        <FontAwesomeIcon icon={faBagShopping} />
+        COMPRAR
       </button>
     </CardStyles>
   );
