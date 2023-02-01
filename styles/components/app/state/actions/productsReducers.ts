@@ -5,7 +5,6 @@ const initialState: any = {
 }
 
 const productsReducer = (state = initialState, action: any) => {
-    console.log(action.payload, "es action")
     switch (action.type) {
         case "getProducts":
             return {
