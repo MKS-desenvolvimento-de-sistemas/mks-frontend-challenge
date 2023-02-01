@@ -13,8 +13,7 @@ export function Reduce(number: any) {
         return sum;  
 }
 
-export function Delete(CartData: any, CartDataList: any) {  
-    const id = CartData.find( (element: { id: any; }) => element.id === CartDataList.id);
+export function Delete(CartDataList: any) {  
         return Swal.fire({
             title: 'Ops!',
             text: `Você não pode eliminar ${CartDataList.name} do carrinho porque o challenge não pedia crud`,
