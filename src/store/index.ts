@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
+import { ICartItem } from "../pages/Cart";
 const initialState = { items: [] } as any;
 
 const cartSlice = createSlice({
@@ -39,6 +40,9 @@ const cartSlice = createSlice({
 
       //   state.items.splice(itemIndex, 1);
       // } while (state.items.some((item) => item.id === action.payload.id));
+    },
+    deleteAllItems(state) {
+      state.items = [];
     },
   },
 });

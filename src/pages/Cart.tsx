@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import CartItem from "../CartItem";
+import { cartActions } from "../store";
 
 export interface ICartItem {
   id: number;
@@ -113,6 +114,7 @@ const Cart = ({ showCart, setShowCart }: Props) => {
   const [cart, setCart] = useState<ICartItem[]>([]);
   const [total, setTotal] = useState(0);
   const items = useSelector((state) => state.items);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!items || items.length === 0) return;
@@ -192,7 +194,13 @@ const Cart = ({ showCart, setShowCart }: Props) => {
       </div>
 
       <div className="total">Total: R${items.length > 0 ? total : "0"}</div>
-      <div onClick={() => setShowCart(false)} className="finalizar-compra">
+      <div
+        onClick={() => {
+          setShowCart(false);
+          dispatch(cartActions.deleteAllItems());
+        }}
+        className="finalizar-compra"
+      >
         Finalizar Compra
       </div>
     </CartStyles>
