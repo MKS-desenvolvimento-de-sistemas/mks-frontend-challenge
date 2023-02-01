@@ -17,7 +17,7 @@ import { CloseIcon } from './CloseIcon';
 import { MathNumber} from '../tools/math/MathNumber';
 import Img from '../image/Image';
 import { SpacingIcon } from './SpacingIcon';
-import { Reduce } from '../tools/reduce/Reduce';
+import { Bye, Delete, Reduce } from '../tools/reduce/Reduce';
 // import { ShowHide } from '../tools/math/ShowHide';
 
 export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<HTMLDivElement> | undefined; }) {
@@ -37,7 +37,7 @@ export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<H
             {CartData.map((CartDataList: any, index: number) => {            
                 return (
                     <CheckOutCard key={index}>
-                        <CheckOutCardClose>
+                        <CheckOutCardClose onClick={() => Delete(CartData, CartDataList)}>
                             <CloseIcon />
                         </CheckOutCardClose>                           
                         <CheckOutCardDetails>
@@ -63,8 +63,7 @@ export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<H
                                             +
                                         </h6>
                                     </CounterButton>
-                                </CounterBox>
-                               
+                                </CounterBox>                               
                             </CheckOutCardAmount>
                             <h4>
                                 {MathNumber(CartDataList?.price)}
@@ -82,7 +81,7 @@ export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<H
                 {MathNumber(Reduce(CartData))}
             </div>            
         </CheckOutTotal>        
-        <CheckOutButton>
+        <CheckOutButton onClick={() => Bye()}>
             <h1>
                 Finalizar Compra
             </h1>
