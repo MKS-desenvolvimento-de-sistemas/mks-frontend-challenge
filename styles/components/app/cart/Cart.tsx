@@ -12,19 +12,21 @@ import { useSelector } from "react-redux";
 import { CloseIcon } from './CloseIcon';
 import { MathNumber} from '../tools/math/MathNumber';
 import Img from '../image/Image';
+// import { ShowHide } from '../tools/math/ShowHide';
 
-
-
-export function Cart() {
+export function Cart(props) {
   const CartData = useSelector((state: any) => state?.products?.cart);
   return (
-    <CheckOutBox>
+    props?.isOpen && <CheckOutBox id="checkBox">
         <BoxCart>
             <Flex>
                 <CheckOutTitle>
                     Carrinho de compras
                 </CheckOutTitle> 
-                <CloseIcon /> 
+                <div onClick={props?.toggleMenu}>
+                    <CloseIcon />
+                </div>
+                 
             </Flex>                         
             {CartData.map((CartDataList: any) => {            
                 return (
