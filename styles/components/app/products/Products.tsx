@@ -41,7 +41,7 @@ const ProductsList: React.FC = () => {
                                     <h2>{MathNumber(individualProductData.price)}</h2>
                                 </TitlePrice>                                
                                 <h3>Redesigned from scratch and completely revised.</h3>      
-                                <Button onClick={() => dispatch(updateCartData(individualProductData))  }>
+                                <Button onClick={() => dispatch(updateCartData(individualProductData))}>
                                   <BuyIcon />
                                   <p>COMPRAR</p>
                                 </Button>                                                         

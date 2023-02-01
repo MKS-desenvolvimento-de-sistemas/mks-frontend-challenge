@@ -5,26 +5,39 @@ const initialState: any = {
 }
 
 const productsReducer = (state = initialState, action: any) => {
+    console.log(action.payload, "es action")
     switch (action.type) {
         case "getProducts":
             return {
                 ... state,
                 products: action.payload,
                 loading: false
-            }            
+            }  
+        case "updateQuantity":
+            return {
+                ...state,
+                products: {
+                    ...state.products,
+
+                    cart: {
+                    ...state.cart,
+                    counter: action.payload
+                    }
+                }
+              }
+           
         case "updateCart":
             Object.defineProperties(action.payload, {
                 counter: {
                   value: 1,              
                 }
-              }); 
+              })  
             return {
                 ...state,
                 updatedData: action.payload,              
                 cart: [...state.cart, action.payload],
                 loading: false
             } 
-
         default: 
             return state    
     }

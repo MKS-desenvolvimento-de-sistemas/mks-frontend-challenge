@@ -11,3 +11,10 @@ export const updateCartData = (updatedData: any) => {
         payload: updatedData
     }
 }
+
+export const updateQuantity = (updatedData: any) => {
+    return {
+        type: "updateQuantity",
+        payload: updatedData
+    }
+}
