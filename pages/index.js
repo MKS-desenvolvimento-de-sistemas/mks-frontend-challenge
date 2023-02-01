@@ -29,7 +29,7 @@ export default function Home() {
       </Head>
       <Cart isOpen={isOpen} toggleMenu={toggleMenu} />
       <nav>
-        <Navbar isOpen={isOpen} toggleMenu={toggleMenu} />
+        <Navbar toggleMenu={toggleMenu} />
       </nav>
      
       <Main>
