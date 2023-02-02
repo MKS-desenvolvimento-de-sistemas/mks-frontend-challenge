@@ -40,7 +40,7 @@ export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<H
             {CartData?.map((CartDataList: any, index: number) => {  
                 return (
                     <CheckOutCard key={index}>
-                        <CheckOutCardClose onClick={() => Delete(CartData)}>
+                        <CheckOutCardClose onClick={() => Delete(CartDataList)}>
                             <CloseIcon />
                         </CheckOutCardClose>                           
                         <CheckOutCardDetails>
