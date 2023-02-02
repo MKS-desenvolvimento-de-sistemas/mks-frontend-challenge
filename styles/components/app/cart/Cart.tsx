@@ -18,9 +18,7 @@ import { MathNumber} from '../tools/math/MathNumber';
 import Img from '../image/Image';
 import { SpacingIcon } from './SpacingIcon';
 import { Bye, Delete, Reduce } from '../tools/reduce/Reduce';
-import { updateQuantity } from '../state/actions/products';
 import { lessProductCart, moreProductCart } from '../state/actions/productsReducers';
-// import { ShowHide } from '../tools/math/ShowHide';
 
 export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<HTMLDivElement> | undefined; }) {
   const CartData = useSelector((state: any) => state?.products?.cart);

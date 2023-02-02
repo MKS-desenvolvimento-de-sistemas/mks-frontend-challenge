@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getProductsData, updateCartData } from "../state/actions/products";
 import Loader from "../loader/Loader";
 import Img from "../image/Image";
 import BuyIcon from "./buyIcon";
