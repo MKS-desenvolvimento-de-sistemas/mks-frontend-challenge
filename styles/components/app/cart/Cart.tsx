@@ -19,6 +19,7 @@ import Img from '../image/Image';
 import { SpacingIcon } from './SpacingIcon';
 import { Bye, Delete, Reduce } from '../tools/reduce/Reduce';
 import { updateQuantity } from '../state/actions/products';
+import { lessProductCart, moreProductCart } from '../state/actions/productsReducers';
 // import { ShowHide } from '../tools/math/ShowHide';
 
 export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<HTMLDivElement> | undefined; }) {
@@ -36,7 +37,7 @@ export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<H
                 </div>
                  
             </Flex>                         
-            {CartData.map((CartDataList: any, index: number) => {            
+            {CartData?.map((CartDataList: any, index: number) => {  
                 return (
                     <CheckOutCard key={index}>
                         <CheckOutCardClose onClick={() => Delete(CartData)}>
@@ -50,17 +51,31 @@ export function Cart(props: { isOpen: any; toggleMenu: React.MouseEventHandler<H
                                     Qtd:
                                 </h2>
                                 <CounterBox>
-                                    <CounterButton>
+                                    <CounterButton onClick={() =>                                     
+                                        dispatch(
+                                            lessProductCart({                                          
+                                            quantity: CartDataList?.quantity,
+                                            id: CartDataList?.id
+                                            })                                     
+                                        )
+                                    }>
                                         <h5>
                                             -
                                         </h5>
                                     </CounterButton>
                                     <SpacingIcon />
                                     <h3>
-                                        {CartDataList?.counter}                                    
+                                        {CartDataList?.quantity}                                    
                                     </h3>
                                     <SpacingIcon />
-                                    <CounterButton onClick={() => dispatch(updateQuantity(CartDataList?.counter+1))} >
+                                    <CounterButton onClick={() =>                                     
+                                        dispatch(
+                                            moreProductCart({                                          
+                                            quantity: CartDataList?.quantity,
+                                            id: CartDataList?.id
+                                            })                                     
+                                        )
+                                    }>
                                         <h6>
                                             +
                                         </h6>
