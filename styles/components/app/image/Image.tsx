@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Img = (props) => {
+const Img = (props: any) => {
   return (
     <Image    
       src={props.src}
