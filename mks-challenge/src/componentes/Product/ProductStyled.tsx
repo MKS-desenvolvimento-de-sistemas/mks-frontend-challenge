@@ -12,6 +12,7 @@ export const ContainerProduct = styled.div`
     border-radius: 8px;
     background: #ffffff;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+    
 `;
 
 export const ImgProduct = styled.img`

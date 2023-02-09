@@ -3,8 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { ProviderC } from './ProdutosContext';
 import {store} from './store';
-
-import Child from './componentes/Button/Child';
 import App from './App';
 import './index.css';
 import GlobalStyle from './GlobalStyle';

@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App';
-import { render, fireEvent } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import Product from './componentes/Product/Product'
 import { ButtonBuy } from './componentes/Product/ProductStyled';
 import Header from './componentes/header/Header';
@@ -13,8 +13,6 @@ jest.spyOn(React, 'useContext').mockImplementation(() => ({
   }));
 
  
-  
-  
  
 
 jest.mock('./imgs/Cart.png', () => 'MockedCartImage');
@@ -42,14 +40,4 @@ test('sum', () => {
 
     expect(getAllByText('R$')).toBeTruthy
 })
-// describe('Product Component', () => {
-   
 
-//     it('should render list items', () =>{
-//         const {getByText, debug} = render(<App/>)
-
-//         expect(getByText('test')).toBeInTheDocument
-
-//         debug()
-//     })
-// })
