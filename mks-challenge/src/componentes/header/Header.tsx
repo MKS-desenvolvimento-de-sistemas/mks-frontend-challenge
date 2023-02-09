@@ -25,9 +25,9 @@ const Header: React.FC = () => {
             <Logo>MKS</Logo> 
             <P>Sistemas</P>
         </ContainerLogoPah>
-       <ButtonCartHeader onClick={context?.toggleFunction}>
+       <ButtonCartHeader style={{cursor: 'pointer'}} onClick={context?.toggleFunction}>
             <img style={{width:'19px', height: '18px'}} src={cart} alt="" />
-            <AmountItems style={{}}>{context?.itemsTocart.length}</AmountItems>
+            <AmountItems >{context?.itemsTocart.length}</AmountItems>
        </ButtonCartHeader>
         {context?.toggle && <ProductsList/>}
     </ContainerHeader>

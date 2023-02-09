@@ -4,6 +4,9 @@ import { useProductsQuery } from '../../services/ProductApi'
 import { Skeleton } from '../Skeleton/SkeletonElementStyles';
 
 
+
+
+
 import { 
     ContainerProduct,
     ImgProduct,
@@ -30,7 +33,7 @@ const Product: React.FC =() => {
 
     <>
     
-        {data?.products.map((item)=>{
+        {data?.products.map((item:{name:string, photo:string, id:string, price: number, description: string, brand: string, count: number })=>{
             return(
               <>
               
@@ -42,7 +45,7 @@ const Product: React.FC =() => {
                     <Price>R${Math.trunc(item.price)}</Price>
                     </ContainerNamePrice>
                     <Description>{item.description}</Description>
-                    <ButtonBuy data-testid='buy-button' onClick={() => context.handleShopping(item)}><img src={bag}></img> COMPRAR</ButtonBuy>
+                    <ButtonBuy style={{cursor: 'pointer'}} data-testid='buy-button' onClick={() => context.handleShopping(item)}><img src={bag}></img> COMPRAR</ButtonBuy>
                 </ContainerProduct>
                 
               </>
