@@ -1,41 +1,29 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '../public/vite.svg';
-import './App.css';
+import { useQuery } from '@tanstack/react-query';
+import { FC } from 'react';
+import { RequestAPI, ProductList } from './models/requestAPI';
 
-function App() {
-  const [count, setCount] = useState(0);
+const App: FC = () => {
+  const { data, isError, isLoading } = useQuery<ProductList>({
+    queryKey: ['product'],
+    queryFn: RequestAPI.getProducts,
+  });
+  console.log(data);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={ viteLogo } className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={ reactLogo } className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={ () => setCount((counts) => counts + 1) }>
-          count is
-          {' '}
-          {count}
-        </button>
-        <p>
-          Edit
-          {' '}
-          <code>src/App.tsx</code>
-          {' '}
-          and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    <div>
+      {isLoading && <p>Loading...</p>}
+      {isError && <p>Algo deu errado tente novamente</p>}
+      {data && data.products.map((product) => (
+        <div key={ product.id }>
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
+        </div>
+      ))}
+    </div>
+
   );
-}
+};
 
 export default App;
