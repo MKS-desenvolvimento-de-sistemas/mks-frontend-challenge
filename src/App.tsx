@@ -7,15 +7,7 @@ import Header from './components/Header';
 import Card from './components/Card';
 
 import './App.css';
-
-const StyledHome = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-
-`;
+import { StyledCardResponsive, StyledHome } from './styles/appStyles';
 
 const App: FC = () => {
   const { data, isError, isLoading } = useQuery<ProductList>({
@@ -30,7 +22,10 @@ const App: FC = () => {
       <Header />
       {isLoading && <p>Loading...</p>}
       {isError && <p>Algo deu errado tente novamente</p>}
-      {data && <Card products={ data.products } />}
+      <StyledCardResponsive>
+        {data && data.products.map((product) => (
+          <Card key={ product.id } product={ product } />))}
+      </StyledCardResponsive>
     </StyledHome>
 
   );
