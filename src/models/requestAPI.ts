@@ -3,6 +3,7 @@ type Product = {
   name: string,
   price: number,
   description: string,
+  photo: string,
 };
 
 export type ProductList = {
