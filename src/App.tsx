@@ -1,13 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
-import { FC } from 'react';
 import { styled } from 'styled-components';
+import { FC } from 'react';
+
 import { RequestAPI, ProductList } from './models/requestAPI';
 import Header from './components/Header';
-import './App.css';
 import Card from './components/Card';
+
+import './App.css';
 
 const StyledHome = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
 `;
 
 const App: FC = () => {
@@ -21,16 +28,9 @@ const App: FC = () => {
     <StyledHome>
 
       <Header />
-      <Card />
       {isLoading && <p>Loading...</p>}
       {isError && <p>Algo deu errado tente novamente</p>}
-      {data && data.products.map((product) => (
-        <div key={ product.id }>
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
-        </div>
-      ))}
+      {data && <Card products={ data.products } />}
     </StyledHome>
 
   );
