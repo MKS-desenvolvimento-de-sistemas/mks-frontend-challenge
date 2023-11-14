@@ -1,19 +1,11 @@
-import { useContext, useEffect, useReducer, useState } from 'react';
-import { styled } from 'styled-components';
+import { useContext, useState } from 'react';
 import CartContext from '../context/cartContext';
-
-const StyledCart = styled.div`
-    background-color: white;
-    height: 100vh;
-    width: 50vw;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    transition: 0.5s;
-    border-left: 1px solid black;
-
-`;
+import { StyledAddProduct,
+  StyledAddRemove,
+  StyledButtonAddRemove,
+  StyledButtonFinalizar,
+  StyledCart, StyledCloseCart, StyledDelete, StyledHeaderCart, StyledImg, StyledPrice,
+  StyledTotalPrice, StyledProductCard } from '../styles/cartStyles';
 
 type Total = {
   [productId: number]: {
@@ -23,7 +15,7 @@ type Total = {
 };
 
 export default function ShoppingCart() {
-  const { cart } = useContext(CartContext);
+  const { cart, upDateCart, setShowCart } = useContext(CartContext);
   const [total, setTotal] = useState({} as Total);
 
   const add = (productId: number, price: number) => {
@@ -41,40 +33,87 @@ export default function ShoppingCart() {
     });
   };
 
-  const remove = () => {
-    // if (count === 1) {
-    //   return;
-    // }
-    // setTotal(count - 1);
+  const remove = (productId: number, price: number) => {
+    console.log(total[productId]?.count);
+
+    if (total[productId]?.count >= 1) {
+      setTotal((prevCounts) => {
+        const updatedCount = (prevCounts[productId]?.count || 0) - 1;
+        const updatedPrice = price * updatedCount;
+
+        return {
+          ...prevCounts,
+          [productId]: {
+            count: updatedCount,
+            price: updatedPrice,
+          },
+        };
+      });
+    }
+  };
+  const sum = () => {
+    return Object.values(total).reduce((acc, curr) => acc + curr.price, 0);
+  };
+
+  const handleDelete = (id: number) => {
+    const prod = cart.products.find((product) => product.id === id);
+    if (prod) {
+      remove(prod.id, prod.price);
+    }
+    upDateCart(id);
+  };
+
+  const handleClick = () => {
+    setShowCart(false);
+    console.log('clicou');
   };
   return (
     <StyledCart>
-      shoppingCart
-      <div>Carrinho de compras</div>
-      <button>X</button>
-      <div>
+      <StyledHeaderCart>
+        <div>Carrinho de compras</div>
+        <StyledCloseCart onClick={ handleClick }>X</StyledCloseCart>
+      </StyledHeaderCart>
+
+      <div style={ { overflow: 'auto', height: '73%' } }>
         {cart.products.map((product) => (
           <div key={ product.id }>
-            <img src={ product.photo } alt="" />
-            <div>{product.name}</div>
-            <div>{product.price}</div>
-            <button
-              type="button"
-              onClick={ () => add(product.id, product.price) }
-            >
-              +
-            </button>
-            <span id="count">{total[product.id]?.count || 0}</span>
-            <button type="button" onClick={ remove }>-</button>
+            <StyledProductCard>
+              <StyledDelete onClick={ () => handleDelete(product.id) }>X</StyledDelete>
+              <StyledImg src={ product.photo } alt="" />
+              <div>{product.name}</div>
+              <StyledAddProduct>
+
+                <StyledAddRemove>
+                  <StyledButtonAddRemove
+                    type="button"
+                    onClick={ () => remove(product.id, product.price) }
+                  >
+                    -
+
+                  </StyledButtonAddRemove>
+                  <span id="count">{total[product.id]?.count || 0}</span>
+                  <StyledButtonAddRemove
+                    type="button"
+                    onClick={ () => add(product.id, product.price) }
+                  >
+                    +
+                  </StyledButtonAddRemove>
+
+                </StyledAddRemove>
+                <StyledPrice>{product.price}</StyledPrice>
+              </StyledAddProduct>
+            </StyledProductCard>
           </div>
         ))}
       </div>
-      <div>TOTAL</div>
-      <div>
-        R$
-        {Object.values(total).reduce((acc, curr) => acc + curr.price, 0)}
-      </div>
-      <button>FINALIZAR COMPRA</button>
+      <StyledTotalPrice>
+        <div>TOTAL</div>
+        <div>
+          R$
+          {sum()}
+        </div>
+      </StyledTotalPrice>
+      <StyledButtonFinalizar>FINALIZAR COMPRA</StyledButtonFinalizar>
     </StyledCart>
   );
 }
