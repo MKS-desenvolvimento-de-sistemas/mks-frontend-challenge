@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.0.15",
     "@types/styled-components": "^5.1.30",
     "next": "14.0.2",
     "react": "^18",

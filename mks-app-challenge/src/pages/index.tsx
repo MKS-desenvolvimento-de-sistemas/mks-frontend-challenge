@@ -1,20 +1,14 @@
+import { CardProducts } from "@/styles/Home.style";
 
-import { Inter } from 'next/font/google'
+const Home = () => {
+    return (
+        <main>
+            <CardProducts>
 
-import { CardProducts } from '@/styles/Home.style'
+            </CardProducts>
+        </main>
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-  return (
-    <>
-      <CardProducts >
-        <div>
-          Estrutura Inicial do projeto.
-        </div>
-      </CardProducts>
-
-
-    </>
-  )
+    )
 }
+
+export default Home;
