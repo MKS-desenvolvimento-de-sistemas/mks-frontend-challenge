@@ -1,10 +1,10 @@
-import { FC, useContext, useState } from 'react';
+import { FC, useContext } from 'react';
 import { StyledButton, StyledCard, StyledLogo, StyledText } from '../styles/headerStyles';
 import ShoppingCart from './ShoppingCart';
 import CartContext from '../context/cartContext';
 
 const Header: FC = () => {
-  const [showCart, setShowCart] = useState(false);
+  const { showCart, setShowCart } = useContext(CartContext);
   const handleClick = () => {
     if (showCart) {
       setShowCart(false);
