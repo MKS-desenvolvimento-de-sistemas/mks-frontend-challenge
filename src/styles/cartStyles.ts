@@ -16,6 +16,17 @@ export const StyledCart = styled.div`
     display: flex;
     flex-direction: column;
     
+    @media (min-width: 768px) {
+        width: 40%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 30%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 20%;
+    }
 `;
 
 export const StyledHeaderCart = styled.div`
@@ -39,6 +50,18 @@ export const StyledProductCard = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+
+    @media (min-width: 1024px) {
+        width: 30%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
 `;
 export const StyledCloseCart = styled.button`
   background-color: black;
@@ -56,12 +79,25 @@ export const StyledDelete = styled.button`
   transform: translateX(7rem);
   right: 4rem;
   z-index: 1;
-  
+  @media (min-width: 1440px) {
+    width: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+    font-size: 1rem;
+    transform: translateX(20rem) translateY(-3rem);
+    
+}
   `;
 
 export const StyledImg = styled.img`
     width: 80%;
     height: 80%;
+    @media (min-width: 1440px) {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+    }
     `;
 
 export const StyledAddProduct = styled.div`
@@ -69,6 +105,10 @@ export const StyledAddProduct = styled.div`
   justify-content: space-between;
   width: 80%;
   margin-top: 1rem;
+  @media (min-width: 1440px) {
+    justify-content: center;
+    gap: 1rem;
+}
 `;
 
 export const StyledAddRemove = styled.div`
