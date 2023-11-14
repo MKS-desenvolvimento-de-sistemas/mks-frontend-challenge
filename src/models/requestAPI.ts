@@ -1,14 +1,4 @@
-export type Product = {
-  id: number,
-  name: string,
-  price: number,
-  description: string,
-  photo: string,
-};
-
-export type ProductList = {
-  products: Product[],
-};
+import { ProductList } from '../interface/type';
 
 export class RequestAPI {
   static async getProducts(): Promise<ProductList> {
