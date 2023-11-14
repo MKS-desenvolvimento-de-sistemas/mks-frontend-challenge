@@ -21,11 +21,11 @@ export const StyledCart = styled.div`
     }
 
     @media (min-width: 1024px) {
-        width: 30%;
+        width: 40%;
     }
 
     @media (min-width: 1440px) {
-        width: 20%;
+        width: 30%;
     }
 `;
 
@@ -51,9 +51,6 @@ export const StyledProductCard = styled.div`
     align-items: center;
     padding: 1rem;
 
-    @media (min-width: 1024px) {
-        width: 30%;
-    }
 
     @media (min-width: 1440px) {
         width: 80%;
@@ -85,7 +82,7 @@ export const StyledDelete = styled.button`
     color: white;
     border-radius: 100%;
     font-size: 1rem;
-    transform: translateX(20rem) translateY(-3rem);
+    transform: translateX(24vw) translateY(-6vh);
     
 }
   `;
@@ -107,7 +104,7 @@ export const StyledAddProduct = styled.div`
   margin-top: 1rem;
   @media (min-width: 1440px) {
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 `;
 
