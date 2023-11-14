@@ -1,0 +1,29 @@
+{
+  "name": "mks-app-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/styled-components": "^5.1.30",
+    "next": "14.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-query": "^1.2.9",
+    "jest": "^29.7.0",
+    "react-query": "^3.39.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5"
+  }
+}
