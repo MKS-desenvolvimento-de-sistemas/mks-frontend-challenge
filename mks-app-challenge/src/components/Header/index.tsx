@@ -10,13 +10,15 @@ import {
 
 import ImgCart from '@/assets/Vector.png'
 import Image from 'next/image'
+import React from 'react'
 
 
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <HeaderApp>
             <Logo>
+
                 <LogoTextPrimary>MKS</LogoTextPrimary>
                 <LogoTextSecondary>Sistemas</LogoTextSecondary>
             </Logo>
