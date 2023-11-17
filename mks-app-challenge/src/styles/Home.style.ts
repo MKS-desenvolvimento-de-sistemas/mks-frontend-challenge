@@ -25,8 +25,12 @@ gap: 10px;
 
 margin: 40px auto;
 
+@media (max-width: 600px) {
+ max-width: 50%;
+ gap: 10px;
 
-/* background: pink; */
+margin: 20px auto;
+}
 
 `
 
