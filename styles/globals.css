@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Montserrat 300';
+  src: url('./fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat 400';
+  src: url('./fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat 600';
+  src: url('./fonts/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Thin.ttf');
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat',  sans-serif;
+}
+
+
+
+
+
+
