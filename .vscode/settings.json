@@ -1,0 +1,5 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/621e13f2-076b-4f14-b41c-b7a53ca71367/resourceGroups/TesteMKS/providers/Microsoft.Web/sites/mkssistemas",
+    "appService.deploySubpath": "next",
+    "appService.showBuildDuringDeployPrompt": false
+}
