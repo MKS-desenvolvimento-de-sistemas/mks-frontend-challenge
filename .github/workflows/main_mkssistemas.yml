@@ -30,7 +30,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-        working-directory: ./mks-frontend-challenge/mks-app-challenge/src
+        working-directory: ./mks-frontend-challenge/mks-app-challenge
 
 
 
@@ -67,5 +67,5 @@ jobs:
         with:
           app-name: 'mkssistemas'
           slot-name: 'Production'
-          package: .
+          package: .next
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_52CEA613A32A42B0A17C0D4E090F57F3 }}
