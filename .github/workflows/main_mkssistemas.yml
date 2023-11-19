@@ -31,8 +31,11 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
-      - name: Zip artifact for deployment
-        run: zip -r release.zip ./*
+
+
+      - name: Create deployment package
+        run: |
+          tar -czf deployment-package.tar.gz -C ./next .
         working-directory: ${{ github.workspace }}
 
       - name: Upload artifact for deployment job
