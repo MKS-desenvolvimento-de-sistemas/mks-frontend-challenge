@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'mkssistemas'
           slot-name: 'Production'
-          package: .
+          package: ./next/static
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_52CEA613A32A42B0A17C0D4E090F57F3 }}
