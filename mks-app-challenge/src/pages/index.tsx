@@ -101,7 +101,7 @@ const Home = () => {
                             </ProductInfo>
 
                             <ProductPrice>
-                                R${`${product.price}`}
+                                {`R$${product.price}`}
                             </ProductPrice>
 
                         </BoxNamePrice>
