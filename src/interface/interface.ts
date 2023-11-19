@@ -11,3 +11,10 @@ export interface ProductDataProps {
     updatedAt: string;
   }>;
 }
+
+export interface CardProps {
+  image: string;
+  name: string;
+  price: string;
+  description: string;
+}
