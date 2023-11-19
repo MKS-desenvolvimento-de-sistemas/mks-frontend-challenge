@@ -3,17 +3,17 @@
 export interface CartItem {
     id: number;
     name: string;
-    price: number;
+    price: string;
     quantity: number;
+    brand: string,
+    description: string,
+    photo: string,
+
+
 }
 
 export interface CartState {
     items: CartItem[];
-    isOpen: boolean;
-}
-
-export interface CartState {
-    items: CartItem[]
     isOpen: boolean;
 }
 

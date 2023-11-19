@@ -12,15 +12,29 @@ import {
 }
     from "@/styles/Home.style";
 import { QueryClient, useQuery, useQueryClient } from 'react-query';
-import { fetchProducts } from "./api/fetchProducts";
+import { fetchProducts } from "@/api/fetchProducts";
 import ShoppingBag from "@/assets/shopping-bag.svg";
 import Image from "next/image";
-import { DataApi, Product } from "@/@types/Products";
 import { StyledEngineProvider } from '@mui/material/styles';
-import SkeletonComponent from '@/components/Skeleton/index'
+import SkeletonComponent from '@/components/Skeleton/index';
+import ErroMessage from '@/components/ErrorMessage/index';
+
+import useCombinedCart from '@/Hooks/useCombinedCart';
+import { CartItem } from "@/@types/CartItem";
 
 
 const Home = () => {
+
+    const { addToCartCombined, contextState, reduxState } = useCombinedCart();
+
+    const handleBuyClick = (product: CartItem) => {
+
+
+        addToCartCombined(product);
+
+    }
+
+
     const { data: products, isLoading, isError } = useQuery('products', () => fetchProducts(1, 8));
     if (isLoading) {
         return (
@@ -45,10 +59,20 @@ const Home = () => {
     }
 
     if (isError || !products) {
-        console.log(products);
-        console.log('isError:', isError);
 
-        return <div>Ocorreu um erro ao buscar os produtos.</div>
+
+        return (
+
+            <SkeletonBox>
+
+                <StyledEngineProvider injectFirst>
+
+                    <ErroMessage />
+
+                </StyledEngineProvider>
+
+            </SkeletonBox>
+        )
     }
 
     const queryClient = new QueryClient
@@ -56,21 +80,17 @@ const Home = () => {
     queryClient.invalidateQueries('products');
 
 
-
-
     return (
 
         <BoxCards>
 
-            {Array.isArray(products) && products.length > 0 && products.map((product: DataApi) => (
+            {Array.isArray(products) && products.length > 0 && products.map((product: CartItem) => (
 
                 <CardsProducts key={product.id}>
 
                     <ImageCard>
                         <Image src={product.photo} alt={product.name} width={111} height={120} />
                     </ImageCard>
-
-
 
 
                     <ProductBox>
@@ -81,7 +101,7 @@ const Home = () => {
                             </ProductInfo>
 
                             <ProductPrice>
-                                {`R$${product.price}`}
+                                R${`${product.price}`}
                             </ProductPrice>
 
                         </BoxNamePrice>
@@ -98,7 +118,7 @@ const Home = () => {
 
 
 
-                    <BuyButton>
+                    <BuyButton onClick={() => handleBuyClick(product)}>
                         <Image src={ShoppingBag} alt="shoppingbag" />
 
                         COMPRAR
@@ -112,12 +132,6 @@ const Home = () => {
             ))}
 
         </BoxCards>
-
-
-
-
-
-
 
     )
 }

@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const ContainerCart = styled.div`
-display: flex;
+interface ContainerCartProps {
+    isOpen: boolean;
+}
+
+export const ContainerCart = styled.div<ContainerCartProps>`
+display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 position: fixed;
 flex-direction: column;
 width: 486px;
@@ -190,7 +194,6 @@ align-content: center;
 align-items: center;
 width: 100%;
 height: 19px;
-/* flex-wrap: wrap; */
 flex: 2 1 0%;
 position: relative;
 background:  #FFF;
@@ -241,8 +244,6 @@ border-right: 0.3px solid #BFBFBF;
 background: #FFF;
 
 color: #000;
-
-font-family: "Montserrat";
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
@@ -305,8 +306,6 @@ cursor: pointer;
 export const CartAmount = styled.h4`
 display: flex;
 color: #000;
-
-font-family: Montserrat;
 font-size: 14px;
 font-style: normal;
 font-weight: 700;
@@ -385,7 +384,7 @@ gap: 90px;
 margin-top: 36px;
 
 @media(max-width: 600px) {
-    gap: 10px;
+    gap: 1px;
     margin-left: 10px;
 }
 
@@ -430,10 +429,21 @@ flex-shrink: 0;
 
 background: #000;
 
+cursor: pointer;
+
+transition: background-color 0.3s ease;
+
+&:hover {
+    background-color: rgba(128, 128, 128, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    
+}
+
 @media(max-width: 600px) {
 width: 330px;
 height: 65.864px;
 flex-shrink: 0;
+
 
 
 }
@@ -446,6 +456,8 @@ font-size: 28px;
 font-style: normal;
 font-weight: 700;
 line-height: 15px;
+
+
 
 @media(max-width: 600px) {
 color: #FFF;
