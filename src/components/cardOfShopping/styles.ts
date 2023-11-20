@@ -8,7 +8,7 @@ export const ContainerProduct = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: center;
   border-radius: 8px;
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors?.white};
   box-shadow: -2px 2px 10px 0px rgba(0, 0, 0, 0.05);
 `;
 
@@ -20,14 +20,14 @@ export const ImgProduct = styled.img`
 `;
 
 export const TitleProduct = styled.p`
-  color: ${(props) => props.theme.colors.card.text};
+  color: ${(props) => props.theme.colors?.card.text};
   font-size: 13px;
   font-weight: 400;
   line-height: 17px;
 `;
 
 export const QuantityText = styled.p`
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors?.black};
   font-size: 7px;
   font-weight: 400;
 `;
@@ -40,18 +40,18 @@ export const Quantity = styled.div`
   padding: 5px;
   border-radius: 4px;
   border: 0.3px solid #bfbfbf;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors?.white};
 `;
 
 export const DecreaseAndIncrease = styled.p`
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors?.black};
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
 `;
 
 export const Number = styled.p`
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors?.black};
   font-size: 14px;
   font-weight: 400;
   padding: 0 5px;
@@ -60,7 +60,7 @@ export const Number = styled.p`
 `;
 
 export const Price = styled.p`
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors?.black};
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
