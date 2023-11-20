@@ -43,9 +43,9 @@ const CardOfShopping = ({ product }: { product: ProductProps }) => {
       <div>
         <S.QuantityText>Qtd:</S.QuantityText>
         <S.Quantity>
-          <S.DecreaseAndIncrease onClick={decrease}>-</S.DecreaseAndIncrease>
+          <S.DecreaseAndIncrease onClick={decrease} data-testid="decrease">-</S.DecreaseAndIncrease>
           <S.Number data-testid="count">{count}</S.Number>
-          <S.DecreaseAndIncrease onClick={increase}>+</S.DecreaseAndIncrease>
+          <S.DecreaseAndIncrease onClick={increase} data-testid="increase">+</S.DecreaseAndIncrease>
         </S.Quantity>
       </div>
 
