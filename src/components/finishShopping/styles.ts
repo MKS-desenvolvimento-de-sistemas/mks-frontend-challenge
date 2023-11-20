@@ -16,7 +16,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding-top: 36px;
-  background: ${(props) => props.theme.colors.blue01};
+  background: ${(props) => props.theme.colors?.blue01};
   box-shadow: -5px 0px 6px 0px rgba(0, 0, 0, 0.13);
   transform: translateX(200px);
   animation: ${animeRight} 500ms forwards;
@@ -38,7 +38,7 @@ export const TitleAndClose = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors?.white};
   font-size: 27px;
   font-weight: 700;
 
@@ -50,12 +50,12 @@ export const Title = styled.h1`
 export const Close = styled.div`
   width: 38px;
   height: 38px;
-  background-color: ${(props) => props.theme.colors.black};
+  background-color: ${(props) => props.theme.colors?.black};
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors?.white};
   cursor: pointer;
 
   @media (max-width: 500px) {
@@ -91,7 +91,7 @@ export const TotalAndPrice = styled.div`
 `;
 
 export const Total = styled.p`
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors?.white};
   font-size: 28px;
   font-weight: 700;
   line-height: 15px;
@@ -103,9 +103,9 @@ export const Total = styled.p`
 
 export const Finish = styled.button`
   width: 100%;
-  background-color: ${(props) => props.theme.colors.black};
+  background-color: ${(props) => props.theme.colors?.black};
   padding: 30px 0;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors?.white};
   font-size: 28px;
   font-weight: 700;
   line-height: 15px;

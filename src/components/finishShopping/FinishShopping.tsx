@@ -5,7 +5,7 @@ import CardOfShopping from "../cardOfShopping/CardOfShopping";
 const FinishShopping = ({ closeShopping }: { closeShopping: () => void }) => {
   const { shopping, total } = useShopping();
 
-  const totalSum = Object.values(total).reduce((sum, value) => sum + value, 0); // Soma o valor dos produtos que estão no carrinho
+  const totalSum = total && typeof total === 'object' ? Object.values(total).reduce((sum, value) => sum + value, 0) : 0; // Soma o valor dos produtos que estão no carrinho
 
   return (
     <S.Container>
@@ -15,8 +15,8 @@ const FinishShopping = ({ closeShopping }: { closeShopping: () => void }) => {
       </S.TitleAndClose>
 
       <S.Products>
-        {shopping.length > 0 ? (
-          shopping.map((product) => (
+        {shopping?.length > 0 ? (
+          shopping?.map((product) => (
             <CardOfShopping product={product} key={product.id} />
           ))
         ) : (
@@ -28,7 +28,7 @@ const FinishShopping = ({ closeShopping }: { closeShopping: () => void }) => {
 
       <S.TotalAndPrice>
         <S.Total>Total:</S.Total>
-        <S.Total>R$ {shopping.length > 0 ? totalSum : 0}</S.Total>
+        <S.Total>R$ {shopping?.length > 0 ? totalSum : 0}</S.Total>
       </S.TotalAndPrice>
 
       <S.Finish>Finalizar Compra</S.Finish>

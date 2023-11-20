@@ -27,7 +27,7 @@ const Header = () => {
       <S.Shopping onClick={openShopping}>
         <Image src={IconCart} alt="shopping cart" width={19} height={18} />
 
-        <S.QuantityOfProducts>{shopping.length}</S.QuantityOfProducts>
+        <S.QuantityOfProducts>{shopping?.length}</S.QuantityOfProducts>
       </S.Shopping>
       {open && <FinishShopping closeShopping={closeShopping} />}
     </S.Container>
