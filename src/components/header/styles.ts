@@ -8,6 +8,10 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const Logo = styled.div`
@@ -21,6 +25,10 @@ export const Title = styled.h1`
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.1875rem;
+
+  @media (max-width: 350px) {
+    font-size: 2rem;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -28,6 +36,10 @@ export const SubTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.1875rem;
+
+  @media (max-width: 350px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Shopping = styled.div`

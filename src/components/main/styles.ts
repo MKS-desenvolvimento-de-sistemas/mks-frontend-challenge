@@ -14,4 +14,14 @@ export const GridOfProducts = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 31px 22px;
   padding: 3rem 0;
+
+  @media (max-width: 970px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 730px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `
