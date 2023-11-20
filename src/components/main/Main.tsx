@@ -26,6 +26,7 @@ const Main = () => {
                 image={product.photo}
                 name={product.name}
                 price={product.price}
+                id={product.id}
               />
             ))
           : Array.from({ length: 8 }, (_, i) => <Skeleton key={i} />)}

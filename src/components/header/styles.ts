@@ -39,6 +39,7 @@ export const Shopping = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 `;
 
 export const QuantityOfProducts = styled.p`
