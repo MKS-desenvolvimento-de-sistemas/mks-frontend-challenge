@@ -6,12 +6,16 @@ import Image from "next/image";
 
 import { CardProps } from "@/interface/interface";
 import { useShopping } from "@/context/shopping/useShopping";
+import { useAnimation, motion } from "framer-motion";
 
 const Card = ({ image, name, price, description, id }: CardProps) => {
   const { buyProduct } = useShopping();
+
+  // Cria uma instância de controle de animação
+  const animeScale = useAnimation();
   return (
     <S.Container>
-      <S.ProductImg src={image} />
+      <S.ProductImg whileHover={{ scale: 1.1 }} src={image} alt={`Image of product: ${name}`} />
       <S.TitleAndPrice>
         <S.Title>{name}</S.Title>
 
@@ -22,10 +26,16 @@ const Card = ({ image, name, price, description, id }: CardProps) => {
 
       <S.Description>{description}</S.Description>
 
-      <S.Buy onClick={() => buyProduct(id)}>
-        <Image src={Icon} alt="Icon of a bag" width={12} height={13} />
+      <S.Buy
+        onHoverStart={() => animeScale.start({ scale: 0.9, color: "#eee" })}
+        onHoverEnd={() => animeScale.start({ scale: 1.0, color: "#fff" })}
+        onClick={() => buyProduct(id)}
+      >
+        <motion.div animate={animeScale}>
+          <Image src={Icon} alt="Icon of a bag" width={12} height={13} />
+        </motion.div>
 
-        <S.Purchase>COMPRAR</S.Purchase>
+        <S.Purchase animate={animeScale}>COMPRAR</S.Purchase>
       </S.Buy>
     </S.Container>
   );

@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   width: 220px;
   height: 285px;
+  padding-top: 7px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,8 +14,8 @@ export const Container = styled.div`
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.14);
 `;
 
-export const ProductImg = styled.img`
-  width: 100%;
+export const ProductImg = styled(motion.img)`
+  width: 90%;
   height: 138px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -60,7 +62,7 @@ export const Description = styled.p`
   padding: 0 11px 0 14px;
 `;
 
-export const Buy = styled.div`
+export const Buy = styled(motion.div)`
   width: 100%;
   padding: 9px 0;
   display: flex;
@@ -72,7 +74,7 @@ export const Buy = styled.div`
   cursor: pointer;
 `;
 
-export const Purchase = styled.p`
+export const Purchase = styled(motion.p)`
   color: ${(props) => props.theme.colors?.white};
   font-size: 0.875rem;
   font-weight: 600;
