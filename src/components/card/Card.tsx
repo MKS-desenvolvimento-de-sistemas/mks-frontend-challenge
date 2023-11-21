@@ -8,7 +8,7 @@ import { CardProps } from "@/interface/interface";
 import { useShopping } from "@/context/shopping/useShopping";
 
 const Card = ({ image, name, price, description, id }: CardProps) => {
-  const {buyProduct} = useShopping()
+  const { buyProduct } = useShopping();
   return (
     <S.Container>
       <S.ProductImg src={image} />
