@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.main`
   width: 100%;
@@ -7,7 +7,7 @@ export const Container = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const GridOfProducts = styled.div`
   display: grid;
@@ -24,4 +24,14 @@ export const GridOfProducts = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
-`
+`;
+
+export const SucessNotification = styled.div`
+  position: fixed;
+  bottom: 0;
+  background-color: ${(props) => props.theme.colors?.white};
+  padding: 2rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: ${(props) => props.theme.colors?.blue01};
+`;
