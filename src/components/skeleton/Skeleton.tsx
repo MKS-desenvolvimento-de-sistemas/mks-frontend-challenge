@@ -2,7 +2,7 @@ import * as S from './styles'
 
 const Skeleton = () => {
   return (
-    <S.Skeleton />
+    <S.Skeleton aria-label="loading" />
   )
 }
 

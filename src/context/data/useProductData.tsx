@@ -9,9 +9,8 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export type ProductsDataContextProps = {
-  data: ProductDataProps;
+  data?: ProductDataProps;
   error: Error | null;
-  isLoading: boolean;
 };
 
 export const ProductsDataContext = createContext(
@@ -19,7 +18,7 @@ export const ProductsDataContext = createContext(
 );
 
 export const ProductsDataProvider = ({ children }: { children: ReactNode }) => {
-  const { data, error, isLoading } = useQuery({
+  const { data, error } = useQuery({
     queryKey: ["products"],
     queryFn: () =>
       axios
@@ -34,8 +33,7 @@ export const ProductsDataProvider = ({ children }: { children: ReactNode }) => {
     <ProductsDataContext.Provider
       value={{
         data,
-        error,
-        isLoading,
+        error
       }}
     >
       {children}
