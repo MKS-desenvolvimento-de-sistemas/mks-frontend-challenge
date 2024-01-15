@@ -1,43 +1,71 @@
-Diretrizes do desafio
-===========================
+# Página Ecommerce MKS
 
-O objetivo principal desse teste é avaliar sua capacidade de escrever código limpo, bem testado e reutilizável. Ao terminar, faça o deploy da aplicação e mande-nos o link.
+## 🔥 Introdução
 
-Tarefa (funcional)
----------------
+Bem-vindo ao README da Página de Ecommerce MKS. Esta aplicação foi desenvolvida utilizando o framework Next.js, integrado ao Typescript, e incorporando Jest para realizar testes unitários. Nesta página, proporcionamos uma experiência simulada de compra, permitindo aos usuários adicionar itens ao carrinho e calcular tanto a quantidade de itens no carrinho quanto o valor total da compra.
+### ⚙️ Pré-requisitos
 
-Para esse desafio, você deve consumir nossa [API REST de produtos](https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api-docs/) para exibir a lista de produtos da loja.
+Certifique-se de ter o Node.js instalado em sua máquina. O Next.js é construído sobre o Node.js, então você precisará dessa plataforma para executar a aplicação.
+Você pode baixar o Node.js em https://nodejs.org/. O npm é instalado automaticamente junto com o Node.js.
 
-A aplicação deve conter apenas uma página/rota e um carrinho.
+```
+Instalação do Next.js:
 
-- <b>Loja</b>: A lista de produtos deve ser buscada de nossa API, use um shimmer/skeleton enquanto estiver em loading.
- 
-- <b>Carrinho</b>: O carrinho deve conter todos os produtos selecionados, juntamente com a opção de aumentar a quantidade de cada produto selecionado.
+Após instalar o Node.js, abra o terminal e instale o Next.js globalmente usando o seguinte comando:
 
-Use do Jest e a testing-library para realizar os testes unitários.
+npm install -g next
 
-Recursos
----------------
+```
+Clone o repositório: git clone [URL do Repositório]
+Instale as dependências: npm install
+```
 
-UI/UX: [Figma loja](https://www.figma.com/file/Z4z8osDbK1ET7cjNzFRMrK/MKS-Front-end-challenge?node-id=0%3A1) PS: O design system está incluso, incluindo a fonte.
+### 🔨 Guia de instalação
 
-API: [API REST de produtos](https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api-docs/) para exibir a lista de produtos da loja.
+Para instalar e executar o projeto, siga as etapas abaixo:
 
-Ferramentas requeridas
----------------
+1. Clone o repositório:
 
-1. TypeScript
-2. React ou Next.js (Preferimos Next.js)
-3. React-query
-4. Styled-components
-5. Jest
+```
+git clone [URL do Repositório]
 
-Aspectos técnicos
----------------
+```
 
-Todas as ferramentas listadas anteriormente são mandatórias, além delas sinta-se livre para utilizar de qualquer outra technologia que te seja confortável.
+2. Instale as dependências:
 
-Faça o deploy!
----------------
+```
+npm install
 
-Ao finalizar, faça o deploy no lugar que te for confortável (exemplo: Vercel, Netlify, Heroku, Amazon EC2, App Runner, etc)
+```
+
+3. Inicie a aplicação:
+
+```
+npm run dev
+
+
+```
+
+## 📦 Tecnologias usadas:
+
+
+- ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+
+- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+- ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+
+- ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+## 👷 Autores
+
+- **Diego Reis**  - [Diego Reis](https://github.com/dreisdev)
+
+## 📄 Licença
+
+Esse projeto está sob a licença (MIT LICENSE)
+
+## 💡 Contato
+
+- Para suporte, mande um email para dreis.dev@outlook.com.
+- [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dreis-dev/)
