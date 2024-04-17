@@ -18,7 +18,7 @@ const helper = (variant: 'primary' | 'secondary') => {
   return variants[variant] || variants['primary'];
 };
 
-const StyledButton = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   width: 100%;
   size: 14px;
   text-transform: uppercase;
@@ -38,5 +38,3 @@ const StyledButton = styled.button<ButtonProps>`
 
   ${({ variant }) => helper(variant)}
 `;
-
-export default StyledButton;

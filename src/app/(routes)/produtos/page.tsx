@@ -1,11 +1,17 @@
 "use client"
 
-import ButtonComponent from "@/components/Button";
+import ButtonComponent from "@/components/button";
+import BuyIcon from "../../../../public/icons/comprar";
 
 const Page = () => {
   return (
     <div>
-      <ButtonComponent />
+      <ButtonComponent
+        variant="primary"
+        icon={BuyIcon}
+      >
+        comprar
+      </ButtonComponent>
     </div>
   );
 };

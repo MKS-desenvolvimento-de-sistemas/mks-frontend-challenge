@@ -1,15 +1,15 @@
 import BuyIcon from "../../../public/icons/comprar";
-import StyledButton from "./style";
+import * as S from "./style";
 import ButtonProps from "./type";
 
 const ButtonComponent: React.FC<ButtonProps> = ({ children, variant, icon }) => {
   return (
-    <StyledButton
+    <S.Button
       variant={variant}
     >
       {icon && <BuyIcon />}
       { children }
-    </StyledButton>
+    </S.Button>
   )
 };
 
