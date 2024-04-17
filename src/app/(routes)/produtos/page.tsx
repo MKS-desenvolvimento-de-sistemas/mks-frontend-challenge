@@ -1,66 +1,12 @@
 "use client"
 
 import * as S from "./style";
-import ProductComponent from "@/components/product";
-
-const api = {
-  products: {
-    id: 1,
-    name: "iPhone X 128 GB",
-    brand: "Apple",
-    description: "O Apple iPhone X é um smartphone iOS avançado e abrangente em todos os pontos de vista com algumas características excelentes",
-    price: 2000.1
-  },
-  count: 1
-};
+import ListComponent from "@/components/list";
 
 const Page = () => {
   return (
     <S.Container>
-      <S.List>
-        <ProductComponent
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-        <ProductComponent
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-        <ProductComponent
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-        <ProductComponent
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-        <ProductComponent
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-        <ProductComponent
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-      </S.List>
+      <ListComponent />
     </S.Container>
   );
 };
