@@ -10,17 +10,19 @@ const ProductComponent: React.FC<ProductProps> = (props) => {
       <S.Content>
         <S.ContainerImage>
           <Image
-            alt="Apple Watch"
-            src={'/images/iphone.png'}
-            width={190}
-            height={160}
+            alt="Product Image"
+            src={props.photo}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
           />
         </S.ContainerImage>
         <S.Informations>
           <S.Header>
             <Typography tag="h2" fontWeight={300}>{props.brand} {props.name}</Typography>
             <S.Price>
-              {props.price.toLocaleString('pt-BR', {
+              {parseFloat(props.price).toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
                 minimumFractionDigits: 0,

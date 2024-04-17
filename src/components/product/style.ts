@@ -14,7 +14,9 @@ export const Content = styled.div`
 `;
 
 export const ContainerImage = styled.div`
-  width: 100%;
+  width: 350px;
+  max-height: 250px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +33,7 @@ export const Header = styled.header`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
 `;
 

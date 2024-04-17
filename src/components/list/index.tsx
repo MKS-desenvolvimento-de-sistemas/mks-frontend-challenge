@@ -1,30 +1,29 @@
-import ProductComponent from '../product';
 import * as S from './style';
-
-const api = {
-  products: {
-    id: 1,
-    name: "iPhone X 128 GB",
-    brand: "Apple",
-    description: "O Apple iPhone X é um smartphone iOS avançado e abrangente em todos os pontos de vista com algumas características excelentes",
-    price: 2000.1
-  },
-  count: 1
-};
+import ProductComponent from '../product';
+import { useProducts } from '@/hooks/useProducts';
+import ProductProps from '../product/type';
 
 const ListComponent = () => {
+  const { data, isLoading } = useProducts(6);
+
   return (
     <S.List>
-      {Array.from({ length: 6 }).map((_, index) => (
-        <ProductComponent
-          key={index}
-          id={api.products.id}
-          name={api.products.name}
-          brand={api.products.brand}
-          description={api.products.description}
-          price={api.products.price}
-        />
-      ))}
+      {
+        data?.products.map((product: ProductProps, index: number) => (
+          <ProductComponent
+            key={index}
+            id={product.id}
+            name={product.name}
+            brand={product.brand}
+            description={product.description}
+            price={product.price}
+            photo={product.photo}
+          />
+        ))
+      }
+      {/* Array.from({ length: 6 }).map((_, index) => (
+        
+      )) */}
     </S.List>
   );
 };
