@@ -1,5 +1,6 @@
 "use client"
 
+import * as S from "./style";
 import ProductComponent from "@/components/product";
 
 const api = {
@@ -15,15 +16,52 @@ const api = {
 
 const Page = () => {
   return (
-    <div>
-      <ProductComponent
-        id={api.products.id}
-        name={api.products.name}
-        brand={api.products.brand}
-        description={api.products.description}
-        price={api.products.price}
-      />
-    </div>
+    <S.Container>
+      <S.List>
+        <ProductComponent
+          id={api.products.id}
+          name={api.products.name}
+          brand={api.products.brand}
+          description={api.products.description}
+          price={api.products.price}
+        />
+        <ProductComponent
+          id={api.products.id}
+          name={api.products.name}
+          brand={api.products.brand}
+          description={api.products.description}
+          price={api.products.price}
+        />
+        <ProductComponent
+          id={api.products.id}
+          name={api.products.name}
+          brand={api.products.brand}
+          description={api.products.description}
+          price={api.products.price}
+        />
+        <ProductComponent
+          id={api.products.id}
+          name={api.products.name}
+          brand={api.products.brand}
+          description={api.products.description}
+          price={api.products.price}
+        />
+        <ProductComponent
+          id={api.products.id}
+          name={api.products.name}
+          brand={api.products.brand}
+          description={api.products.description}
+          price={api.products.price}
+        />
+        <ProductComponent
+          id={api.products.id}
+          name={api.products.name}
+          brand={api.products.brand}
+          description={api.products.description}
+          price={api.products.price}
+        />
+      </S.List>
+    </S.Container>
   );
 };
 

@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Providers from "@/providers";
 import type { Metadata } from "next";
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Navbar />
           { children }
+          <Footer />
         </Providers>
       </body>
     </html>

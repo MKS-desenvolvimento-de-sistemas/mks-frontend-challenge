@@ -2,7 +2,8 @@ import theme from "@/styles/theme";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 350px;
+  width: 100%;
+  max-width: 300px;
   padding-top: 10px;
   box-shadow: 0px 2px 8px 0px #00000022;
 `;
