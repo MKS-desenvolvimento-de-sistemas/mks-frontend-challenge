@@ -5,6 +5,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import GlobalStyles from "@/styles/global";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
+import { CartProvider } from "./cart";
 
 interface ProvidersProps {
   children: ReactNode,
@@ -15,7 +16,9 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
     <QueryClientProvider client={queryClient}>
       <StyledComponentsRegistry>
         <GlobalStyles />
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </StyledComponentsRegistry>
     </QueryClientProvider>
   )
