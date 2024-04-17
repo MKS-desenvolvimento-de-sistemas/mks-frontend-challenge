@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 300px;
   padding-top: 10px;
   box-shadow: 0px 2px 8px 0px #00000022;
@@ -24,7 +28,7 @@ export const ContainerImage = styled.div`
 
 export const Informations = styled.div`
   display: flex;
-  padding: 10px 0px;
+  padding: 16px 0px;
   flex-direction: column;
   gap: 12px;
 `;

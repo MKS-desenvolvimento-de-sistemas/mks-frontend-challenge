@@ -3,6 +3,7 @@ interface Theme {
     primary: string,
     secondary: string,
     background: string,
+    black: string,
     text: {
       white: string,
       black: string,
@@ -21,6 +22,7 @@ const theme: Theme = {
     primary: '#0F52BA',
     secondary: '#373737',
     background: '#F5F5F5',
+    black: '#000',
     text: {
       white: '#FFF',
       black: '#2C2C2C',

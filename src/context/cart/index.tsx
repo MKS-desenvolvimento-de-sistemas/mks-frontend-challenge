@@ -1,3 +1,5 @@
+"use client";
+
 import ProductProps from "@/components/product/type";
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
