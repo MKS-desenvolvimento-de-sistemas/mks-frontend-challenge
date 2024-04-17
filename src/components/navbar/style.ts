@@ -5,6 +5,9 @@ export const Navbar = styled.nav`
   width: 100vw;
   background-color: ${theme.colors.primary};
   color: ${theme.colors.text.white};
+  display: flex;
+  justify-content: space-between;
+  
 `;
 
 export const Container = styled.div`

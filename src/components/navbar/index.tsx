@@ -2,6 +2,7 @@
 
 import * as S from "./style";
 import Typography from "../typography";
+import Cart from "../cart";
 
 const Navbar = () => {
   return (
@@ -22,6 +23,8 @@ const Navbar = () => {
           Sistemas
         </Typography>
       </S.Container>
+      
+      <Cart />
     </S.Navbar>
   );
 };
