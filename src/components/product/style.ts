@@ -27,17 +27,16 @@ export const Informations = styled.div`
 `;
 
 export const Header = styled.header`
+  width: 100%;
   display: flex;
+  align-items: center;
   gap: 12px;
-  display: -webkit-inline-box;
 `;
 
 export const Price = styled.div`
   border-radius: 5px;
   padding: 5px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   color: ${theme.colors.text.white};
   background-color: ${theme.colors.secondary};
   font-weight: 700;

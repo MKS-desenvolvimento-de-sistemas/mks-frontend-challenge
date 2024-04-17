@@ -18,11 +18,13 @@ const ProductComponent: React.FC<ProductProps> = (props) => {
         </S.ContainerImage>
         <S.Informations>
           <S.Header>
-            <Typography tag="h2">{props.name}</Typography>
+            <Typography tag="h2">{props.brand} {props.name}</Typography>
             <S.Price>
               {props.price.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
               })}
             </S.Price>
           </S.Header>

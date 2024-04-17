@@ -1,6 +1,6 @@
 "use client"
 
-import Product from "@/components/product";
+import ProductComponent from "@/components/product";
 
 const api = {
   products: {
@@ -16,7 +16,7 @@ const api = {
 const Page = () => {
   return (
     <div>
-      <Product
+      <ProductComponent
         id={api.products.id}
         name={api.products.name}
         brand={api.products.brand}
