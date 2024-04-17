@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface TypographyProps {
-  tag: 'h1' | 'h2' | 'body' | 'default';
+  tag: 'h1' | 'h2' | 'p' | 'span';
   children: ReactNode;
 }
 

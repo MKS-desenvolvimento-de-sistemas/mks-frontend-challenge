@@ -1,17 +1,28 @@
 "use client"
 
-import ButtonComponent from "@/components/button";
-import BuyIcon from "../../../../public/icons/comprar";
+import Product from "@/components/product";
+
+const api = {
+  products: {
+    id: 1,
+    name: "iPhone X 128 GB",
+    brand: "Apple",
+    description: "O Apple iPhone X é um smartphone iOS avançado e abrangente em todos os pontos de vista com algumas características excelentes",
+    price: 2000.1
+  },
+  count: 1
+};
 
 const Page = () => {
   return (
     <div>
-      <ButtonComponent
-        variant="primary"
-        icon={BuyIcon}
-      >
-        comprar
-      </ButtonComponent>
+      <Product
+        id={api.products.id}
+        name={api.products.name}
+        brand={api.products.brand}
+        description={api.products.description}
+        price={api.products.price}
+      />
     </div>
   );
 };

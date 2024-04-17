@@ -8,23 +8,26 @@ const Navbar = () => {
   return (
     <S.Navbar>
       <S.Container>
-        <Typography
-          tag="h1"
-          fontSize='40px'
-          fontWeight={600}
-        >
-          MKS
-        </Typography>
-        <Typography 
-          tag="h2" 
-          fontSize='20px'
-          fontWeight={300}
-        >
-          Sistemas
-        </Typography>
+        <S.ContainerLeft>
+          <Typography
+            tag="h1"
+            fontSize='40px'
+            fontWeight={600}
+          >
+            MKS
+          </Typography>
+          <Typography
+            tag="h2"
+            fontSize='20px'
+            fontWeight={100}
+            marginBottom={7}
+          >
+            Sistemas
+          </Typography>
+        </S.ContainerLeft>
+
+        <Cart />
       </S.Container>
-      
-      <Cart />
     </S.Navbar>
   );
 };

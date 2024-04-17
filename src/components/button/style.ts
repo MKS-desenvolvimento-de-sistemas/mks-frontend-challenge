@@ -25,7 +25,7 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 600;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0px 0px 8px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
