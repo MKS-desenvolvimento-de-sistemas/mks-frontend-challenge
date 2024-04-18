@@ -11,15 +11,15 @@ const ProductComponent: React.FC<ProductProps> = (product) => {
   const { products, setProducts } = useCart();
 
   const handleAddToCart = () => {
-    
+
     setProducts(currentProducts => {
       const existingProductIndex = currentProducts.findIndex(p => p.id === product.id);
       if (existingProductIndex !== -1) {
-        return currentProducts.map((p, index) => 
-        index === existingProductIndex ? {...p, quantity: p.quantity + 1} : p
+        return currentProducts.map((p, index) =>
+          index === existingProductIndex ? { ...p, quantity: p.quantity + 1 } : p
         );
       } else {
-        return [...currentProducts, {...product, quantity: 1}];
+        return [...currentProducts, { ...product, quantity: 1 }];
       }
     });
 
@@ -27,7 +27,15 @@ const ProductComponent: React.FC<ProductProps> = (product) => {
   };
 
   return (
-    <S.Container>
+    <S.Container
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+    >
       <S.Content>
         <S.ContainerImage>
           <Image

@@ -16,8 +16,11 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const ContainerLeft = styled.div`
+export const ContainerLeft = styled.a`
   display: flex;
   gap: 10px;
   align-items: end;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${theme.colors.background};
 `;

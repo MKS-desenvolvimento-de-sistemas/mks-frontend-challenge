@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <S.Navbar>
       <S.Container>
-        <S.ContainerLeft>
+        <S.ContainerLeft href="">
           <Typography
             tag="h1"
             fontSize='40px'

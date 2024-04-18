@@ -21,39 +21,39 @@ const ListComponent = () => {
   };
 
   return (
-    <S.List
-      as={motion.ul}
-      initial="hidden"
-      animate="visible"
-    >
-      {
-        !isLoading ?
-          data?.products.map((product: ProductProps, index: number) => (
-            <ProductComponent
-              key={index}
-              id={product.id}
-              name={product.name}
-              brand={product.brand}
-              description={product.description}
-              price={product.price}
-              photo={product.photo}
-              quantity={product.quantity}
-            />
-          )) : (
-            Array.from({ length: limit}).map((item: any, index: number) => (
-              <ProductSkeleton />
-            ))
-          )
-      }
-      <div>
-        <ButtonComponent
-          variant='primary'
-          onClick={handleLoadMore}
-        >
-          Carregar Mais Produtos
-        </ButtonComponent>
-      </div>
-    </S.List>
+    <S.Container>
+      <S.List
+        as={motion.ul}
+        initial="hidden"
+        animate="visible"
+      >
+        {
+          !isLoading ?
+            data?.products.map((product: ProductProps, index: number) => (
+              <ProductComponent
+                key={index}
+                id={product.id}
+                name={product.name}
+                brand={product.brand}
+                description={product.description}
+                price={product.price}
+                photo={product.photo}
+                quantity={product.quantity}
+              />
+            )) : (
+              Array.from({ length: limit }).map((item: any, index: number) => (
+                <ProductSkeleton />
+              ))
+            )
+        }
+      </S.List>
+      <ButtonComponent
+        variant='primary'
+        onClick={handleLoadMore}
+      >
+        Carregar Mais Produtos
+      </ButtonComponent>
+    </S.Container>
   );
 };
 

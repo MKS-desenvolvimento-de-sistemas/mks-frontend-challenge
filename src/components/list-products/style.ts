@@ -11,3 +11,11 @@ export const List = styled(motion.ul)`
   gap: 16px;
   flex-grow: 1;
 `;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px auto;
+  max-width: 1100px;
+`;
