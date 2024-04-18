@@ -3,8 +3,17 @@ import * as S from './style';
 import Image from 'next/image';
 import Typography from '@/components/typography';
 import formatMoney from '@/utils/formatMoney';
+import { useCart } from '@/hooks/useCart';
 
 const ProductCartItem: React.FC<ProductProps> = (product) => {
+  const { products, setProducts } = useCart();
+
+  const handleRemoveProduct = () => {
+    setProducts(currentProducts => 
+      currentProducts.filter(p => p.id !== product.id)
+    );
+  };
+
   return (
     <S.ProductItem>
       <div>
@@ -21,7 +30,7 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
         <p>{product.quantity}</p>
       </div>
       <Typography tag='p' fontWeight={700}>{formatMoney(product.price)}</Typography>
-      <S.RemoveProduct>X</S.RemoveProduct>
+      <S.RemoveProduct onClick={handleRemoveProduct}>X</S.RemoveProduct>
     </S.ProductItem>
   );
 };

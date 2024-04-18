@@ -1,7 +1,7 @@
 import Typography from '@/components/typography';
 import * as S from './style';
 import { useCart } from '@/hooks/useCart';
-import ProductCartItem from '../product';
+import ProductCartItem from '../product-cart';
 
 const Modal = () => {
   const { products, setCartActive } = useCart();

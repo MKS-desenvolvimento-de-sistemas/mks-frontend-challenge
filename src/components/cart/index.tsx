@@ -12,7 +12,7 @@ const Cart: React.FC = () => {
     <>
       <S.Container onClick={() => setCartActive(!isCartActive)}>
         <CarrinhoIcon />
-        <p style={{ fontWeight: 700}}>{products.length}</p>
+        <p style={{ fontWeight: 700}}>{products.length | 0}</p>
       </S.Container>
       { isCartActive && 
         <Modal />
