@@ -20,7 +20,7 @@ export const Content = styled.div`
   margin: 16px auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 `;
 
 export const Header = styled.div`
