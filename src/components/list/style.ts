@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const List = styled.ul`
+export const List = styled(motion.ul)`
   margin: 16px auto;
   max-width: 1100px;
   display: flex;
