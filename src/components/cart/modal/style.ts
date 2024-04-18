@@ -15,7 +15,7 @@ export const Modal = styled.div`
 
 export const Content = styled.div`
   width: 85%;
-  height: 90%;
+  height: 95%;
   padding: 10px;
   margin: 16px auto;
   display: flex;
@@ -41,7 +41,9 @@ export const ListProducts = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  min-height: 80%;
+  padding-top: 12px;
+  height: 85%;
+  overflow-y: auto;
 `;
 
 export const TotalContainer = styled.div`

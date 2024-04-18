@@ -26,4 +26,5 @@ export const RemoveProduct = styled.div`
   cursor: pointer;
   font-size: 12px;
   text-center: center;
+  z-index: 99;
 `;
