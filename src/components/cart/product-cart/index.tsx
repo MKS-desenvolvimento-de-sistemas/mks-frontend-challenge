@@ -10,31 +10,32 @@ import { toast } from 'react-toastify';
 const ProductCartItem: React.FC<ProductProps> = (product) => {
   const { setProducts } = useCart();
 
-  const updateProductQuantity = (delta: any) => {
+  const handleIncrement = () => {
     setProducts(currentProducts =>
-      currentProducts.map(p => {
-        if (p.id === product.id) {
-          const newQuantity = p.quantity + delta;
-          if (newQuantity < 1) {
-            toast.warning('Não foi possível remover: quantidade mínima de 1.');
-            return p;
-          } else {
-            toast.success(delta > 0 ? `Produto adicionado!` : 'Produto removido!');
-            return {...p, quantity: newQuantity};
-          }
-        }
-        return p;
-      })
+      currentProducts.map(p =>
+        p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p
+      )
     );
+
+    toast.success(`Produto adicionado!`);
   };
 
-  const handleIncrement = () => updateProductQuantity(1);
-  const handleDecrement = () => updateProductQuantity(-1);
+  const handleDecrement = () => {
+    setProducts(currentProducts =>
+      currentProducts.map(p => (
+        p.id === product.id
+      ) ? { ...p, quantity: Math.max(p.quantity - 1, 1) } : p
+      )
+    );
+
+    toast.warning(`Produto removido!`);
+  };
 
   const handleRemoveProduct = () => {
-    setProducts(currentProducts => 
+    setProducts(currentProducts =>
       currentProducts.filter(p => p.id !== product.id)
     );
+
     toast.warning(`${product.name} removido do carrinho!`);
   };
 
@@ -49,7 +50,7 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
         />
       </div>
       <div>
-        <Typography 
+        <Typography
           tag='p'
           width={60}
           className='truncate'
@@ -57,7 +58,7 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
         >
           {product.brand}
         </Typography>
-        <Typography 
+        <Typography
           tag='p'
           width={60}
           className='truncate'
@@ -65,8 +66,8 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
           {product.name}
         </Typography>
       </div>
-      <QuantityComponent 
-        quantity={product.quantity} 
+      <QuantityComponent
+        quantity={product.quantity}
         onDecrement={handleDecrement}
         onIncrement={handleIncrement}
       />
