@@ -1,7 +1,7 @@
 import theme from "@/styles/theme";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const OpenModal = styled.div`
   width: 100px;
   height: 45px;
   border-radius: 8px;

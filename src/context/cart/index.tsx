@@ -8,6 +8,7 @@ interface ICartContext {
   setCartActive: Dispatch<SetStateAction<boolean>>;
   products: ProductProps[];
   setProducts: Dispatch<SetStateAction<ProductProps[]>>;
+  getTotal: () => number;
 };
 
 export const CartContext = createContext<ICartContext | undefined>(undefined);

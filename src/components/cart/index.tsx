@@ -10,10 +10,10 @@ const Cart: React.FC = () => {
 
   return (
     <>
-      <S.Container onClick={() => setCartActive(!isCartActive)}>
+      <S.OpenModal onClick={() => setCartActive(!isCartActive)}>
         <CarrinhoIcon />
         <p style={{ fontWeight: 700}}>{products.length | 0}</p>
-      </S.Container>
+      </S.OpenModal>
       { isCartActive && 
         <Modal />
       }

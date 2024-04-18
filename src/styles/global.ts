@@ -11,6 +11,12 @@ const styles = css`
     height: 100%;
     font-family: sans-serif;
   };
+
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
 `;
 
 const GlobalStyles = createGlobalStyle`

@@ -14,6 +14,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     return [];
   });
 
+  const getTotal = () => {
+    return products.reduce((total, product) => total + (parseFloat(product.price) * product.quantity), 0);
+  };
+
   useEffect(() => {
     localStorage.setItem('cartProducts', JSON.stringify(products));
   }, [products]);
@@ -23,6 +27,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCartActive,
     products,
     setProducts,
+    getTotal,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>

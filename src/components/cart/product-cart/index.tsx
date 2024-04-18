@@ -4,9 +4,26 @@ import Image from 'next/image';
 import Typography from '@/components/typography';
 import formatMoney from '@/utils/formatMoney';
 import { useCart } from '@/hooks/useCart';
+import QuantityComponent from './quantity';
 
 const ProductCartItem: React.FC<ProductProps> = (product) => {
-  const { products, setProducts } = useCart();
+  const { setProducts } = useCart();
+
+  const handleIncrement = () => {
+    setProducts(currentProducts =>
+      currentProducts.map(p => 
+        p.id === product.id ? {...p, quantity: p.quantity + 1} : p
+      )
+    );
+  };
+
+  const handleDecrement = () => {
+    setProducts(currentProducts =>
+      currentProducts.map(p =>
+        p.id === product.id ? {...p, quantity: Math.max(p.quantity - 1, 1)} : p
+      )
+    );
+  };
 
   const handleRemoveProduct = () => {
     setProducts(currentProducts => 
@@ -24,12 +41,29 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
           alt='Imagem Carrinho'
         />
       </div>
-      <Typography tag='p'
-      >{product.name}</Typography>
-      <div style={{ width: '100px'}}>
-        <p>{product.quantity}</p>
+      <div>
+        <Typography 
+          tag='p'
+          width={60}
+          className='truncate'
+          marginBottom={4}
+        >
+          {product.brand}
+        </Typography>
+        <Typography 
+          tag='p'
+          width={60}
+          className='truncate'
+        >
+          {product.name}
+        </Typography>
       </div>
-      <Typography tag='p' fontWeight={700}>{formatMoney(product.price)}</Typography>
+      <QuantityComponent 
+        quantity={product.quantity} 
+        onDecrement={handleDecrement}
+        onIncrement={handleIncrement}
+      />
+      <Typography tag='p' fontWeight={800} fontSize={18} marginTop={6}>{formatMoney(product.price)}</Typography>
       <S.RemoveProduct onClick={handleRemoveProduct}>X</S.RemoveProduct>
     </S.ProductItem>
   );

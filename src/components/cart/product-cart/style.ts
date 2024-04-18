@@ -2,8 +2,9 @@ import theme from "@/styles/theme";
 import styled from "styled-components";
 
 export const ProductItem = styled.li`
-  width: 80%;
+  width: 85%;
   padding: 12px 24px;
+  gap: 16px;
   color: ${theme.colors.text.black};
   background-color: ${theme.colors.background};
   list-style: none;
@@ -11,7 +12,6 @@ export const ProductItem = styled.li`
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: relative;
 `;
 
