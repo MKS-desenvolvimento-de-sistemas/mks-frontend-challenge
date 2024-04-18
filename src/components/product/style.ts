@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 300px;
+  height: 318px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,7 +19,7 @@ export const Content = styled.div`
 
 export const ContainerImage = styled.div`
   width: 350px;
-  max-height: 250px;
+  height: 140px;
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -30,11 +30,13 @@ export const Informations = styled.div`
   display: flex;
   padding: 16px 0px;
   flex-direction: column;
+  justify-content: space-between;
   gap: 12px;
 `;
 
 export const Header = styled.header`
   width: 100%;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: space-between;
