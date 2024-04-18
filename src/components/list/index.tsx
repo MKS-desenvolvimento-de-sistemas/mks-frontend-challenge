@@ -18,6 +18,7 @@ const ListComponent = () => {
             description={product.description}
             price={product.price}
             photo={product.photo}
+            quantity={product.quantity}
           />
         ))
       }
