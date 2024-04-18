@@ -10,31 +10,31 @@ import { toast } from 'react-toastify';
 const ProductCartItem: React.FC<ProductProps> = (product) => {
   const { setProducts } = useCart();
 
-  const handleIncrement = () => {
+  const updateProductQuantity = (delta: any) => {
     setProducts(currentProducts =>
-      currentProducts.map(p => 
-        p.id === product.id ? {...p, quantity: p.quantity + 1} : p
-      )
+      currentProducts.map(p => {
+        if (p.id === product.id) {
+          const newQuantity = p.quantity + delta;
+          if (newQuantity < 1) {
+            toast.warning('Não foi possível remover: quantidade mínima de 1.');
+            return p;
+          } else {
+            toast.success(delta > 0 ? `Produto adicionado!` : 'Produto removido!');
+            return {...p, quantity: newQuantity};
+          }
+        }
+        return p;
+      })
     );
-
-    toast.success(`Produto adicionado!`);
   };
 
-  const handleDecrement = () => {
-    setProducts(currentProducts =>
-      currentProducts.map(p =>
-        p.id === product.id ? {...p, quantity: Math.max(p.quantity - 1, 1)} : p
-      )
-    );
-
-    toast.warning(`Produto removido!`);
-  };
+  const handleIncrement = () => updateProductQuantity(1);
+  const handleDecrement = () => updateProductQuantity(-1);
 
   const handleRemoveProduct = () => {
     setProducts(currentProducts => 
       currentProducts.filter(p => p.id !== product.id)
     );
-
     toast.warning(`${product.name} removido do carrinho!`);
   };
 
@@ -70,8 +70,12 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
         onDecrement={handleDecrement}
         onIncrement={handleIncrement}
       />
-      <Typography tag='p' fontWeight={800} fontSize={18} marginTop={6}>{formatMoney(product.price)}</Typography>
-      <S.RemoveProduct onClick={handleRemoveProduct}>X</S.RemoveProduct>
+      <Typography tag='p' fontWeight={800} fontSize={18} marginTop={6}>
+        {formatMoney(product.price)}
+      </Typography>
+      <S.RemoveProduct onClick={handleRemoveProduct}>
+        X
+      </S.RemoveProduct>
     </S.ProductItem>
   );
 };
