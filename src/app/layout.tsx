@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Providers from "@/providers";
 import type { Metadata } from "next";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: "MKS Sistemas",
