@@ -17,6 +17,9 @@ export const Content = styled.div`
   width: 85%;
   padding: 10px;
   margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 `;
 
 export const Header = styled.div`
@@ -37,5 +40,5 @@ export const CloseModal = styled.div`
 export const ListProducts = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 `;

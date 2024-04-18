@@ -5,6 +5,7 @@ type ProductProps = {
   description: string,
   price: string,
   photo: string,
+  quantity: number,
 };
 
 export default ProductProps;

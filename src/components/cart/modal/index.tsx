@@ -34,6 +34,7 @@ const Modal = () => {
                 photo={item.photo}
                 price={item.price}
                 key={index}
+                quantity={item.quantity}
               />
             ))
           }
