@@ -5,6 +5,7 @@ import Typography from '@/components/typography';
 import formatMoney from '@/utils/formatMoney';
 import { useCart } from '@/hooks/useCart';
 import QuantityComponent from './quantity';
+import { toast } from 'react-toastify';
 
 const ProductCartItem: React.FC<ProductProps> = (product) => {
   const { setProducts } = useCart();
@@ -15,6 +16,8 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
         p.id === product.id ? {...p, quantity: p.quantity + 1} : p
       )
     );
+
+    toast.success(`Produto adicionado!`);
   };
 
   const handleDecrement = () => {
@@ -23,12 +26,16 @@ const ProductCartItem: React.FC<ProductProps> = (product) => {
         p.id === product.id ? {...p, quantity: Math.max(p.quantity - 1, 1)} : p
       )
     );
+
+    toast.warning(`Produto removido!`);
   };
 
   const handleRemoveProduct = () => {
     setProducts(currentProducts => 
       currentProducts.filter(p => p.id !== product.id)
     );
+
+    toast.warning(`${product.name} removido do carrinho!`);
   };
 
   return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { createGlobalStyle, css } from 'styled-components';
 
 const styles = css`

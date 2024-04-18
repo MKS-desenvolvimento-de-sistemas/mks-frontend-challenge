@@ -6,6 +6,7 @@ import GlobalStyles from "@/styles/global";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { CartProvider } from "./cart";
+import { ToastContainer } from "react-toastify";
 
 interface ProvidersProps {
   children: ReactNode,
@@ -19,6 +20,7 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
         <CartProvider>
           {children}
         </CartProvider>
+        <ToastContainer />
       </StyledComponentsRegistry>
     </QueryClientProvider>
   )

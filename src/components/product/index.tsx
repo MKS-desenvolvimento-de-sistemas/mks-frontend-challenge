@@ -5,21 +5,25 @@ import Image from "next/image";
 import Typography from "../typography";
 import { useCart } from "@/hooks/useCart";
 import formatMoney from "@/utils/formatMoney";
+import { toast } from "react-toastify";
 
 const ProductComponent: React.FC<ProductProps> = (product) => {
   const { products, setProducts } = useCart();
 
   const handleAddToCart = () => {
+    
     setProducts(currentProducts => {
       const existingProductIndex = currentProducts.findIndex(p => p.id === product.id);
       if (existingProductIndex !== -1) {
         return currentProducts.map((p, index) => 
-          index === existingProductIndex ? {...p, quantity: p.quantity + 1} : p
+        index === existingProductIndex ? {...p, quantity: p.quantity + 1} : p
         );
       } else {
         return [...currentProducts, {...product, quantity: 1}];
       }
     });
+
+    toast.success(`${product.name} adicionado ao carrinho!`, { theme: "colored" });
   };
 
   return (
