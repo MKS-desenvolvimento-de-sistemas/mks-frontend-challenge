@@ -1,7 +1,7 @@
 "use client"
 
 import * as S from "./style";
-import ListComponent from "@/components/list";
+import ListComponent from "@/components/list-products";
 
 const Page = () => {
   return (

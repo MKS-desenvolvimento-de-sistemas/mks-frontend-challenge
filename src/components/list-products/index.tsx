@@ -5,6 +5,7 @@ import ProductProps from '../product/type';
 import { motion } from 'framer-motion';
 import ButtonComponent from '../button';
 import { useEffect, useState } from 'react';
+import { ProductSkeleton } from '../product/skeleton/style';
 
 const ListComponent = () => {
   const [limit, setLimit] = useState<number>(6);
@@ -19,35 +20,33 @@ const ListComponent = () => {
     setLimit(currentLimit => currentLimit + 3);
   };
 
-  if (isLoading) {
-    return <p>Carregando...</p>;
-  }
-
   return (
-    <S.List 
-      as={motion.ul} 
+    <S.List
+      as={motion.ul}
       initial="hidden"
       animate="visible"
     >
       {
-        data?.products.map((product: ProductProps, index: number) => (
-          <ProductComponent
-            key={index}
-            id={product.id}
-            name={product.name}
-            brand={product.brand}
-            description={product.description}
-            price={product.price}
-            photo={product.photo}
-            quantity={product.quantity}
-          />
-        ))
+        !isLoading ?
+          data?.products.map((product: ProductProps, index: number) => (
+            <ProductComponent
+              key={index}
+              id={product.id}
+              name={product.name}
+              brand={product.brand}
+              description={product.description}
+              price={product.price}
+              photo={product.photo}
+              quantity={product.quantity}
+            />
+          )) : (
+            Array.from({ length: limit}).map((item: any, index: number) => (
+              <ProductSkeleton />
+            ))
+          )
       }
-      {/* Array.from({ length: 6 }).map((_, index) => (
-        
-      )) */}
       <div>
-        <ButtonComponent 
+        <ButtonComponent
           variant='primary'
           onClick={handleLoadMore}
         >
