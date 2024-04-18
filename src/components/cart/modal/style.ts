@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Modal = styled.div`
   background-color: ${theme.colors.primary};
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;

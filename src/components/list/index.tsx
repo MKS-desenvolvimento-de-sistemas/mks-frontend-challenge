@@ -3,26 +3,29 @@ import ProductComponent from '../product';
 import { useProducts } from '@/hooks/useProducts';
 import ProductProps from '../product/type';
 import { motion } from 'framer-motion';
-
-const containerTransition = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
+import ButtonComponent from '../button';
+import { useEffect, useState } from 'react';
 
 const ListComponent = () => {
-  const { data, isLoading } = useProducts(6);
+  const [limit, setLimit] = useState<number>(6);
+
+  const { data, isLoading, refetch } = useProducts(limit);
+
+  useEffect(() => {
+    refetch();
+  }, [limit, refetch]);
+
+  const handleLoadMore = () => {
+    setLimit(currentLimit => currentLimit + 3);
+  };
+
+  if (isLoading) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <S.List 
       as={motion.ul} 
-      variants={containerTransition}
       initial="hidden"
       animate="visible"
     >
@@ -43,6 +46,14 @@ const ListComponent = () => {
       {/* Array.from({ length: 6 }).map((_, index) => (
         
       )) */}
+      <div>
+        <ButtonComponent 
+          variant='primary'
+          onClick={handleLoadMore}
+        >
+          Carregar Mais Produtos
+        </ButtonComponent>
+      </div>
     </S.List>
   );
 };
