@@ -31,7 +31,8 @@ Ferramentas requeridas
 3. React-query
 4. Styled-components ou SASS
 5. Framer-motion
-6. Jest
+6. Zustand
+7. Jest
 
 Aspectos técnicos
 ---------------
