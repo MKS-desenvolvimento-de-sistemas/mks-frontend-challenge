@@ -1,0 +1,6 @@
+<div class="store">
+    <h1>Store</h1>
+    <div *ngIf="isLoading">Loading...</div>
+    <app-product-card *ngFor="let product of products" [product]="product" (addToCartEvent)="addToCart($event)"></app-product-card>
+  </div>
+  

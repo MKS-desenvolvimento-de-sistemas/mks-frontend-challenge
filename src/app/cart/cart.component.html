@@ -1,0 +1,14 @@
+<div class="cart-item">
+    <h3>{{ name }}</h3>
+    <p>Quantity: {{ quantity }}</p>
+    <p>Price: ${{ price }}</p>
+  </div>
+  <div class="cart">
+    <h1>Cart</h1>
+    <div *ngIf="cart.length === 0">Your cart is empty</div>
+    <div *ngFor="let item of cart">
+      <app-cart-item [name]="item.name" [quantity]="item.quantity" [price]="item.price"></app-cart-item>
+    </div>
+    <p>Total: ${{ calculateTotal() }}</p>
+  </div>
+  

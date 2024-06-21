@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@angular/animations": "^17.3.3",
+    "@ngneat/helipopper": "^9.2.1",
+    "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^29.5.12"
+  }
+}
