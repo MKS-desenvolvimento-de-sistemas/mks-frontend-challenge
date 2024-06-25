@@ -1,0 +1,41 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  
+  .loading {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+    @media (min-width: 1200px){
+        .product-list {
+            max-width: 1140px;
+        }
+    }
+
+    @media (max-width: 992px){
+        .product-list{
+            max-width: 960px;
+        }
+    }
+
+    @media (max-width: 768px){
+        .product-list {
+            max-width: 720px;
+        }
+    }
+
+    @media (max-width: 576px){
+        .product-list {
+            max-width: 540px;
+        }
+    }

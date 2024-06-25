@@ -1,0 +1,128 @@
+.cart-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 600px;
+    height: 100%;
+    background-color:#0F52BA;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+    color: #FFFFFF;
+  }
+  
+  .cart-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    float: right;
+    background-color: #000000;
+    border: none;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .cart-sidebar h2 {
+    margin-top: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 25px;
+    position: relative;
+  }
+  
+  .cart-item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .cart-item-info {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+  }
+  
+  .cart-item-info h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+  }
+  
+  .quantity-control input {
+    width: 40px;
+    text-align: center;
+  }
+  
+  .cart-item-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .cart-total {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .checkout-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    font-size: 28px;
+  }
+  
+  .remove-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000000;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .sidebarHeader{
+    padding: 20px;
+  }
+  .cart-total span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    font-size: 28px;
+  }
+  .list-products{
+    padding: 30px;
+  }

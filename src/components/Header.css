@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f52ba;
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .sistemas {
+    font-weight: 300;
+  }
+  
+  .cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 90px;
+    height: 45px;
+    border-radius: 8px;
+  }
+  
+  .cart-icon img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+  
+  .cart-icon span {
+    font-size: 1.2rem;
+  }
+  
